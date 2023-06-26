@@ -7,6 +7,7 @@ title: Vaccine Guidelines For CKD/TRANSPLANT Recipient
 
 
 
+
 ### CKD/কিডনি রোগী বা Post Transplant/ট্রান্সপ্লান্ট পরবর্তী ভ্যাকসিন গাইডলাইন।
 
 ● ক্রনিক কিডনি রোগীদের জন্য এবং ডায়ালাইসিস জার্নি শুরু করার পূর্বে বেশ কিছু ভ্যাকসিন নেফ্রোলজিস্টরা সাজেস্ট করে থাকেন বা নেওয়া উচিত যেমন Hepatitis B vaccine, Influenza vaccine, pneumonia Vaccine ইত্যাদি যা আপনাকে মারাত্মক কিছু ভাইরাস থেকে বাঁচাতে সাহায্য করবে।
