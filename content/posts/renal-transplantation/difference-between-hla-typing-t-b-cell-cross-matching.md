@@ -9,6 +9,7 @@ title: >-
 
 
 
+
 ### Difference between HLA Typing & T-B cell Cross matching (এইচএলএ টাইপিং এবং টি-বি সেল ক্রস ম্যাচিংয়ের মধ্যে পার্থক্য)
 
 HLA Typing ও T & B Cell Cross Matching দুটা টেস্টের মধ্যে আপনারা কনফিউজড হয়ে যান। 
