@@ -7,6 +7,7 @@ title: HLA & Tissue Typing
 
 
 
+
 **HLA & Tissue Typing**
 
 Blood related donor এ HLA Typing এর হিসাবটা কিন্তু একেবারে অংকের মত। যেমনঃ
