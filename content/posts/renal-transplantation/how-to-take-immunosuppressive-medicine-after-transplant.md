@@ -9,6 +9,7 @@ title: >-
 
 
 
+
 ### **Transplant এর পর medicine এর নিয়ম**
 
 Transplant এর পর প্রধান ৩টি medicine হল ৩টি immunosuppressive medicine.
