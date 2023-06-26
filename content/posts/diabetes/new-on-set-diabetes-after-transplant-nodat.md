@@ -5,6 +5,7 @@ image: /images/fb_img_1625946382380.jpg
 title: New On Set Diabetes After Transplant (NODAT)
 ---
 
+
 ### **New On Set Diabetes After Transplant (NODAT)**
 
 কিডনি প্রতিস্থাপনের প্রথম ৬ মাসের মধ্যে ট্রান্সপ্ল্যান্ট বাক্তিদের উচ্চ মাত্রার immunosuppression and glucocorticoids ( steroids ) জাতীয় মেডিসিন প্রয়োগের ফলে রক্তের শর্করার মাত্রা বেড়ে যেয়ে থাকতে পারে যাকে New Onset Diabetes After Transplantation (NODAT) বলা হয়ে থাকে। এটি প্রতিস্থাপনের পরে যে কোনও সময়ও হতে পারে। NODAT এর কারনে কারডিওভাস্কুলার রোগ, ইনফেকশন এবং প্রতিস্থাপিত কিডনি কার্যক্ষমতা হ্রাস হয়ে যার ফলশ্রুতিতে ইউরিন এর মাধমে প্রোটিন যাওয়ার পরিমান বৃদ্ধি করে।
