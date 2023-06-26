@@ -7,6 +7,7 @@ title: Glucose Tolerance Test
 
 
 
+
 #### **ডায়বেটিস নির্ণয়ের সবচেয়ে নির্ভরযোগ্য টেস্ট হচ্ছে Oral Glucose Tolerance Test বা OGTT....**
 
 **OGTT টেস্ট করার সঠিক নিয়মঃ**
