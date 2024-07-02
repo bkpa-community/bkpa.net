@@ -1,6 +1,6 @@
 ---
 draft: false
-title: Chronic Kidney Disease(CKD) / Proteinurea
+title: Chronic Kidney Disease(CKD) / Proteinurea.
 date: 2022-03-07T18:00:00.000Z
 description: ''
 image: /images/fb_img_1626069100358.jpg
