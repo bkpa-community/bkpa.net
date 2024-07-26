@@ -5,7 +5,7 @@ description: ''
 image: /images/fb_img_1626068470668.jpg
 ---
 
-🚩 Lockdown/Transplant Medicine 🚩
+🚩 Lockdown/Curfew /Transplant Medicine 🚩
 
 \<shohag, Md Abul bashar Siddique>
 
