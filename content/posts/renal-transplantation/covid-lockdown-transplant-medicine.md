@@ -33,7 +33,7 @@ Pharma solution ltd bd.
 
 🚩যারা 💕 Cellcept (mycophenolate mofetil ) 500 mg খান তাদের জন্য \*Roche বাংলাদেশ এর সকল সেলস/ডিস্ট্রিবিউশন অফিস এর এড্রেস, 📞ফোন নাম্বার এবং হোম ডেলিভারির ব্যাপারে নিচের লিংকে পাবেন :-
 
-💥Roche pharma Bangladesh phone - 09606403020
+💥Roche pharma Bangladesh phone - +880 9666-788766(custome care), 09606403020
 
 [https://www.roche.com.bd/en/distribution-centers.html](https://www.roche.com.bd/en/distribution-centers.html "https://www.roche.com.bd/en/distribution-centers.html")
 
