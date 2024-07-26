@@ -1,5 +1,7 @@
 ---
-title: Curfew/Lockdown & Transplant Medicine name and Distributor list in Bangladesh.
+title: >-
+  Curfew/Lockdown & Transplant Medicine name and Distributor's list in
+  Bangladesh.
 date: 2022-02-04T18:00:00.000Z
 description: ''
 image: /images/fb_img_1626068470668.jpg
