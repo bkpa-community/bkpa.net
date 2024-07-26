@@ -83,7 +83,7 @@ Cyclosporin
 
 1.🔹️Prednisolone (যা Steroid নামে পরিচিত ):-
 
-Cortan (Incepta Pharmaceuticals Ltd) ,Deltasone(Renata Limited),Bexipred(beximco)etc 🔸️
+Cortan (Incepta Pharmaceuticals Ltd) ,Deltasone(Renata Limited), Bexipred(beximco)etc 🔸️
 
 2.🔹️Tacrolimus ( যা ইম্মুনোসাপ্রেসিভ ড্র্যাগ হিসেবে ব্যবহার করা হয় যা রেনাল ট্রান্সপ্লান্ট রোগীদের মূলত কাজে লাগে):-
 
