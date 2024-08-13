@@ -1,8 +1,8 @@
 ---
-date: '2021-07-29T18:00:00.000Z'
+title: Rules of 24 Hours Urine Protein Test.
+date: 2021-07-29T18:00:00.000Z
 description: ''
 image: /images/fb_img_1627574921667.jpg
-title: Urine Protein Test.
 ---
 
 ### Urine এ প্রোটিন পাস করছে কিনা তা বেশ কয়েকটি টেস্টের মাধ্যমে জানা যায়। সেগুলো হলঃ
@@ -15,7 +15,7 @@ title: Urine Protein Test.
 
 ★24 hour urine protein বা 24 hour UTP
 
-ইউরিনে 0-30 mg প্রোটিন পাস করলে তা স্বাভাবিক,  
+ইউরিনে 0-30 mg প্রোটিন পাস করলে তা স্বাভাবিক,\
 30-300 mg হলে তা micro-albumin (অর্থাৎ কম প্রোটিন), 300 mg এর বেশি হলে তা macro-albumin (অর্থাৎ বেশি প্রোটিন)
 
 একজন কিডনি রুগির জীবনে বিভিন্ন সময়ে বিভিন্ন টেস্ট অর্থবহ হয়, সবসময় একই টেস্ট একই meaning নাও দিতে পারে।
@@ -42,8 +42,8 @@ UTP টেস্ট করার স্পেসিফিক নিয়ম আছ
 
 ##### **Caution:**
 
-> ###### **BKPA is a voluntary social organization whose mission is to raise awareness, promote and share knowledge about kidney disease. BKPA does not provide any kind of medical advice directly or indirectly through social media or any other platform which should only be done by the nephrologist or registered doctor. This is prohibited to take any kind of medical treatment based on the information provided by BKPA.**
+> **BKPA is a voluntary social organization whose mission is to raise awareness, promote and share knowledge about kidney disease. BKPA does not provide any kind of medical advice directly or indirectly through social media or any other platform which should only be done by the nephrologist or registered doctor. This is prohibited to take any kind of medical treatment based on the information provided by BKPA.**
 
 ##### **সতর্কতাঃ**
 
-> ###### **বিকেপিএ একটি স্বেচ্ছাসেবী সামাজিক সংগঠন যার লক্ষ্য কিডনি রোগ সম্পর্কে সামাজিক সচেতনতা বৃদ্ধি,প্রচার এবং সতর্ক করা। বিকেপিএতে সামাজিক মাধ্যম অথবা অন্য কোন মাধ্যম ব্যবহার করে বা সরাসরি প্রত্যক্ষ / পরোক্ষভাবে কোনো প্রকার চিকিৎসা সংক্রান্ত সেবা বা পরামর্শ প্রদান করা হয় না যা শুধুমাত্র আপনার নেফ্রোলজিস্ট এবং রেজিস্টার্ড চিকিৎসকের এখতিয়ার।বিকেপিএ প্রদত্ত তথ্যের উপর ভিত্তি করে কোন প্রকার চিকিৎসা গ্রহণ নিষিদ্ধ।**
+> **বিকেপিএ একটি স্বেচ্ছাসেবী সামাজিক সংগঠন যার লক্ষ্য কিডনি রোগ সম্পর্কে সামাজিক সচেতনতা বৃদ্ধি,প্রচার এবং সতর্ক করা। বিকেপিএতে সামাজিক মাধ্যম অথবা অন্য কোন মাধ্যম ব্যবহার করে বা সরাসরি প্রত্যক্ষ / পরোক্ষভাবে কোনো প্রকার চিকিৎসা সংক্রান্ত সেবা বা পরামর্শ প্রদান করা হয় না যা শুধুমাত্র আপনার নেফ্রোলজিস্ট এবং রেজিস্টার্ড চিকিৎসকের এখতিয়ার।বিকেপিএ প্রদত্ত তথ্যের উপর ভিত্তি করে কোন প্রকার চিকিৎসা গ্রহণ নিষিদ্ধ।**
