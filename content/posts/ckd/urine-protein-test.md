@@ -1,5 +1,7 @@
 ---
-title: Rules of 24 Hours Urine Protein Test.
+title: >-
+  Rules of 24 Hours Urine collection for Protein test/ ২৪ ঘন্টা ইউরিন সংগ্রহের
+  পদ্ধতি.
 date: 2021-07-29T18:00:00.000Z
 description: ''
 image: /images/fb_img_1627574921667.jpg
