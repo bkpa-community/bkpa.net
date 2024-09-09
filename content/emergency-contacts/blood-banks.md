@@ -34,7 +34,7 @@ Central Office, T.S.C(Ground Floor), University of Dhaka, Dhaka-1000
 
 Mobile No: 01534982674
 
-Website: www\.badhan.org
+Website: [www.badhan.org](http://www.badhan.org)
 
 ### 5. Thalassemia Blood Bank
 
@@ -50,8 +50,8 @@ For those Thalassemia patients, it’s helpful. As the thalassemia patient requi
 
 Sandhani Central. Room 35, Tinshed Outdoor building BSMMU, Shahabag, Dhaka – 1000
 Contact No. : 880-2-8621658, Fax: 880-2-8620378
-Email: central\@sandhani.org
-Web: www\.sandhani.org
+Email: [central@sandhani.org](mailto:central@sandhani.org)
+Web: [www.sandhani.org](http://www.sandhani.org)
 
 Sandhani (DMC)
 
@@ -69,11 +69,7 @@ Phone: 9362573
 
 Mobile: 01713-398386
 
-Web: www\.policebloodbank.gov.bd
-
-Well, these are good organizations for Blood transfusions. below some are listed, contact in case of emergency.
-
-### 8. Oriental Blood bank
+Web: [www.policebloodbank.gov.b](http://www.policebloodbank.gov.bd)8. Oriental Blood bank
 
 Green Center, 2B/30, Green Road, Dhanmondi, Dhaka
 
@@ -100,6 +96,75 @@ Phone: +8801715546807, 8801736877303
 
 ### Blood Donors Club – Find Blood Donors by Group
 
-It is an excellent blood donation club. Here all the members are listed according to the blood group with mobile numbers. So you can easily contact them. I have registered there.
-
 Website: [http://www.blooddonorsbd.com/](http://www.blooddonorsbd.com/)
+
+12\. Islami Bank Hospital Blood Bank
+
+30, VIP Road, Kakrail Dhaka-1000
+
+ +88028317090
+
++029336421
+
+13\. Fatema Begum Red Crescent Blood Center
+
+Dr. Minhaz Uddin Taher, In-Charge
+
+01815 850533
+
+395 Anderkilla, Chattogram,
+
+Centere No: 031 620926, , 01819 353445,
+
+14\. Begum Tayeeba Mojumder Red Crescent Blood Center
+
+Fazlul Karim, ULO, In-Charge
+
+01765 311450, 01944 354776
+
+1 New Town, Dinajpur
+
+Center No: 0531 61300, 01723 595972, 01717 184539
+
+15\. ujib Jahan Red Crescent Blood Center 
+
+Dr. Md. Abu Saleh Khan, In-Charge
+
+01715 607986
+
+Chowhatta, Sylhet
+
+Center No: 01611 300900, 0821 724098
+
+16\. Natore Red Crescent Blood Center
+
+Mrs. Shammi Akter (Admin)
+
+01792 774841, 01725 097292
+
+Hospital Road, Natore
+
+Center No: 01850 124225, 0771 66961\
+
+
+17\. Rajshahi Red Crescent Blood Center
+
+Md. Mobarak Ali, In-Charge
+
+01865 055075
+
+Rajshahi District Road, Rajshahi
+
+Center No: 01556 333821
+
+18.Achia Khatun Memorial Red Crescent Blood Center
+
+Md. Sohrab Hossain, In-Charge
+
+01913 137366
+
+Bonna, Medical Technologist 01941 989197
+
+Jhenidah Road, Stadium Para, Magura
+
+Center No: 01941 989198
