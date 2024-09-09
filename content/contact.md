@@ -12,6 +12,6 @@ contact_items:
     content: ''
   - name: Email Us
     icon: fas fa-envelope
-    content: bkpa.bd@gmail.com
+    content: bkpafoundation@gmail.com
 ---
 
