@@ -168,3 +168,21 @@ Bonna, Medical Technologist 01941 989197
 Jhenidah Road, Stadium Para, Magura
 
 Center No: 01941 989198
+
+19\. SAVAR PRIME HOSPITAL
+
+Address: A-89, Talbag, Thana road, Savar, Dhaka
+
+20\. Active Blood Bank, Transfusion And Diagnostic Center
+
+Address: 85/A-B, Hosni Dalan Road, Chankherpool, Chawkbazar, Dhaka
+
+21\. Ad-din Barrister Rafique-ul-Huq Hospital
+
+Address: 2, Baro Moghbazar, Dhaka-1217
+
+22\. Ahsania Mission Cancer & General Hospital
+
+Plot #03, Embankment Drive Way, Sector#10, Uttara Model Town, Uttara, Dhaka-1230
+
+23\. Ahsania Mission Cancer and General Hospital
