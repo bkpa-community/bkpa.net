@@ -13,7 +13,7 @@ contact_items:
       Tauhidul Islam -Mobile: 01717334902 , MD. ABUL BASHAR SIDDIQUE.- Mobile:
       01831313131 
     icon: <i class="fa-sharp fa-solid fa-address-book"></i>
-    content: ''
+    content: Contact Person
   - name: Email Us
     icon: fas fa-envelope
     content: bkpafoundation@gmail.com
