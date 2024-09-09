@@ -9,11 +9,13 @@ contact_items:
       Address - Greenmart Market,(Office Number- 304, 2nd floor). 
       House - 33, 33/1 Bir Uttam K.M. Shafiullah Sarak (Green Road), 
       Dhaka – 1205, Bangladesh
-  - name: >-
-      Tauhidul Islam -Mobile: 01717334902 , MD. ABUL BASHAR SIDDIQUE.- Mobile:
-      01831313131 
+  - name: Contact Person
     icon: <i class="fa-sharp fa-solid fa-address-book"></i>
-    content: Contact Person
+    content: |-
+
+
+      Tauhidul Islam - +88 01717334902 , 
+      MD. ABUL BASHAR SIDDIQUE.-  +88 01831313131 
   - name: Email Us
     icon: fas fa-envelope
     content: bkpafoundation@gmail.com
