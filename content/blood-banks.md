@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: Blood Banks
 description: Emergency Contact List for kidney Patients of Bangladesh
 layout: contact-list
