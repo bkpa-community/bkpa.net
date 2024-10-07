@@ -1,13 +1,13 @@
 ---
 title: >-
-  Visa Crisis/Curfew/Lockdown & Transplant Medicine name and Distributors list
-  in Bangladesh.
+  Visa Crisis/Curfew/Lockdown&Transplant Medicine name and Distributors list in
+  Bangladesh.
 date: 2022-02-04T18:00:00.000Z
 description: ''
 image: /images/fb_img_1626068470668.jpg
 ---
 
-🚩 Lockdown/Curfew /Transplant Medicine 🚩
+🚩 Lockdown/Curfew/ visa Crisis Transplant Medicine 🚩
 
 \<shohag, Md Abul bashar Siddique>
 
