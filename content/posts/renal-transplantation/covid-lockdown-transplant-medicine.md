@@ -1,6 +1,6 @@
 ---
 title: >-
-  Visa Crisis/Lockdown&Transplant Medicine name and Distributors list in
+  Lockdown/Visa Crisis & Transplant Medicine name and Distributors list in
   Bangladesh.
 date: 2022-02-04T18:00:00.000Z
 description: ''
