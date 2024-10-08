@@ -2,7 +2,7 @@
 title: Vaccine Guidelines For CKD/TRANSPLANT Recipient
 date: 2022-02-13T18:00:00.000Z
 description: ''
-image: /images/fb_img_1627974251176.jpg
+image: /images/fb_img_1627974251176 (1).jpg
 ---
 
 ### CKD/কিডনি রোগী বা Post Transplant/ট্রান্সপ্লান্ট পরবর্তী ভ্যাকসিন গাইডলাইন।
