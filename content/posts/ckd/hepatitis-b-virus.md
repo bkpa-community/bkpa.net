@@ -1,10 +1,10 @@
 ---
-date: '2022-02-11T18:00:00.000Z'
-description: ''
-image: /images/fb_img_1627552465200.jpg
 title: >-
   হেপাটাইটিস সম্পর্কে সচেতনতা এবং Hepatitis B virus ভ্যাকসিন নেওয়ার  শিডিউল বা
   পদ্ধতি
+date: 2022-02-11T18:00:00.000Z
+description: ''
+image: /images/fb_img_1627552465200.jpg
 ---
 
 ### হেপাটাইটিস সম্পর্কে সচেতনতা এবং Hepatitis B virus ভ্যাকসিন নেওয়ার  শিডিউল বা পদ্ধতি
@@ -35,32 +35,32 @@ title: >-
 
 ### হেপাটাইটিস বি ভ্যাক্সিনেশন শিডিউলঃ
 
-**Normal schedule**  
-1st dose: যেকোনো দিন  
-2nd dose: ১ম dose এর ১ মাস পর  
+**Normal schedule**\
+1st dose: যেকোনো দিন\
+2nd dose: ১ম dose এর ১ মাস পর\
 3rd dose: ১ম dose এর ৬ মাস পর
 
-\****Accelerated schedule**  
-\**1st dose: যেকোনো দিন  
-2nd dose: ১ম ডোজের ১ মাস পরে  
-3rd dose: ১ম ডোজের ২ মাস পরে  
+\****Accelerated schedule***\
+*\**1st dose: যেকোনো দিন\
+2nd dose: ১ম ডোজের ১ মাস পরে\
+3rd dose: ১ম ডোজের ২ মাস পরে\
 4th dose: ১ম ডোজের ১২মাস পরে
 
-**কিডনি ও ডায়ালাইসিস রুগির জন্য**  
-1st dose: যেকোনো দিন  
-2nd dose: ১ম ডোজের ১ মাস পরে  
-3rd dose: ১ম ডোজের ২ মাস পরে  
+**কিডনি ও ডায়ালাইসিস রুগির জন্য**\
+1st dose: যেকোনো দিন\
+2nd dose: ১ম ডোজের ১ মাস পরে\
+3rd dose: ১ম ডোজের ২ মাস পরে\
 4th dose: ১ম ডোজের ৬মাস পরে
 
 প্রাথমিকভাবে HBsAg টেস্ট টি নেগেটিভ আসলে ভ্যাক্সিনেশন শুরু করা যায়।পজিটিভ হলে ভ্যাক্সিনেশন করা যাবেনা।
 
 **নিয়মঃ**
 
-_প্রতিবার ২টি PFS (Pre filled syringe) ২বাহু অথবা ২ উরুর মাংসপেশীতে (১৭ বছরের বেশি হলে)_
+*প্রতিবার ২টি PFS (Pre filled syringe) ২বাহু অথবা ২ উরুর মাংসপেশীতে (১৭ বছরের বেশি হলে)*
 
 অথবা
 
-_প্রতিবার ১টি PFS (Pre filled syringe) বাহু অথবা উরুর মাংসপেশীতে (১৭ বছরের কম হলে)_
+*প্রতিবার ১টি PFS (Pre filled syringe) বাহু অথবা উরুর মাংসপেশীতে (১৭ বছরের কম হলে)*
 
 ### হেপাটাইটিস বি ভ্যাক্সিনেশনের পর রূটিন বুস্টার ডোজের দরকার আছে কি?
 
@@ -68,14 +68,14 @@ _প্রতিবার ১টি PFS (Pre filled syringe) বাহু অথ
 
 ### যদি ভ্যাক্সিনেশনের পর Anti-HBs Ab টাইটার ১০ mIU এর কম হয় তাহলে কি করা উচিত ?
 
-➡ যাদের Anti-HBs Ab টাইটার ১০ mIU এর কম তাদেরকে ভ্যাক্সিন non-responder বলা হয়। এই ব্যক্তিদের আবার HBsAg ও Anti Hbc Ig টেস্ট করাতে হবে। যদি নেগেটিভ আসে তবে অন্য কোম্পানির ভ্যাক্সিনের পূর্ণ ডোজ(৩/৪ ডোজ) দিতে হবে। এরপর ও যদি Anti-HBs Ab titre কম আসে তবে আর ভ্যাক্সিন দিয়ে কোন লাভ নেই। এক্ষেত্রে, non-responder কোনভাবে Hepetitis B virus এ Exposed হলে শুধু মাত্র Hepatitis B immunoglobiulin নিবে (অবশ্যই Exposer এর ৪৮ ঘন্টার মধ্যে) । প্রত্যেক non-responder এর ৬ মাস পর পর HBsAg ও Anti Hbc Ig টেস্ট করাতে হবে।
+➡ 
 
-ⒸBKPA
+যাদের Anti-HBs Ab টাইটার ১০ mIU এর কম হয় তাদেরকে ভ্যাক্সিন non-responder বলা হয়। এই ব্যক্তিদের আবার HbsAg টেস্ট করে যদি নেগেটিভ আসে তবে ভ্যাক্সিনের পূর্ণ ডোজ(৩/৪ ডোজ) দিতে হবে। যাদের Anti-HBs Ab টাইটার ১০ mIU এর কম তাদেরকে ভ্যাক্সিন non-responder বলা হয়। এই ব্যক্তিদের আবার HBsAg ও Anti Hbc Ig টেস্ট করাতে হবে। যদি নেগেটিভ আসে তবে ভ্যাক্সিনের পূর্ণ ডোজ(৩/৪ ডোজ) দিতে হবে।
 
 ##### **Caution:**
 
-> ###### **BKPA is a voluntary social organization whose mission is to raise awareness, promote and share knowledge about kidney disease. BKPA does not provide any kind of medical advice directly or indirectly through social media or any other platform which should only be done by the nephrologist or registered doctor. This is prohibited to take any kind of medical treatment based on the information provided by BKPA.**
+> **BKPA is a voluntary social organization whose mission is to raise awareness, promote and share knowledge about kidney disease. BKPA does not provide any kind of medical advice directly or indirectly through social media or any other platform which should only be done by the nephrologist or registered doctor. This is prohibited to take any kind of medical treatment based on the information provided by BKPA.**
 
 ##### **সতর্কতাঃ**
 
-> ###### **বিকেপিএ একটি স্বেচ্ছাসেবী সামাজিক সংগঠন যার লক্ষ্য কিডনি রোগ সম্পর্কে সামাজিক সচেতনতা বৃদ্ধি,প্রচার এবং সতর্ক করা। বিকেপিএতে সামাজিক মাধ্যম অথবা অন্য কোন মাধ্যম ব্যবহার করে বা সরাসরি প্রত্যক্ষ / পরোক্ষভাবে কোনো প্রকার চিকিৎসা সংক্রান্ত সেবা বা পরামর্শ প্রদান করা হয় না যা শুধুমাত্র আপনার নেফ্রোলজিস্ট এবং রেজিস্টার্ড চিকিৎসকের এখতিয়ার।বিকেপিএ প্রদত্ত তথ্যের উপর ভিত্তি করে কোন প্রকার চিকিৎসা গ্রহণ নিষিদ্ধ।**
+> **বিকেপিএ একটি স্বেচ্ছাসেবী সামাজিক সংগঠন যার লক্ষ্য কিডনি রোগ সম্পর্কে সামাজিক সচেতনতা বৃদ্ধি,প্রচার এবং সতর্ক করা। বিকেপিএতে সামাজিক মাধ্যম অথবা অন্য কোন মাধ্যম ব্যবহার করে বা সরাসরি প্রত্যক্ষ / পরোক্ষভাবে কোনো প্রকার চিকিৎসা সংক্রান্ত সেবা বা পরামর্শ প্রদান করা হয় না যা শুধুমাত্র আপনার নেফ্রোলজিস্ট এবং রেজিস্টার্ড চিকিৎসকের এখতিয়ার।বিকেপিএ প্রদত্ত তথ্যের উপর ভিত্তি করে কোন প্রকার চিকিৎসা গ্রহণ নিষিদ্ধ।**
