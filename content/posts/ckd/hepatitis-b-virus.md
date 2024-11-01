@@ -1,5 +1,7 @@
 ---
-title: Hepatitis B virus সম্পর্কে সচেতনতা এবং ভ্যাকসিন নেওয়ার  শিডিউল বা পদ্ধতি
+title: >-
+  Hepatitis B/ হেপাটাইটিস বি Virus সম্পর্কে সচেতনতা এবং ভ্যাকসিন নেওয়ার  শিডিউল
+  বা পদ্ধতি
 date: 2022-02-11T18:00:00.000Z
 description: ''
 image: /images/fb_img_1627552465200.jpg
