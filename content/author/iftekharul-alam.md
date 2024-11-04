@@ -1,11 +1,9 @@
 ---
-address: ''
-bio: ''
-email: ''
+title: 'IFTEKHARUL ALAM. VICE CHAIRMAN, BKPA FOUNDATION '
 image: /images/img-20230405-wa0004.jpg
+bio: 'VICE CHAIRMAN, BKPA FOUNDATION '
 phone: ''
-title: IFTEKHARUL ALAM
+email: ''
+address: ''
 ---
-
-
 
