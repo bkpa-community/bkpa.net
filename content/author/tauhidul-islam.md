@@ -1,11 +1,9 @@
 ---
-address: ''
-bio: ''
-email: ''
+title: 'Tauhidul Islam. GENERAL SECRETARY, BKPA FOUNDATION '
 image: /images/img-20230404-wa0012-1.jpg
+bio: 'General secretary, BKPA FOUNDATION '
 phone: ''
-title: Tauhidul Islam
+email: ''
+address: ''
 ---
-
-
 
