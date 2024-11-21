@@ -1,7 +1,7 @@
 ---
-title: '4. Dr.Jonaki Rizwana. Executive Member, BKPA FOUNDATION '
+title: '4. Dr.Jonaki Rizwana. Vice chairman, BKPA FOUNDATION '
 image: /images/img-20230404-wa0019-1.jpg
-bio: 'Executive Member, BKPA FOUNDATION '
+bio: 'Vice Chairman, BKPA FOUNDATION '
 phone: ''
 email: ''
 address: ''
