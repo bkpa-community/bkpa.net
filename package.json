@@ -11,7 +11,7 @@
   "author": "",
   "license": "UNLICENSED",
   "dependencies": {
-    "@tinacms/cli": "^1.5.20",
-    "tinacms": "^1.5.11"
+    "@tinacms/cli": "^1.6.12",
+    "tinacms": "^2.5.0"
   }
 }
