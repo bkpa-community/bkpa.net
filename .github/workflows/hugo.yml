@@ -12,13 +12,12 @@ permissions:
   pages: write
   id-token: write
 
-
 # Environment variables available to all jobs and steps in this workflow
 env:
   HUGO_ENV: production
-  HUGO_VERSION: "0.114.0"
-  GO_VERSION: "1.16.3"
-  NODE_VERSION: "18.15.0"
+  HUGO_VERSION: "0.139.2"
+  GO_VERSION: "1.23.3"
+  NODE_VERSION: "20.18.1"
   TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
   TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
   TINA_SEARCH_TOKEN: ${{ secrets.TINA_SEARCH_TOKEN }}
