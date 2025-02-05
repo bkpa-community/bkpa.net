@@ -1,13 +1,11 @@
 ---
-date: '2022-02-12T18:00:00.000Z'
-description: ''
-image: /images/121152390_10223879864285681_3286846895408637308_n.jpeg
 title: >-
   Blood Group & Transplant - কে কোন গ্রুপের রক্তের ডোনারের কাছে কিডনি নিতে
   পারবে.
+date: 2022-02-12T18:00:00.000Z
+description: ''
+image: /images/121152390_10223879864285681_3286846895408637308_n.jpeg
 ---
-
-
 
 চার্টটি খেয়াল করুন তাহলে বুঝতে পারবেন আপনি সাধারণত কোন রক্তের গ্রুপ এর ব্যাক্তির কাছে থেকে কিডনি নিতে পারবেন এবং কোন রক্তের গ্রুপ এর ব্যাক্তিকে কিডনি দিতে পারবেন .Remember : Rh ফ্যাক্টর অর্থাৎ ব্লাড গ্রুপ পসিটিভ (+) বা নেগেটিভ (-) সাধারণত কিডনি ডোনেশন এর ক্ষেত্রে সমস্যা না যেমন : O পজিটিভ  O নেগেটিভ এর কাছে থেকে নিতে এবং দিতে পারবে এটা সাধারণ নিয়ম।
 
@@ -15,12 +13,10 @@ title: >-
 
 ⒸBKPA
 
-**_MD.Abul Bashar Siddique(shohag)_**
-
 ##### **Caution:**
 
-> ###### **BKPA is a voluntary social organization whose mission is to raise awareness, promote and share knowledge about kidney disease. BKPA does not provide any kind of medical advice directly or indirectly through social media or any other platform which should only be done by the nephrologist or registered doctor. This is prohibited to take any kind of medical treatment based on the information provided by BKPA.**
+> **BKPA is a voluntary social organization whose mission is to raise awareness, promote and share knowledge about kidney disease. BKPA does not provide any kind of medical advice directly or indirectly through social media or any other platform which should only be done by the nephrologist or registered doctor. This is prohibited to take any kind of medical treatment based on the information provided by BKPA.**
 
 ##### **সতর্কতাঃ**
 
-> ###### **বিকেপিএ একটি স্বেচ্ছাসেবী সামাজিক সংগঠন যার লক্ষ্য কিডনি রোগ সম্পর্কে সামাজিক সচেতনতা বৃদ্ধি,প্রচার এবং সতর্ক করা। বিকেপিএতে সামাজিক মাধ্যম অথবা অন্য কোন মাধ্যম ব্যবহার করে বা সরাসরি প্রত্যক্ষ / পরোক্ষভাবে কোনো প্রকার চিকিৎসা সংক্রান্ত সেবা বা পরামর্শ প্রদান করা হয় না যা শুধুমাত্র আপনার নেফ্রোলজিস্ট এবং রেজিস্টার্ড চিকিৎসকের এখতিয়ার।বিকেপিএ প্রদত্ত তথ্যের উপর ভিত্তি করে কোন প্রকার চিকিৎসা গ্রহণ নিষিদ্ধ।**
+> **বিকেপিএ একটি স্বেচ্ছাসেবী সামাজিক সংগঠন যার লক্ষ্য কিডনি রোগ সম্পর্কে সামাজিক সচেতনতা বৃদ্ধি,প্রচার এবং সতর্ক করা। বিকেপিএতে সামাজিক মাধ্যম অথবা অন্য কোন মাধ্যম ব্যবহার করে বা সরাসরি প্রত্যক্ষ / পরোক্ষভাবে কোনো প্রকার চিকিৎসা সংক্রান্ত সেবা বা পরামর্শ প্রদান করা হয় না যা শুধুমাত্র আপনার নেফ্রোলজিস্ট এবং রেজিস্টার্ড চিকিৎসকের এখতিয়ার।বিকেপিএ প্রদত্ত তথ্যের উপর ভিত্তি করে কোন প্রকার চিকিৎসা গ্রহণ নিষিদ্ধ।**
