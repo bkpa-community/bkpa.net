@@ -52,15 +52,8 @@ jobs:
       - name: Install npm dependencies
         run: npm install
 
-      - name: Publish to GitHub Pages
+      - name: Build site
         run: npm run build
-
-      - name: Verify build output
-        run: |
-          if [ ! -d "./public" ]; then
-            echo "Build output directory './public' does not exist."
-            exit 1
-          fi
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -84,6 +77,8 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v3
-        with:
-          artifact_name: hugo-site
+        uses: actions/deploy-pages@v4
+
+      - name: Debug Build Output
+        run: ls -lah ./public
+      
