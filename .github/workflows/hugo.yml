@@ -6,11 +6,26 @@ on:
   push:
     branches: ["main"]
 
+  # Allows to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
 
 # Environment variables available to all jobs and steps in this workflow
 env:
@@ -24,15 +39,8 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
       - name: Install Hugo
         run: |
           curl -LO "https://github.com/gohugoio/hugo/releases/download/v${{ env.HUGO_VERSION }}/hugo_extended_${{ env.HUGO_VERSION }}_Linux-64bit.tar.gz"
@@ -41,45 +49,37 @@ jobs:
           rm hugo_extended_${{ env.HUGO_VERSION }}_Linux-64bit.tar.gz
           hugo version
 
-      - name: Install dependencies
-        run: npm install
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Install Node.js dependencies
+        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
 
       - name: Build site
         run: npm run build
 
-      - name: Check artifact size
-        run: du -sh ./public
+      - name: Index pagefind
+        run: npx pagefind --source "./public"
 
-      - name: Check for symlinks & hard links
-        run: |
-          find ./public -type l -exec ls -lah {} \; || echo "No symlinks found"
-          find ./public -type f -links +1 || echo "No hard links found"
-
-      - name: Remove symlinks (if found)
-        run: find ./public -type l -delete
-
-      - name: Upload artifact (Must be named github-pages)
-        uses: actions/upload-artifact@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3.0.1
         with:
-          name: github-pages
           path: ./public
 
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     needs: build
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: github-pages
-          path: ./public
-
-      - name: Check downloaded artifact
-        run: ls -lah ./public || echo "Artifact download failed!"
-
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4.0.5
