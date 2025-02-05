@@ -23,11 +23,11 @@ env:
   TINA_SEARCH_TOKEN: ${{ secrets.TINA_SEARCH_TOKEN }}
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
@@ -41,27 +41,21 @@ jobs:
           rm hugo_extended_${{ env.HUGO_VERSION }}_Linux-64bit.tar.gz
           hugo version
 
-      - name: Install Go
-        run: |
-          curl -LO "https://dl.google.com/go/go${{ env.GO_VERSION }}.linux-amd64.tar.gz"
-          sudo tar -C /usr/local -xzf go${{ env.GO_VERSION }}.linux-amd64.tar.gz
-          echo "export PATH=$PATH:/usr/local/go/bin" >> $GITHUB_ENV
-          rm go${{ env.GO_VERSION }}.linux-amd64.tar.gz
-          go version
-
-      - name: Install npm dependencies
+      - name: Install dependencies
         run: npm install
 
       - name: Build site
-        run: npm run build
+        run: hugo --minify
 
-      - name: Upload artifact
+      - name: Check if public/ exists
+        run: ls -lah ./public || echo "Public folder not found!"
+
+      - name: Upload artifact (Must be named github-pages)
         uses: actions/upload-artifact@v4
         with:
-          name: hugo-site
+          name: github-pages
           path: ./public
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
@@ -72,7 +66,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: hugo-site
+          name: github-pages
           path: ./public
 
       - name: Check downloaded artifact
@@ -81,4 +75,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      
