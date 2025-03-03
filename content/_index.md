@@ -1,7 +1,5 @@
 ---
 banner:
-  - image: 'https://assets.tina.io/ab6660d0-da2f-486a-ba38-40c4dc39e58c/BKPa.png'
-    color: white
   - title: >-
       MOU Signing Ceremony Between BKPA Foundation & Dhanmondi General and
       Kidney Hospital
@@ -13,6 +11,8 @@ banner:
       BKPA Foundation and Dhanmondi General & Kidney Hospital Ltd (DGKHL) has
       signed a MOU by which members of BKPA Foundation can avail discount in
       both IPD and OPD services from DGKHL.
+  - image: 'https://assets.tina.io/ab6660d0-da2f-486a-ba38-40c4dc39e58c/BKPa.png'
+    color: white
   - title: 'বিকেপিএ ফাউন্ডেশন '
     image: /images/dark-green-red-abstract-triangle-background-vector.jpg
     color: white
