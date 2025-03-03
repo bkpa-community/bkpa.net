@@ -1,6 +1,7 @@
 ---
 banner:
   - image: 'https://assets.tina.io/ab6660d0-da2f-486a-ba38-40c4dc39e58c/BKPa.png'
+    color: white
   - title: >-
       MOU Signing Ceremony Between BKPA Foundation & Dhanmondi General and
       Kidney Hospital
