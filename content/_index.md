@@ -11,8 +11,17 @@ banner:
       BKPA Foundation and Dhanmondi General & Kidney Hospital Ltd (DGKHL) has
       signed a MOU by which members of BKPA Foundation can avail discount in
       both IPD and OPD services from DGKHL.
-  - image: 'https://assets.tina.io/ab6660d0-da2f-486a-ba38-40c4dc39e58c/BKPa.png'
+  - title: 'Are Your Kidneys OK? Detect early, protect kidney health'
+    image: 'https://assets.tina.io/ab6660d0-da2f-486a-ba38-40c4dc39e58c/BKPa.png'
     color: white
+    content: |-
+      The major risk factors for kidney disease are:
+
+      Diabetes
+      Hypertension
+      Cardiovascular disease
+      Obesity
+      Family history of kidney disease.
   - title: 'বিকেপিএ ফাউন্ডেশন '
     image: /images/dark-green-red-abstract-triangle-background-vector.jpg
     color: white
