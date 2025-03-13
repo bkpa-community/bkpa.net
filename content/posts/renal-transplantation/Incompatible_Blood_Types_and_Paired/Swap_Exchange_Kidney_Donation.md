@@ -1,6 +1,8 @@
 ---
 draft: false
-title: Incompatible Blood Types and Paired / Swap Exchange Kidney Donation
+title: >-
+  Incompatible Blood Types and Paired / Swap Exchange Kidney Donation -কিডনি
+  সোয়াপিং
 date: 2022-02-10T18:00:00.000Z
 description: Incompatible_Blood_Types_and_Paired/Swap_Exchange_Kidney_Donation
 image: /images/473329622_10235685885830869_5760513775688660512_n.jpg
