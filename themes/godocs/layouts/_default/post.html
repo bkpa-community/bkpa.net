@@ -10,7 +10,6 @@
     </strong>
     {{ end }}
     <h3 class="h5 mb-3"><a class="stretched-link" href="{{.RelPermalink}}">{{.Title}}</a></h3>
-    <p class="card-text mb-4">{{.Summary | truncate 100}} </p>
-    <!-- <a href="{{.Permalink}}" class="btn btn-primary">Read More</a> -->
+    <p class="card-text mb-4">{{.Summary | plainify | truncate 100}} </p>
   </div>
 </article>
