@@ -1,8 +1,7 @@
 ---
 draft: false
 title: >-
-  Incompatible Blood Types and Paired / Swap Exchange Kidney Donation -কিডনি
-  সোয়াপিং
+  Incompatible Blood Types and Paired / Swap Exchange Kidney Donation - কিডনি সোয়াপিং
 date: 2022-02-10T18:00:00.000Z
 description: Incompatible_Blood_Types_and_Paired/Swap_Exchange_Kidney_Donation
 image: /images/473329622_10235685885830869_5760513775688660512_n.jpg
@@ -16,11 +15,11 @@ image: /images/473329622_10235685885830869_5760513775688660512_n.jpg
 
 The exchange of organs took place between a couple and two sisters aged 23 and 28 years
 
-কিডনি প্রতিস্থাপনের হার বাড়াতে রোগীর আত্মীয়দের মধ্যে কিডনি অদলবদল বা সোয়াপিংয়ের সুযোগ রাখা হবে। পাশাপাশি ক্যাডাভেরিক কিডনি ট্রান্সপ্ল্যান্ট (ব্রেন ডেড রোগীর কিডনি প্রতিস্থাপন) বাড়াতেও উদ্যোগ নেওয়া হচ্ছে।   আমাদের দেশে ‘কিডনি সোয়াপিং’ চালু করতে যাচ্ছে সরকার। 
+কিডনি প্রতিস্থাপনের হার বাড়াতে রোগীর আত্মীয়দের মধ্যে কিডনি অদলবদল বা সোয়াপিংয়ের সুযোগ রাখা হবে। পাশাপাশি ক্যাডাভেরিক কিডনি ট্রান্সপ্ল্যান্ট (ব্রেন ডেড রোগীর কিডনি প্রতিস্থাপন) বাড়াতেও উদ্যোগ নেওয়া হচ্ছে।   আমাদের দেশে ‘কিডনি সোয়াপিং’ চালু করতে যাচ্ছে সরকার।
 
 এসংবাদ জানতে এই  লিঙ্ক টি পড়ুন
 
-[‘কিডনি সোয়াপিং’ চালু করতে যাচ্ছে সরকার, দেশে প্রতিস্থাপনের সংকট কি কমবে? ](https://www.tbsnews.net/bangla/bangladesh/news-details-320956)
+[‘কিডনি সোয়াপিং’ চালু করতে যাচ্ছে সরকার, দেশে প্রতিস্থাপনের সংকট কি কমবে?](https://www.tbsnews.net/bangla/bangladesh/news-details-320956)
 
 **ⒸBKPA**
 
