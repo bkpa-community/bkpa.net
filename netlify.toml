@@ -3,7 +3,7 @@ publish = "public"
 command = "yarn build"
 
 [build.environment]
-HUGO_VERSION = "0.114.1"
+HUGO_VERSION = "0.151.0"
 
 [[headers]]
 for = "/*" # This defines which paths this specific [[headers]] block will cover.
