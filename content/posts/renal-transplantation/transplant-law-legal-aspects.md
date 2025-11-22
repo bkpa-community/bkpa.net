@@ -59,7 +59,7 @@ image: /images/laws-of-organ-donation-in-india-960x720.jpg
 * ভাগ্নে- ভাগ্নি
 * সৎ ভাই বোন 
 
-**✔ Emotional Donor**
+**✔ Emotional Donor ঃ Emotional Donor (অনুভূতিজাত দাতা) সংজ্ঞা স্পষ্ট করে তাদের অনুমোদন পাওয়ার শর্ত কঠোর করা হয়েছে।**
 
 * দীর্ঘদিনের পরিচিত
 * সমাজ/পরিবারিক ঘনিষ্ঠতা সম্পন্ন ব্যক্তি
