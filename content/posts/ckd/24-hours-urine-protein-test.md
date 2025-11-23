@@ -87,6 +87,10 @@ image: /images/161335273_10225246352529061_4741228291592592703_n.jpeg
 
 **ⒸBKPA\_Foundation**
 
+**Facebook Group: [BKPA FOUNDATION - FACEBOOK GROUP](https://www.facebook.com/groups/bkpafoundation)**
+
+Facebook Page: [BKA FOUNDATION - FACEBOOK PAGE](https://www.facebook.com/profile.php?id=61569530603501)
+
 ##### **Caution:**
 
 > BKPA Foundation is a voluntary social organization dedicated to raising awareness and sharing knowledge about kidney disease. The foundation’s mission is to educate the public, promote preventive measures, and disseminate reliable information regarding kidney health.
