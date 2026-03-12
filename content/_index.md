@@ -1,16 +1,9 @@
 ---
 banner:
-  - title: >-
-      MOU Signing Ceremony Between BKPA Foundation & Dhanmondi General and
-      Kidney Hospital
-    image: >-
-      https://assets.tina.io/ab6660d0-da2f-486a-ba38-40c4dc39e58c/WhatsApp Image
-      2024-04-29 at 9.20.34 AM (1).jpeg
+  - title: MOU Signing Ceremony Between BKPA Foundation & Dhanmondi General and Kidney Hospital
+    image: 'https://assets.tina.io/ab6660d0-da2f-486a-ba38-40c4dc39e58c/WhatsApp Image 2024-04-29 at 9.20.34 AM (1).jpeg'
     color: white
-    content: >-
-      BKPA Foundation and Dhanmondi General & Kidney Hospital Ltd (DGKHL) has
-      signed a MOU by which members of BKPA Foundation can avail discount in
-      both IPD and OPD services from DGKHL.
+    content: BKPA Foundation and Dhanmondi General & Kidney Hospital Ltd (DGKHL) has signed a MOU by which members of BKPA Foundation can avail discount in both IPD and OPD services from DGKHL.
   - title: 'Are Your Kidneys OK? Detect early, protect kidney health'
     image: 'https://assets.tina.io/ab6660d0-da2f-486a-ba38-40c4dc39e58c/BKPa.png'
     color: white
@@ -25,26 +18,15 @@ banner:
   - title: 'বিকেপিএ ফাউন্ডেশন '
     image: /images/dark-green-red-abstract-triangle-background-vector.jpg
     color: white
-    content: >-
-      বাংলাদেশ কিডনি পেশেন্ট ফাউন্ডেশন(BKPA FOUNDATION) একটি স্বেচ্ছাসেবী
-      সামাজিক সংগঠন যার লক্ষ্য কিডনি রোগ প্রতিরোধের জন্য সামাজিক সচেতনতা বৃদ্ধি,
-      তথ্য আদান-প্রদান, এবং কিডনি রোগ সম্পর্কে মানুষকে সতর্ক করা।
+    content: 'বাংলাদেশ কিডনি পেশেন্ট ফাউন্ডেশন(BKPA FOUNDATION) একটি স্বেচ্ছাসেবী সামাজিক সংগঠন যার লক্ষ্য কিডনি রোগ প্রতিরোধের জন্য সামাজিক সচেতনতা বৃদ্ধি, তথ্য আদান-প্রদান, এবং কিডনি রোগ সম্পর্কে মানুষকে সতর্ক করা।'
   - title: 'BKPA FOUNDATION '
     image: /images/banner-kidney.jpg
     color: white
-    content: >-
-      BKPA (Bangladesh Kidney Patient) Foundation is a Non-profit Charitable
-      Association, formed in April 2015 to build community engagement for the
-      prevention of Kidney Disease through social awareness, sharing
-      information, volunteerism and advocacy.
+    content: 'BKPA (Bangladesh Kidney Patient) Foundation is a Non-profit Charitable Association, formed in April 2015 to build community engagement for the prevention of Kidney Disease through social awareness, sharing information, volunteerism and advocacy.'
   - title: আপনি জানেন কি ?
     image: /images/banner-bkpa.jpeg
     color: white
-    content: >-
-      কিডনি রোগ সম্পর্কে সচেতনতার উদ্দেশ্যে WWW.BKPA.NET হচ্ছে বাংলাদেশে সর্ব
-      প্রথম বাংলা ভাষায় তৈরি একটি স্বয়ংসম্পূর্ণ ওয়েবসাইট ! বাংলাদেশের প্রতিটি
-      অঞ্চলে থাকা বিশাল  জনগোষ্ঠীর কাছে সহজ ভাষায় কিডনি রোগ সম্পর্কে সচেতনতা
-      তৈরি করাই বিকেপিএ এর উদ্দেশ্য।
+    content: কিডনি রোগ সম্পর্কে সচেতনতার উদ্দেশ্যে WWW.BKPA.NET হচ্ছে বাংলাদেশে সর্ব প্রথম বাংলা ভাষায় তৈরি একটি স্বয়ংসম্পূর্ণ ওয়েবসাইট ! বাংলাদেশের প্রতিটি অঞ্চলে থাকা বিশাল  জনগোষ্ঠীর কাছে সহজ ভাষায় কিডনি রোগ সম্পর্কে সচেতনতা তৈরি করাই বিকেপিএ এর উদ্দেশ্য।
   - title: Bridge the knowledge gap to better Kidney Care
     image: /images/banner-kidney-2.jpg
     color: white
@@ -52,13 +34,12 @@ banner:
   - title: কিডনি ভালো রাখতে চান ?
     image: /images/stat-amgen-main-image-1600x900-1.jpg
     color: white
-    content: >
+    content: |
       কিডনি রোগ প্রতিরোধে - 
-
-      স্বাস্থ্যকর খাদ্যাভ্যাস গড়ে তুলুন, রক্তের শর্করা ও রক্তচাপ নিয়ন্ত্রণে
-      রাখুন, ধূমপান বর্জন  করুন, নিয়মিত শরীরচর্চা করুন, চিকিৎসকের পরামর্শ ছাড়া
-      কোনো ওষুধ সেবন বন্ধ করুন এবং যারা ঝুঁকিপূর্ণ তারা নিয়মিত কিডনির পরীক্ষা
-      করুন। 
+      স্বাস্থ্যকর খাদ্যাভ্যাস গড়ে তুলুন, রক্তের শর্করা ও রক্তচাপ নিয়ন্ত্রণে রাখুন, ধূমপান বর্জন  করুন, নিয়মিত শরীরচর্চা করুন, চিকিৎসকের পরামর্শ ছাড়া কোনো ওষুধ সেবন বন্ধ করুন এবং যারা ঝুঁকিপূর্ণ তারা নিয়মিত কিডনির পরীক্ষা করুন। 
+  - title: BKPA FOUNDATION
+    image: 'https://assets.tina.io/ab6660d0-da2f-486a-ba38-40c4dc39e58c/ChatGPT Image Mar 9, 2026, 01_09_43 PM - Copy (2).png'
+    color: White
 notice:
   enable: true
   title: "\U0001F4A5 BKPA Latest News & Notice Board \U0001F4A5"
