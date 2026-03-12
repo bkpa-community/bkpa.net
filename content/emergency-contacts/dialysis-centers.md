@@ -2,7 +2,7 @@
 title: Dialysis Centers
 ---
 
-ialysis Centers in Bangladesh (Address, Phone, Email)
+**Dialysis Centers in Bangladesh (Address, Phone, Email)**
 
 1\. Kidney Foundation Hospital & Research Institute
 
@@ -10,7 +10,7 @@ ialysis Centers in Bangladesh (Address, Phone, Email)
 
 ☎ Phone: +88-02-44807447, +88-02-44807448
 
-📧 Email: info\@kidneyfoundationbd.com
+📧 Email: [info@kidneyfoundationbd.com](mailto:info@kidneyfoundationbd.com)
 
 ⏰ Service: 24 hours dialysis service
 
@@ -20,7 +20,7 @@ ialysis Centers in Bangladesh (Address, Phone, Email)
 
 ☎ Phone: +880-2-8127473, +880-2-9115401
 
-📧 Email: dhaka\@iskkc.org
+📧 Email: [dhaka@iskkc.org](mailto:dhaka@iskkc.org)
 
 3\. ISK Kidney Dialysis Center – Rajshahi
 
@@ -28,7 +28,7 @@ ialysis Centers in Bangladesh (Address, Phone, Email)
 
 ☎ Phone: +880-2-47812654, +8801726995657
 
-📧 Email: rajshahi\@iskkc.org
+📧 Email: [rajshahi@iskkc.org](mailto:rajshahi@iskkc.org)
 
 4\. ISK Kidney Dialysis Center – Bogura
 
@@ -36,7 +36,7 @@ ialysis Centers in Bangladesh (Address, Phone, Email)
 
 ☎ Phone: +8801772257361
 
-📧 Email: bogra\@iskkc.org
+📧 Email: [bogra@iskkc.org](mailto:bogra@iskkc.org)
 
 5\. ISK Kidney Dialysis Center – Khulna
 
@@ -44,7 +44,7 @@ ialysis Centers in Bangladesh (Address, Phone, Email)
 
 ☎ Phone: +8801795426405
 
-📧 Email: khulna\@iskkc.org
+📧 Email: [khulna@iskkc.org](mailto:khulna@iskkc.org)
 
 6\. ISK Kidney Dialysis Center – Barisal
 
@@ -52,7 +52,7 @@ ialysis Centers in Bangladesh (Address, Phone, Email)
 
 ☎ Phone: 01863-560660
 
-📧 Email: barisal\@iskkc.org
+📧 Email: [barisal@iskkc.org](mailto:barisal@iskkc.org)
 
 7\. Sonar Bangla Foundation Kidney Dialysis Center – Keraniganj
 
@@ -60,9 +60,9 @@ ialysis Centers in Bangladesh (Address, Phone, Email)
 
 ☎ Phone: +8801810113565
 
-📧 Email: sbfb.keraniganj\@gmail.com
+📧 Email: [sbfb.keraniganj@gmail.com](mailto:sbfb.keraniganj@gmail.com)
 
-, keraniganj\@sbfus.org
+, [keraniganj@sbfus.org](mailto:keraniganj@sbfus.org)
 
 8\. Sonar Bangla Foundation Dialysis Center – Gazipur
 
@@ -70,9 +70,9 @@ ialysis Centers in Bangladesh (Address, Phone, Email)
 
 ☎ Phone: +8801851030359
 
-📧 Email: gazipur\@sbfus.org
+📧 Email: [gazipur@sbfus.org](mailto:gazipur@sbfus.org)
 
-, sbfb.gazipur\@gmail.com
+, [sbfb.gazipur@gmail.com](mailto:sbfb.gazipur@gmail.com)
 
 9\. Sonar Bangla Foundation Dialysis Center – Jatrabari
 
@@ -80,7 +80,7 @@ ialysis Centers in Bangladesh (Address, Phone, Email)
 
 ☎ Phone: +8801400429982
 
-📧 Email: jatrabari\@sbfus.org
+📧 Email: [jatrabari@sbfus.org](mailto:jatrabari@sbfus.org)
 
 10\. Sonar Bangla Foundation Dialysis Center – Narsingdi
 
@@ -88,7 +88,7 @@ ialysis Centers in Bangladesh (Address, Phone, Email)
 
 ☎ Phone: +8801852901270
 
-📧 Email: narsingdi\@sbfus.org
+📧 Email: [narsingdi@sbfus.org](mailto:narsingdi@sbfus.org)
 
 11\. Arizona Kidney Dialysis Center – Barisal
 
@@ -96,7 +96,7 @@ ialysis Centers in Bangladesh (Address, Phone, Email)
 
 ☎ Phone: +8801863560660
 
-📧 Email: barisal\@sbfus.org
+📧 Email: [barisal@sbfus.org](mailto:barisal@sbfus.org)
 
 Other Dialysis Centers (Dhaka)
 
@@ -112,4 +112,4 @@ Asgar Ali Hospital Dialysis Center – Dhaka
 
 Gonoshasthaya Dialysis Center – Dhanmondi
 
-NIPRO JMI Dialysis Center Ltd – City Tower, West Panthapath, Dhaka 
+NIPRO JMI Dialysis Center Ltd – City Tower, West Panthapath, Dhaka
