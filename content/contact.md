@@ -14,8 +14,9 @@ contact_items:
     content: |-
 
 
-      Tauhidul Islam - +88 01717334902 , 
-      MD. ABUL BASHAR SIDDIQUE.-  +88 01831313131 
+      Tauhidul Islam                               +88 01717334902
+      MD. ABUL BASHAR SIDDIQUE.    +88 01831313131 
+      Md. Iftekharul Alam                       +88 01917188496
   - name: Email Us
     icon: fas fa-envelope
     content: bkpafoundation@gmail.com
