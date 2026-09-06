@@ -5,8 +5,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://bkpa-community.github.io",
-  base: "/bkpa-v2",
+  site: "https://www.bkpa.net",
   build: {
     inlineStylesheets: "always",
   },

@@ -1,5 +1,5 @@
-const SITE = "https://bkpa-community.github.io";
-const BASE = "/bkpa-v2";
+const SITE = "https://www.bkpa.net";
+const BASE = "";
 const ORIGIN = `${SITE}${BASE}`;
 
 export function organizationSchema() {
