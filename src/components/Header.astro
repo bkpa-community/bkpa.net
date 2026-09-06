@@ -95,7 +95,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     </div>
   </div>
 
-  <div id="mobile-nav" class="hidden border-t border-(--color-line) px-6 pb-4 [&.open]:block lg:!hidden">
+  <div id="mobile-nav" class="hidden max-h-[calc(100dvh-var(--header-h,4rem))] overflow-y-auto overscroll-contain border-t border-(--color-line) px-6 pb-4 [&.open]:block lg:!hidden">
     <div class="flex justify-center py-3">
       <div class="flex overflow-hidden rounded-full border border-(--color-line) font-mono text-xs font-semibold" role="group" aria-label="Language">
         <button type="button" data-lang-btn="bn" class="px-5 py-2 text-(--color-ink-soft) aria-pressed:bg-(--color-deep) aria-pressed:text-(--color-deep-ink)">বাংলা</button>

@@ -101,7 +101,23 @@ const schemaBlocks = [organizationSchema(), ...(schema ? (Array.isArray(schema) 
 
       const mobBtn = document.getElementById("mobile-toggle");
       const mobNav = document.getElementById("mobile-nav");
+
+      // The open menu is capped at the viewport minus the bar above it, so a
+      // long menu scrolls instead of running off the bottom with no way back.
+      // Measured rather than assumed: the bar's height changes with the
+      // viewport, and a hardcoded guess either clips the last item or leaves
+      // a dead gap under it.
+      const headerBar = document.querySelector("header > div");
+      function syncMenuHeight() {
+        if (!headerBar || !mobNav) return;
+        const barHeight = headerBar.getBoundingClientRect().height;
+        mobNav.style.setProperty("--header-h", `${barHeight}px`);
+      }
+      syncMenuHeight();
+      window.addEventListener("resize", syncMenuHeight);
+
       mobBtn?.addEventListener("click", () => {
+        syncMenuHeight();
         const open = mobNav?.classList.toggle("open");
         mobBtn.setAttribute("aria-expanded", String(!!open));
       });
