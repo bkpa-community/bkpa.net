@@ -65,9 +65,14 @@ body {
 
 .bn {
   font-family: var(--font-bn-display);
+  /* Headings: enough room for matras without opening gaps between lines. */
+  line-height: 1.35;
 }
 .bn-body {
   font-family: var(--font-bn-body);
+  /* Running text needs noticeably more than the Latin 1.5, or ascenders and
+     descenders from adjacent lines very nearly touch. */
+  line-height: 1.8;
 }
 
 [data-lang="bn"] .i18n-en {
@@ -112,10 +117,11 @@ body {
    --------------------------------------------------------------------------- */
 .text-eyebrow {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  line-height: 1.3;
+  /* 1.3 clipped the top of Bengali matras in this role. */
+  line-height: 1.5;
 }
 .text-display-1 {
   font-family: var(--font-display);
@@ -125,33 +131,59 @@ body {
 }
 .text-display-2 {
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 3.6vw, 2.5rem);
-  line-height: 1.15;
+  font-size: clamp(1.9rem, 3.6vw, 2.5rem);
+  line-height: 1.2;
   font-weight: 600;
 }
 .text-display-3 {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 2.6vw, 1.85rem);
-  line-height: 1.2;
+  font-size: clamp(1.6rem, 2.6vw, 1.85rem);
+  line-height: 1.28;
   font-weight: 600;
 }
 .text-display-4 {
   font-family: var(--font-display);
-  font-size: 1.125rem;
-  line-height: 1.4;
+  font-size: clamp(1.2rem, 1.2rem + 0.4vw, 1.3rem);
+  line-height: 1.45;
   font-weight: 600;
 }
 .text-meta {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  line-height: 1.4;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+/* Secondary running text — card excerpts, addresses, captions. Larger on a
+   phone than on a desktop, which looks backwards written down but matches how
+   the two are read: a phone is held further from the eye than its size
+   suggests, and has none of the surrounding context a wide layout provides. */
+.text-body-sm {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+@media (min-width: 640px) {
+  .text-body-sm {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
 }
 
 /* Prose styling for article/emergency-contact bodies rendered from markdown */
 .prose-bkpa {
   max-width: none;
   color: var(--color-ink);
-  line-height: 1.75;
+  line-height: 1.8;
+  /* The longest-read surface on the site, and most of it is Bengali. 17px on a
+     phone rather than 16 — the measure is only ~327px there, so lines are
+     short and the extra size costs no comfortable line length. Back to 16px
+     from sm up, where lines are long enough that larger text would push the
+     measure past a comfortable count. */
+  font-size: 1.0625rem;
+}
+@media (min-width: 640px) {
+  .prose-bkpa {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
 }
 .prose-bkpa h1,
 .prose-bkpa h2,

@@ -100,9 +100,9 @@ const pageSchema = breadcrumbSchema([
                   </div>
                   <div class="min-w-0 p-5">
                     <h3 class="text-display-4">{item.name}</h3>
-                    {item.role && <p class="mt-0.5 text-sm text-(--color-ink-soft)">{item.role}</p>}
-                    {item.address && <p class="mt-1.5 text-sm text-(--color-ink-soft)">{item.address}</p>}
-                    <div class="mt-2 flex flex-col gap-0.5 font-mono text-xs text-(--color-ink-soft)">
+                    {item.role && <p class="mt-0.5 text-body-sm text-(--color-ink-soft)">{item.role}</p>}
+                    {item.address && <p class="mt-1.5 text-body-sm text-(--color-ink-soft)">{item.address}</p>}
+                    <div class="mt-2 flex flex-col gap-0.5 font-mono text-[0.8125rem] text-(--color-ink-soft) sm:text-xs">
                       {item.phone && <span>{item.phone}</span>}
                       {item.email && (
                         <a class="hover:text-(--color-deep)" href={`mailto:${item.email}`}>{item.email}</a>
@@ -113,7 +113,7 @@ const pageSchema = breadcrumbSchema([
                         </a>
                       )}
                     </div>
-                    {item.notes && <p class="mt-2 text-xs text-(--color-ink-soft) italic">{item.notes}</p>}
+                    {item.notes && <p class="mt-2 text-[0.8125rem] text-(--color-ink-soft) italic sm:text-xs">{item.notes}</p>}
                   </div>
                 </div>
               ))}
