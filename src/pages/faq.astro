@@ -1,9 +1,12 @@
 ---
+import { getSiteFaq } from "@/lib/content";
+import { defaultLanguage } from "@/lib/languageParser";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getEntry } from "astro:content";
 import { faqPageSchema } from "../lib/schema";
 
-const faq = (await getEntry("siteFaq", "main"))!.data;
+const lang = defaultLanguage.languageCode;
+
+const faq = (await getSiteFaq(lang))!.data;
 const pageSchema = faqPageSchema(faq.items);
 ---
 

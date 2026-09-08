@@ -1,0 +1,19 @@
+{
+  "main": {
+    "title": "Contact",
+    "items": [
+      {
+        "name": "Address",
+        "content": "Address - Greenmart Market,(Office Number- 304, 2nd floor). \nHouse - 33, 33/1 Bir Uttam K.M. Shafiullah Sarak (Green Road), \nDhaka – 1205, Bangladesh"
+      },
+      {
+        "name": "Contact Person",
+        "content": "Tauhidul Islam                               +88 01717334902\nMD. ABUL BASHAR SIDDIQUE.    +88 01831313131 \nMd. Iftekharul Alam                       +88 01917188496"
+      },
+      {
+        "name": "Email Us",
+        "content": "bkpafoundation@gmail.com"
+      }
+    ]
+  }
+}

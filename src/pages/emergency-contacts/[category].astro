@@ -1,11 +1,15 @@
 ---
+import { getEmergencyContacts } from "@/lib/content";
+import { defaultLanguage } from "@/lib/languageParser";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getCollection, render } from "astro:content";
+import { render } from "astro:content";
 import { EMERGENCY_CATEGORIES } from "../../lib/categories";
 import { breadcrumbSchema } from "../../lib/schema";
 
+const lang = defaultLanguage.languageCode;
+
 export async function getStaticPaths() {
-  const all = await getCollection("emergencyContacts");
+  const all = await getEmergencyContacts(defaultLanguage.languageCode);
   return all.map((entry) => ({ params: { category: entry.id }, props: { entry } }));
 }
 

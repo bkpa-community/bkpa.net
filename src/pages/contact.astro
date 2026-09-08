@@ -1,9 +1,12 @@
 ---
+import { getSiteContact } from "@/lib/content";
+import { defaultLanguage } from "@/lib/languageParser";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getEntry } from "astro:content";
 import { breadcrumbSchema } from "../lib/schema";
 
-const contact = (await getEntry("siteContact", "main"))!.data;
+const lang = defaultLanguage.languageCode;
+
+const contact = (await getSiteContact(lang))!.data;
 const pageSchema = breadcrumbSchema([
   { name: "Home", path: "/" },
   { name: "Contact", path: "/contact" },

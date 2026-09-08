@@ -2,20 +2,42 @@ import { defineCollection } from "astro:content";
 import { glob, file } from "astro/loaders";
 import { z } from "astro/zod";
 
+
+// ---------------------------------------------------------------------------
+// Per-language collections.
+//
+// Each language gets its own loader `base`, which keeps entry ids free of a
+// language segment: an article is "ckd/anemia" in both locales, not
+// "bn/ckd/anemia". Route building and category parsing therefore work the same
+// whatever the language, and adding a second locale needed no change to the
+// code that reads ids.
+//
+// English collections are empty for now. src/lib/content.ts falls back to
+// Bengali per collection, so a page renders rather than 404s while English is
+// written.
+// ---------------------------------------------------------------------------
+
 // ---------------------------------------------------------------------------
 // "Know Your Kidney" educational articles.
 // Stored as src/content/articles/<category-slug>/<article-slug>.md
 // The category is the first path segment of each entry's id (e.g. "ckd/anemia").
 // ---------------------------------------------------------------------------
-const articles = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/articles" }),
-  schema: z.object({
+const articlesSchema = z.object({
     title: z.string(),
     date: z.coerce.date().optional(),
     description: z.string().optional().default(""),
     image: z.string().optional(),
     draft: z.boolean().optional().default(false),
-  }),
+  });
+
+const articlesBn = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/articles/bn" }),
+  schema: articlesSchema,
+});
+
+const articlesEn = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/articles/en" }),
+  schema: articlesSchema,
 });
 
 // ---------------------------------------------------------------------------
@@ -25,9 +47,7 @@ const articles = defineCollection({
 // or name was mis-split); categories still holding placeholder text fall
 // back to freeform markdown `body`.
 // ---------------------------------------------------------------------------
-const emergencyContacts = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/emergency-contacts" }),
-  schema: z.object({
+const emergencyContactsSchema = z.object({
     title: z.string(),
     order: z.number().default(0),
     intro: z.string().optional(),
@@ -51,15 +71,22 @@ const emergencyContacts = defineCollection({
         }),
       )
       .optional(),
-  }),
+  });
+
+const emergencyContactsBn = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/emergency-contacts/bn" }),
+  schema: emergencyContactsSchema,
+});
+
+const emergencyContactsEn = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/emergency-contacts/en" }),
+  schema: emergencyContactsSchema,
 });
 
 // ---------------------------------------------------------------------------
 // Executive Body / team members.
 // ---------------------------------------------------------------------------
-const team = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/team" }),
-  schema: z.object({
+const teamSchema = z.object({
     order: z.number().default(99),
     name: z.string(),
     role: z.string().optional().default(""),
@@ -67,19 +94,35 @@ const team = defineCollection({
     phone: z.string().optional(),
     email: z.string().optional(),
     address: z.string().optional(),
-  }),
+  });
+
+const teamBn = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/team/bn" }),
+  schema: teamSchema,
+});
+
+const teamEn = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/team/en" }),
+  schema: teamSchema,
 });
 
 // ---------------------------------------------------------------------------
 // Homepage activity gallery.
 // ---------------------------------------------------------------------------
-const gallery = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/gallery" }),
-  schema: z.object({
+const gallerySchema = z.object({
     order: z.number().default(99),
     caption: z.string().optional().default(""),
     image: z.string(),
-  }),
+  });
+
+const galleryBn = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/gallery/bn" }),
+  schema: gallerySchema,
+});
+
+const galleryEn = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/gallery/en" }),
+  schema: gallerySchema,
 });
 
 // ---------------------------------------------------------------------------
@@ -87,9 +130,7 @@ const gallery = defineCollection({
 // stored as its own small JSON file (a one-entry map) so Sitepins renders
 // them as structured forms.
 // ---------------------------------------------------------------------------
-const siteHome = defineCollection({
-  loader: file("./src/content/site/home.json"),
-  schema: z.object({
+const siteHomeSchema = z.object({
     banners: z.array(
       z.object({
         title: z.string(),
@@ -102,31 +143,70 @@ const siteHome = defineCollection({
       title: z.string(),
       content: z.string(),
     }),
-  }),
+  });
+
+const siteHomeBn = defineCollection({
+  loader: file("./src/content/site/bn/home.json"),
+  schema: siteHomeSchema,
 });
 
-const siteAbout = defineCollection({
-  loader: file("./src/content/site/about.json"),
-  schema: z.object({
+const siteHomeEn = defineCollection({
+  loader: file("./src/content/site/en/home.json"),
+  schema: siteHomeSchema,
+});
+
+const siteAboutSchema = z.object({
     title: z.string(),
     description: z.string().optional().default(""),
-  }),
+  });
+
+const siteAboutBn = defineCollection({
+  loader: file("./src/content/site/bn/about.json"),
+  schema: siteAboutSchema,
 });
 
-const siteFaq = defineCollection({
-  loader: file("./src/content/site/faq.json"),
-  schema: z.object({
+const siteAboutEn = defineCollection({
+  loader: file("./src/content/site/en/about.json"),
+  schema: siteAboutSchema,
+});
+
+const siteFaqSchema = z.object({
     title: z.string(),
     items: z.array(z.object({ question: z.string(), answer: z.string() })),
-  }),
+  });
+
+const siteFaqBn = defineCollection({
+  loader: file("./src/content/site/bn/faq.json"),
+  schema: siteFaqSchema,
 });
 
-const siteContact = defineCollection({
-  loader: file("./src/content/site/contact.json"),
-  schema: z.object({
+const siteFaqEn = defineCollection({
+  loader: file("./src/content/site/en/faq.json"),
+  schema: siteFaqSchema,
+});
+
+const siteContactSchema = z.object({
     title: z.string(),
     items: z.array(z.object({ name: z.string(), content: z.string() })),
-  }),
+  });
+
+const siteContactBn = defineCollection({
+  loader: file("./src/content/site/bn/contact.json"),
+  schema: siteContactSchema,
 });
 
-export const collections = { articles, emergencyContacts, team, gallery, siteHome, siteAbout, siteFaq, siteContact };
+const siteContactEn = defineCollection({
+  loader: file("./src/content/site/en/contact.json"),
+  schema: siteContactSchema,
+});
+
+export const collections = {
+  articlesBn, articlesEn,
+  emergencyContactsBn, emergencyContactsEn,
+  teamBn, teamEn,
+  galleryBn, galleryEn,
+  siteHomeBn, siteHomeEn,
+  siteAboutBn, siteAboutEn,
+  siteFaqBn, siteFaqEn,
+  siteContactBn, siteContactEn,
+};

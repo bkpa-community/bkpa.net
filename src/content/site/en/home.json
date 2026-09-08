@@ -1,0 +1,44 @@
+{
+  "main": {
+    "banners": [
+      {
+        "title": "MOU Signing Ceremony Between BKPA Foundation & Dhanmondi General and Kidney Hospital",
+        "content": "BKPA Foundation and Dhanmondi General & Kidney Hospital Ltd (DGKHL) has signed a MOU by which members of BKPA Foundation can avail discount in both IPD and OPD services from DGKHL."
+      },
+      {
+        "title": "Are Your Kidneys OK? Detect early, protect kidney health",
+        "content": "The major risk factors for kidney disease are:\n\nDiabetes\nHypertension\nCardiovascular disease\nObesity\nFamily history of kidney disease."
+      },
+      {
+        "title": "বিকেপিএ ফাউন্ডেশন",
+        "image": "/images/dark-green-red-abstract-triangle-background-vector.jpg",
+        "content": "বাংলাদেশ কিডনি পেশেন্ট ফাউন্ডেশন(BKPA FOUNDATION) একটি স্বেচ্ছাসেবী সামাজিক সংগঠন যার লক্ষ্য কিডনি রোগ প্রতিরোধের জন্য সামাজিক সচেতনতা বৃদ্ধি, তথ্য আদান-প্রদান, এবং কিডনি রোগ সম্পর্কে মানুষকে সতর্ক করা।"
+      },
+      {
+        "title": "BKPA FOUNDATION",
+        "image": "/images/banner-kidney.jpg",
+        "content": "BKPA (Bangladesh Kidney Patient) Foundation is a Non-profit Charitable Association, formed in April 2015 to build community engagement for the prevention of Kidney Disease through social awareness, sharing information, volunteerism and advocacy."
+      },
+      {
+        "title": "আপনি জানেন কি ?",
+        "image": "/images/banner-bkpa.jpeg",
+        "content": "কিডনি রোগ সম্পর্কে সচেতনতার উদ্দেশ্যে WWW.BKPA.NET হচ্ছে বাংলাদেশে সর্ব প্রথম বাংলা ভাষায় তৈরি একটি স্বয়ংসম্পূর্ণ ওয়েবসাইট ! বাংলাদেশের প্রতিটি অঞ্চলে থাকা বিশাল জনগোষ্ঠীর কাছে সহজ ভাষায় কিডনি রোগ সম্পর্কে সচেতনতা তৈরি করাই বিকেপিএ এর উদ্দেশ্য।"
+      },
+      {
+        "title": "Bridge the knowledge gap to better Kidney Care",
+        "image": "/images/banner-kidney-2.jpg",
+        "content": "World Kidney Day : March 10, 2022"
+      },
+      {
+        "title": "কিডনি ভালো রাখতে চান ?",
+        "image": "/images/stat-amgen-main-image-1600x900-1.jpg",
+        "content": "কিডনি রোগ প্রতিরোধে - \nস্বাস্থ্যকর খাদ্যাভ্যাস গড়ে তুলুন, রক্তের শর্করা ও রক্তচাপ নিয়ন্ত্রণে রাখুন, ধূমপান বর্জন করুন, নিয়মিত শরীরচর্চা করুন, চিকিৎসকের পরামর্শ ছাড়া কোনো ওষুধ সেবন বন্ধ করুন এবং যারা ঝুঁকিপূর্ণ তারা নিয়মিত কিডনির পরীক্ষা করুন।"
+      }
+    ],
+    "notice": {
+      "enable": false,
+      "title": "BKPA Latest News & Notice Board",
+      "content": "ঘোষণা - New Facebook গ্রুপ লিংক CLICK HERE- https://www.facebook.com/share/g/18E7Cc81QB/\nযারা শুধুমাত্র কিডনি রোগী বা ডায়ালাইসিস বা কিডনি ট্রান্সপ্লান্ট রেসিপিয়েন্ট বা তাদের পরিবারের সদস্য/কেয়ার গিভার বা চিকিৎসক বা স্বেচ্ছাসেবক তাদেরকে ইনভাইট করার অনুরোধ করছি....ধন্যবাদ.\n\nঘোষণা - বিকেপিএ (BKPA FOUNDATION) এখন গণপ্রজাতন্ত্রী বাংলাদেশ সরকার কর্তৃক নিবন্ধিত/Registered ফাউন্ডেশন যা বাংলাদেশের কিডনি রোগীদের জন্য এক নতুন মাইলফলক.."
+    }
+  }
+}

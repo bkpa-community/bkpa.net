@@ -1,13 +1,17 @@
 ---
+import { getArticles } from "@/lib/content";
+import { defaultLanguage } from "@/lib/languageParser";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import ContentFeedback from "../../../components/ContentFeedback.astro";
 import OpenRemark from "../../../components/OpenRemark.astro";
-import { getCollection, render } from "astro:content";
+import { render } from "astro:content";
 import { categoryBySlug } from "../../../lib/categories";
 import { articleSchema, breadcrumbSchema } from "../../../lib/schema";
 
+const lang = defaultLanguage.languageCode;
+
 export async function getStaticPaths() {
-  const all = await getCollection("articles", (a) => !a.data.draft);
+  const all = (await getArticles(defaultLanguage.languageCode)).filter((a) => !a.data.draft);
   return all.map((a) => {
     const [category, ...rest] = a.id.split("/");
     return { params: { category, slug: rest.join("/") }, props: { entry: a } };

@@ -1,15 +1,18 @@
 ---
+import { getArticles, getGallery, getSiteHome } from "@/lib/content";
+import { defaultLanguage } from "@/lib/languageParser";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CategoryIcon from "../components/CategoryIcon.astro";
 import FindHelpWizard from "../components/FindHelpWizard.astro";
-import { getCollection, getEntry } from "astro:content";
 import { CATEGORIES, EMERGENCY_CATEGORIES } from "../lib/categories";
 
-const home = (await getEntry("siteHome", "main"))!.data;
+const lang = defaultLanguage.languageCode;
 
-const articles = await getCollection("articles", (a) => !a.data.draft);
+const home = (await getSiteHome(lang))!.data;
+
+const articles = (await getArticles(lang)).filter((a) => !a.data.draft);
 const countFor = (slug: string) => articles.filter((a) => a.id.startsWith(`${slug}/`)).length;
-const photos = (await getCollection("gallery")).sort((a, b) => a.data.order - b.data.order);
+const photos = (await getGallery(lang)).sort((a, b) => a.data.order - b.data.order);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 ---

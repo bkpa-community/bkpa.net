@@ -1,0 +1,11 @@
+{
+  "main": {
+    "title": "Frequently Asked Question",
+    "items": [
+      {
+        "question": "[Placeholder] Add your first real question here",
+        "answer": "This FAQ page had no real questions on the live Hugo site (only theme demo text) — replace this placeholder in Sitepins with BKPA's actual FAQs."
+      }
+    ]
+  }
+}

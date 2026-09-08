@@ -1,10 +1,13 @@
 ---
+import { getSiteAbout, getTeam } from "@/lib/content";
+import { defaultLanguage } from "@/lib/languageParser";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getCollection, getEntry } from "astro:content";
 import { breadcrumbSchema } from "../lib/schema";
 
-const about = (await getEntry("siteAbout", "main"))!.data;
-const members = (await getCollection("team")).sort((a, b) => a.data.order - b.data.order);
+const lang = defaultLanguage.languageCode;
+
+const about = (await getSiteAbout(lang))!.data;
+const members = (await getTeam(lang)).sort((a, b) => a.data.order - b.data.order);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const pageSchema = breadcrumbSchema([
   { name: "Home", path: "/" },

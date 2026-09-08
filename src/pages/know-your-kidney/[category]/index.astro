@@ -1,9 +1,12 @@
 ---
+import { getArticles } from "@/lib/content";
+import { defaultLanguage } from "@/lib/languageParser";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import CategoryIcon from "../../../components/CategoryIcon.astro";
-import { getCollection } from "astro:content";
 import { CATEGORIES, categoryBySlug } from "../../../lib/categories";
 import { collectionPageSchema, breadcrumbSchema } from "../../../lib/schema";
+
+const lang = defaultLanguage.languageCode;
 
 export async function getStaticPaths() {
   return CATEGORIES.map((c) => ({ params: { category: c.slug } }));
@@ -23,7 +26,7 @@ function excerpt(markdown: string, maxLength = 160) {
 
 const { category } = Astro.params;
 const cat = categoryBySlug(category)!;
-const all = await getCollection("articles", (a) => !a.data.draft);
+const all = (await getArticles(lang)).filter((a) => !a.data.draft);
 const items = all
   .filter((a) => a.id.startsWith(`${cat.slug}/`))
   .sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0));

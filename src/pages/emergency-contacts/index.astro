@@ -1,10 +1,13 @@
 ---
+import { getEmergencyContacts } from "@/lib/content";
+import { defaultLanguage } from "@/lib/languageParser";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
 import { EMERGENCY_CATEGORIES } from "../../lib/categories";
 import { breadcrumbSchema } from "../../lib/schema";
 
-const all = await getCollection("emergencyContacts");
+const lang = defaultLanguage.languageCode;
+
+const all = await getEmergencyContacts(lang);
 const countFor = (slug: string) => all.find((e) => e.id === slug)?.data.items?.length ?? 0;
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const pageSchema = breadcrumbSchema([
