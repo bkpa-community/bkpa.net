@@ -34,6 +34,17 @@ const { Content } = await render(entry);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const items = entry.data.items ?? [];
 
+// Whether this category shows photos at all.
+//
+// A green block stands in for a missing photo so a part-illustrated grid stays
+// aligned — that reads fine when a handful of entries lack one. But three of
+// the four categories have no photos whatsoever (dialysis centres and blood
+// banks are institutions, not people), and there the same rule produced a page
+// of empty green squares with the actual contact details pushed below the
+// fold. So the image area is dropped entirely when nothing in the category has
+// one.
+const hasAnyImage = items.some((item) => Boolean(item.image));
+
 // Group by city, then order within each group by `rank` (lower first).
 // Entries without a rank keep their original file order and follow the ranked
 // ones. Grouping here rather than relying on a heading-on-change means the
@@ -99,23 +110,24 @@ const pageSchema = breadcrumbSchema([
               )}
               {group.items.map((item) => (
                 <div class="flex flex-col overflow-hidden rounded-lg border border-(--color-line)">
-                  <div class="aspect-square overflow-hidden bg-(--color-surface-2)">
-                    {item.image ? (
-                      <img
-                        class="h-full w-full object-cover"
-                        src={encodeURI(`${base}${item.image}`)}
-                        alt={item.name}
-                        loading="lazy"
-                        width="480"
-                        height="480"
-                      />
-                    ) : (
-                      // No photo: a plain brand-colour block. The name is
-                      // already in the heading below, so this carries no
-                      // information and needs no text.
-                      <div class="h-full w-full bg-(--color-deep)"></div>
-                    )}
-                  </div>
+                  {hasAnyImage && (
+                    <div class="aspect-square overflow-hidden bg-(--color-surface-2)">
+                      {item.image ? (
+                        <img
+                          class="h-full w-full object-cover"
+                          src={encodeURI(`${base}${item.image}`)}
+                          alt={item.name}
+                          loading="lazy"
+                          width="480"
+                          height="480"
+                        />
+                      ) : (
+                        // Keeps this card the same height as its neighbours
+                        // that do have a photo.
+                        <div class="h-full w-full bg-(--color-deep)"></div>
+                      )}
+                    </div>
+                  )}
                   <div class="min-w-0 p-5">
                     <h3 class="text-display-4">{item.name}</h3>
                     {item.role && <p class="mt-0.5 text-body-sm text-(--color-ink-soft)">{item.role}</p>}
