@@ -29,7 +29,10 @@
   },
   "feedback": {
     "question": "How helpful was this content?",
-    "thanks": "Thanks for your feedback!"
+    "thanks": "Thanks for your feedback!",
+    "caution_label": "Caution:",
+    "caution": "BKPA is a voluntary social organization whose mission is to raise awareness, promote and share knowledge about kidney disease. BKPA does not provide any kind of medical advice directly or indirectly through social media or any other platform which should only be done by the nephrologist or registered doctor. This is prohibited to take any kind of medical treatment based on the information provided by BKPA.",
+    "rating_label": "Content rating"
   },
   "home": {
     "eyebrow_org": "Non-profit Charitable Association · Founded 2015",
@@ -40,15 +43,98 @@
     "when_you_need_it": "When you need it now",
     "find_help_eyebrow": "Find Help",
     "find_help_heading": "How can we help you?",
-    "find_help_intro": "Answer a few questions and we will point you to the right information."
+    "find_help_intro": "Answer a few questions and we will point you to the right information.",
+    "non_profit_charitable_association_est_2015": "Non-Profit Charitable Association · Est. 2015",
+    "bkpa_foundation": "BKPA Foundation",
+    "bkpa_bangladesh_kidney_patient_foundation_is": "BKPA (Bangladesh Kidney Patient) Foundation is a Non-profit Charitable Association, formed in April 2015 to build community engagement for the prevention of Kidney Disease through social awareness, sharing information, volunteerism and advocacy.",
+    "bridging_the_knowledge_gap_to_better_kidney_": "\"Bridging the knowledge gap to better kidney care.\"",
+    "find_help": "Find Help",
+    "how_can_we_help": "How can we help?",
+    "answer_a_few_quick_questions_and_we_ll_point": "Answer a few quick questions and we'll point you to the right resources for you.",
+    "know_your_kidney": "Know Your Kidney",
+    "from_kidney_basics_to_dialysis_and_transplan": "From kidney basics to dialysis and transplantation — every topic explained in plain Bengali and English.",
+    "c_labelen": "{c.labelEn}",
+    "articles": "articles",
+    "when_you_need_it_now": "When you need it now",
+    "emergency_contacts": "Emergency Contacts",
+    "from_nephrologists_to_blood_banks_find_the_r": "From nephrologists to blood banks — find the right contact by category, fast.",
+    "gallery": "Gallery",
+    "our_activities": "Our Activities"
   },
   "wizard": {
     "step": "Step",
     "restart": "Start over",
-    "next": "Next"
+    "next": "Next",
+    "back": "Back",
+    "start_over": "Start over"
   },
   "footer": {
     "org_full_name": "Bangladesh Kidney Patient Association Foundation",
-    "developed_by": "Developed by"
+    "developed_by": "Developed by",
+    "blurb": "Bangladesh Kidney Patient Association Foundation — building awareness and community around kidney disease prevention. Founded April 2015."
+  },
+  "contact": {
+    "contact_us": "Contact Us"
+  },
+  "emergency": {
+    "emergency_contacts": "Emergency Contacts",
+    "meta_labelen_entry_data_title": "{meta?.labelEn ?? entry.data.title}",
+    "c_labelen": "{c.labelEn}",
+    "when_you_need_it_now": "When you need it now",
+    "from_nephrologists_to_blood_banks_find_the_r": "From nephrologists to blood banks — find the right contact by category, fast.",
+    "entries": "entries"
+  },
+  "executive": {
+    "organization": "Organization",
+    "executive_body": "Executive Body"
+  },
+  "faq": {
+    "faq": "FAQ"
+  },
+  "find_help": {
+    "find_help": "Find Help",
+    "how_can_we_help": "How can we help?",
+    "answer_a_few_quick_questions_and_we_ll_point": "Answer a few quick questions and we'll point you to the right resources."
+  },
+  "kidney": {
+    "cat_labelen": "{cat.labelEn}",
+    "know_your_kidney": "Know Your Kidney",
+    "no_articles_have_been_published_in_this_cate": "No articles have been published in this category yet."
+  },
+  "legal": {
+    "legal_information": "Legal Information",
+    "legal_compliance": "Legal & Compliance",
+    "last_updated_last_updated_en": "Last updated: {LAST_UPDATED_EN}",
+    "this_is_not_medical_advice": "This is not medical advice",
+    "everything_on_this_website_is_published_for_": "Everything on this website is published for general education and awareness only. It is not a substitute for professional medical advice, diagnosis or treatment.",
+    "always_consult_a_qualified_physician_before_": "Always consult a qualified physician before making decisions about your health. Never disregard professional medical advice, or delay seeking it, because of something you have read here.",
+    "in_an_emergency_contact_your_nearest_hospita": "In an emergency, contact your nearest hospital directly. This website is not an emergency service.",
+    "using_this_website_does_not_create_a_doctor_": "Using this website does not create a doctor–patient relationship between you and BKPA Foundation.",
+    "about_the_organisation": "About the organisation",
+    "bangladesh_kidney_patient_foundation_bkpa_fo": "Bangladesh Kidney Patient Foundation (BKPA Foundation) is a non-profit, volunteer-run social organisation formed in April 2015. Our work is awareness, information-sharing and support for kidney patients and their families.",
+    "registration_number_registration_number_regi": "Registration number: {REGISTRATION.number} · Registering authority: {REGISTRATION.authority} · Registered: {REGISTRATION.date}",
+    "directory_listings_and_endorsement": "Directory listings and endorsement",
+    "the_listings_of_doctors_hospitals_dialysis_c": "The listings of doctors, hospitals, dialysis centres and blood banks on this website are compiled from publicly available sources as a convenience to the public.",
+    "inclusion_in_a_listing_is_not_a_recommendati": "Inclusion in a listing is not a recommendation, endorsement, or guarantee of quality. BKPA Foundation does not verify the credentials, licensing or standard of care of any listed practitioner or institution, and accepts no responsibility for them.",
+    "phone_numbers_addresses_and_chamber_hours_ch": "Phone numbers, addresses and chamber hours change. Please verify details before relying on them.",
+    "want_your_details_removed_or_corrected": "Want your details removed or corrected?",
+    "if_you_are_a_practitioner_or_institution_lis": "If you are a practitioner or institution listed on this website and would like your name, photograph, phone number or any other detail removed or corrected, please tell us. We will verify and act promptly. You do not need to give a reason.",
+    "contact_us": "Contact us",
+    "no_fees_no_financial_intermediation": "No fees, no financial intermediation",
+    "everything_on_this_website_is_free_of_charge": "Everything on this website is free of charge. We do not charge for listings, and no listing is placed or ranked in exchange for payment.",
+    "bkpa_foundation_is_not_party_to_any_financia": "BKPA Foundation is not party to any financial transaction between a patient and a practitioner or institution, and does not receive, hold or transfer any funds on anyone's behalf.",
+    "privacy_and_your_data": "Privacy and your data",
+    "this_website_has_no_accounts_and_no_forms_an": "This website has no accounts and no forms, and we collect no personal information from you. We use no analytics and no tracking cookies.",
+    "your_language_preference_and_any_rating_you_": "Your language preference and any rating you give an article are stored only in your own browser (localStorage). Neither is transmitted to us.",
+    "two_third_party_services_are_used_each_with_": "Two third-party services are used, each with its own privacy policy: Google Fonts, to load the site's typefaces (which discloses your IP address to Google), and OpenRemark, for comments on article pages.",
+    "copyright_and_use": "Copyright and use",
+    "the_original_text_and_design_of_this_website": "The original text and design of this website belong to BKPA Foundation. You are welcome — encouraged, in fact — to use or share our material for educational, non-commercial purposes with attribution.",
+    "photographs_of_practitioners_remain_the_prop": "Photographs of practitioners remain the property of the individuals or institutions concerned and are used for identification only. If any image is used in a way you object to, tell us and we will remove it.",
+    "external_links": "External links",
+    "this_website_may_link_to_other_websites_we_h": "This website may link to other websites. We have no control over their content or privacy practices and are not responsible for them.",
+    "corrections_and_complaints": "Corrections and complaints",
+    "our_information_is_gathered_with_care_but_er": "Our information is gathered with care, but errors are possible. If you notice a mistake or wish to raise a complaint, please tell us — we will check and correct it.",
+    "governing_law": "Governing law",
+    "this_website_and_its_use_are_governed_by_the": "This website and its use are governed by the laws of Bangladesh."
   }
 }

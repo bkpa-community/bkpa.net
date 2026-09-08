@@ -1,4 +1,6 @@
 ---
+import { slugSelector } from "@/lib/languageParser";
+import { getTranslations } from "@/lib/translations";
 import { languagePaths } from "@/lib/languageParser";
 
 export function getStaticPaths() {
@@ -12,6 +14,8 @@ import CategoryIcon from "@/components/CategoryIcon.astro";
 import FindHelpWizard from "@/components/FindHelpWizard.astro";
 import { CATEGORIES, EMERGENCY_CATEGORIES } from "@/lib/categories";
 
+const t = getTranslations(lang);
+
 const home = (await getSiteHome(lang))!.data;
 
 const articles = (await getArticles(lang)).filter((a) => !a.data.draft);
@@ -21,30 +25,26 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 ---
 
-<BaseLayout title="Home" description="Detect early, protect kidney health — BKPA Foundation, Bangladesh's first comprehensive Bengali-language kidney health resource.">
+<BaseLayout lang={lang} title={t.nav.home} description="Detect early, protect kidney health — BKPA Foundation, Bangladesh's first comprehensive Bengali-language kidney health resource.">
   <!-- ============ HERO ============ -->
   <section class="pt-16 pb-16 lg:pt-28 lg:pb-28">
     <div class="mx-auto grid max-w-6xl items-center gap-11 px-6 md:px-10 lg:grid-cols-[1.05fr_.95fr] lg:gap-14">
       <div>
         <p class="text-eyebrow text-(--color-ink-soft)">
-          <span class="i18n-bn bn">নন-প্রফিট চ্যারিটেবল অ্যাসোসিয়েশন · প্রতিষ্ঠা ২০১৫</span>
-          <span class="i18n-en">Non-Profit Charitable Association · Est. 2015</span>
+          {t.home.non_profit_charitable_association_est_2015}
         </p>
         <h1 class="mt-3 text-display-1 leading-[1.08] font-semibold text-balance text-(--color-ink)">
-          <span class="i18n-bn bn">বিকেপিএ ফাউন্ডেশন</span>
-          <span class="i18n-en">BKPA Foundation</span>
+          {t.home.bkpa_foundation}
         </h1>
         <p class="mt-4 max-w-xl text-[1.1rem] text-(--color-ink-soft)">
-          <span class="i18n-bn bn-body">বাংলাদেশ কিডনি পেশেন্ট ফাউন্ডেশন(BKPA FOUNDATION) একটি স্বেচ্ছাসেবী সামাজিক সংগঠন যার লক্ষ্য কিডনি রোগ প্রতিরোধের জন্য সামাজিক সচেতনতা বৃদ্ধি, তথ্য আদান-প্রদান, এবং কিডনি রোগ সম্পর্কে মানুষকে সতর্ক করা।</span>
-          <span class="i18n-en">BKPA (Bangladesh Kidney Patient) Foundation is a Non-profit Charitable Association, formed in April 2015 to build community engagement for the prevention of Kidney Disease through social awareness, sharing information, volunteerism and advocacy.</span>
+          {t.home.bkpa_bangladesh_kidney_patient_foundation_is}
         </p>
         <p class="mt-2.5 text-display-4 text-(--color-accent-2) italic">
-          <span class="i18n-bn bn">"কিডনি সেবায় জ্ঞানের ব্যবধান কমিয়ে আনা"</span>
-          <span class="i18n-en">"Bridging the knowledge gap to better kidney care."</span>
+          {t.home.bridging_the_knowledge_gap_to_better_kidney_}
         </p>
         <div class="mt-7 flex">
-          <a class="inline-flex items-center gap-2 rounded-md bg-(--color-deep) px-5.5 py-3 text-sm font-semibold text-(--color-deep-ink) hover:brightness-110" href={`${base}/emergency-contacts/nephrology-doctors`}>
-            <span class="i18n-bn bn">জরুরি সহায়তা</span><span class="i18n-en">Emergency Help</span>
+          <a class="inline-flex items-center gap-2 rounded-md bg-(--color-deep) px-5.5 py-3 text-sm font-semibold text-(--color-deep-ink) hover:brightness-110" href={slugSelector(`/emergency-contacts/nephrology-doctors`, lang)}>
+            {t.home.emergency_help}
           </a>
         </div>
       </div>
@@ -75,13 +75,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   <section class="bg-(--color-deep) py-14 md:py-20 text-(--color-deep-ink)" id="find-help">
     <div class="mx-auto max-w-4xl px-6 md:px-10">
       <div class="max-w-xl">
-        <p class="text-eyebrow opacity-75"><span class="i18n-bn bn">সহায়তা খুঁজুন</span><span class="i18n-en">Find Help</span></p>
-        <h2 class="mt-1.5 text-display-3"><span class="i18n-bn bn">আমরা কীভাবে সাহায্য করতে পারি?</span><span class="i18n-en">How can we help?</span></h2>
-        <p class="mt-2 opacity-90"><span class="i18n-bn bn-body">কয়েকটি প্রশ্নের উত্তর দিন — আমরা আপনাকে সঠিক তথ্যের দিকে পথ দেখাবো।</span><span class="i18n-en">Answer a few quick questions and we'll point you to the right resources for you.</span></p>
+        <p class="text-eyebrow opacity-75">{t.home.find_help}</p>
+        <h2 class="mt-1.5 text-display-3">{t.home.how_can_we_help}</h2>
+        <p class="mt-2 opacity-90">{t.home.answer_a_few_quick_questions_and_we_ll_point}</p>
       </div>
 
       <div class="mt-8 rounded-xl border border-(--color-line) bg-(--color-paper) p-6 text-(--color-ink) md:p-8">
-        <FindHelpWizard />
+        <FindHelpWizard lang={lang} />
       </div>
     </div>
   </section>
@@ -90,21 +90,20 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   <section class="py-14 md:py-20" id="topics">
     <div class="mx-auto max-w-6xl px-6 md:px-10">
       <div class="mb-8 max-w-xl">
-        <p class="text-eyebrow text-(--color-ink-soft)"><span class="i18n-bn bn">শিক্ষামূলক রিসোর্স</span><span class="i18n-en">Educational Resource</span></p>
-        <h2 class="mt-1.5 text-display-3 text-(--color-ink)"><span class="i18n-bn bn">আপনার কিডনি সম্পর্কে জানুন</span><span class="i18n-en">Know Your Kidney</span></h2>
-        <p class="mt-2 text-(--color-ink-soft)"><span class="i18n-bn bn-body">কিডনির গঠন থেকে ডায়ালাইসিস ও প্রতিস্থাপন পর্যন্ত — প্রতিটি বিষয় সহজ বাংলায় ব্যাখ্যা করা।</span><span class="i18n-en">From kidney basics to dialysis and transplantation — every topic explained in plain Bengali and English.</span></p>
+        <p class="text-eyebrow text-(--color-ink-soft)">{t.home.educational_resource}</p>
+        <h2 class="mt-1.5 text-display-3 text-(--color-ink)">{t.home.know_your_kidney}</h2>
+        <p class="mt-2 text-(--color-ink-soft)">{t.home.from_kidney_basics_to_dialysis_and_transplan}</p>
       </div>
       <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
         {CATEGORIES.map((c) => (
-          <a class="flex min-h-[9.5rem] flex-col justify-between gap-3 rounded-lg border border-(--color-line) bg-(--color-surface) p-5 hover:border-(--color-deep)" href={`${base}/know-your-kidney/${c.slug}`}>
+          <a class="flex min-h-[9.5rem] flex-col justify-between gap-3 rounded-lg border border-(--color-line) bg-(--color-surface) p-5 hover:border-(--color-deep)" href={slugSelector(`/know-your-kidney/${c.slug}`, lang)}>
             <div>
               <CategoryIcon slug={c.slug} class="h-6 w-6 text-(--color-deep)" />
               <p class="mt-2.5 text-display-4">
-                <span class="i18n-en">{c.labelEn}</span>
-                <span class="i18n-bn bn block">{c.labelBn}</span>
+                {t.home.c_labelen}
               </p>
             </div>
-            <span class="font-mono text-xs text-(--color-ink-soft) tabular-nums">{countFor(c.slug)} <span class="i18n-bn bn">টি আর্টিকেল</span><span class="i18n-en">articles</span></span>
+            <span class="font-mono text-xs text-(--color-ink-soft) tabular-nums">{countFor(c.slug)} {t.home.articles}</span>
           </a>
         ))}
       </div>
@@ -115,14 +114,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   <section class="bg-(--color-deep) py-14 md:py-20 text-(--color-deep-ink)" id="emergency">
     <div class="mx-auto max-w-6xl px-6 md:px-10">
       <div class="mb-8 max-w-xl">
-        <p class="text-eyebrow opacity-75"><span class="i18n-bn bn">তাৎক্ষণিক প্রয়োজনে</span><span class="i18n-en">When you need it now</span></p>
-        <h2 class="mt-1.5 text-display-3"><span class="i18n-bn bn">জরুরি যোগাযোগ</span><span class="i18n-en">Emergency Contacts</span></h2>
-        <p class="mt-2 opacity-90"><span class="i18n-bn bn-body">নেফ্রোলজিস্ট থেকে ব্লাড ব্যাংক পর্যন্ত — ক্যাটাগরি অনুযায়ী দ্রুত খুঁজে নিন।</span><span class="i18n-en">From nephrologists to blood banks — find the right contact by category, fast.</span></p>
+        <p class="text-eyebrow opacity-75">{t.home.when_you_need_it_now}</p>
+        <h2 class="mt-1.5 text-display-3">{t.home.emergency_contacts}</h2>
+        <p class="mt-2 opacity-90">{t.home.from_nephrologists_to_blood_banks_find_the_r}</p>
       </div>
       <div class="grid grid-cols-2 gap-3.5 sm:grid-cols-3">
         {EMERGENCY_CATEGORIES.map((c) => (
-          <a class="rounded-lg border border-[color-mix(in_srgb,var(--color-deep-ink)_30%,transparent)] bg-[color-mix(in_srgb,var(--color-deep-ink)_12%,transparent)] p-4.5 hover:bg-[color-mix(in_srgb,var(--color-deep-ink)_20%,transparent)]" href={`${base}/emergency-contacts/${c.slug}`}>
-            <span class="block text-sm font-semibold"><span class="i18n-bn bn">{c.labelBn}</span><span class="i18n-en">{c.labelEn}</span></span>
+          <a class="rounded-lg border border-[color-mix(in_srgb,var(--color-deep-ink)_30%,transparent)] bg-[color-mix(in_srgb,var(--color-deep-ink)_12%,transparent)] p-4.5 hover:bg-[color-mix(in_srgb,var(--color-deep-ink)_20%,transparent)]" href={slugSelector(`/emergency-contacts/${c.slug}`, lang)}>
+            <span class="block text-sm font-semibold">{t.home.c_labelen}</span>
           </a>
         ))}
       </div>
@@ -134,8 +133,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     <section class="py-14 md:py-20">
       <div class="mx-auto max-w-6xl px-6 md:px-10">
         <div class="mb-8 max-w-xl">
-          <p class="text-eyebrow text-(--color-ink-soft)"><span class="i18n-bn bn">ছবিঘর</span><span class="i18n-en">Gallery</span></p>
-          <h2 class="mt-1.5 text-display-3 text-(--color-ink)"><span class="i18n-bn bn">আমাদের কার্যক্রম</span><span class="i18n-en">Our Activities</span></h2>
+          <p class="text-eyebrow text-(--color-ink-soft)">{t.home.gallery}</p>
+          <h2 class="mt-1.5 text-display-3 text-(--color-ink)">{t.home.our_activities}</h2>
         </div>
         <div class="grid grid-cols-2 gap-3.5 sm:grid-cols-3 lg:grid-cols-4">
           {photos.map((p) => (

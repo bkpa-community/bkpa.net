@@ -1,125 +1,163 @@
 ---
-import CategoryIcon from "./CategoryIcon.astro";
-import { CATEGORIES, EMERGENCY_CATEGORIES } from "../lib/categories";
+import Icon from "@/components/Icon.astro";
+import CategoryIcon from "@/components/CategoryIcon.astro";
+import { CATEGORIES, EMERGENCY_CATEGORIES } from "@/lib/categories";
+import {
+  slugSelector,
+  stripLanguage,
+  supportedLanguages,
+} from "@/lib/languageParser";
+import { getMenu, getTranslations } from "@/lib/translations";
 
-const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = getTranslations(lang);
+const menu = getMenu(lang);
+
+// Dropdown children are resolved from data, so a new category appears in the
+// nav by being added to categories.ts — not by editing markup here.
+const CHILDREN = {
+  categories: CATEGORIES.map((c) => ({
+    name: lang === "en" ? c.labelEn : c.labelBn,
+    url: `/know-your-kidney/${c.slug}`,
+    slug: c.slug,
+  })),
+  emergencyCategories: EMERGENCY_CATEGORIES.map((c) => ({
+    name: lang === "en" ? c.labelEn : c.labelBn,
+    url: `/emergency-contacts/${c.slug}`,
+    slug: c.slug,
+  })),
+};
+
+function childrenFor(key: string | undefined) {
+  return key ? (CHILDREN[key as keyof typeof CHILDREN] ?? []) : [];
+}
+
+// The switcher points at the same page in the other language rather than the
+// homepage, so changing language never costs the reader their place.
+const currentPath = stripLanguage(Astro.url.pathname);
 ---
 
 <header class="sticky top-0 z-40 border-b border-(--color-line) bg-(--color-paper)/90 backdrop-blur-sm">
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3 md:px-10">
-    <a class="flex items-center" href={`${base}/`}>
-      <img class="logo-light h-9 w-auto" src={`${base}/images/logo.png`} alt="BKPA Foundation" width="420" height="127" />
-      <img class="logo-dark h-9 w-auto" src={`${base}/images/logo-white.png`} alt="BKPA Foundation" width="420" height="127" />
+    <a class="flex items-center" href={slugSelector("/", lang)}>
+      <img class="logo-light h-9 w-auto" src="/images/logo.png" alt="BKPA Foundation" width="420" height="127" />
+      <img class="logo-dark h-9 w-auto" src="/images/logo-white.png" alt="BKPA Foundation" width="420" height="127" />
     </a>
 
     <nav class="hidden items-center gap-7 lg:flex" aria-label="Primary">
-      <a class="text-sm font-semibold hover:text-(--color-deep)" href={`${base}/`}>
-        <span class="i18n-bn bn">হোম</span><span class="i18n-en">Home</span>
-      </a>
-      <a class="text-sm font-semibold hover:text-(--color-deep)" href={`${base}/executive-body`}>
-        <span class="i18n-bn bn">কার্যনির্বাহী পরিষদ</span><span class="i18n-en">Executive Body</span>
-      </a>
-
-      <div class="group relative flex">
-        <span class="flex cursor-default items-center gap-1 text-sm font-semibold" tabindex="0">
-          <span class="i18n-bn bn">কিডনি সম্পর্কে জানুন</span><span class="i18n-en">Know Your Kidney</span>
-          <svg class="h-2.5 w-2.5 opacity-60" viewBox="0 0 20 20" fill="currentColor"><path d="M5 7l5 6 5-6z"></path></svg>
-        </span>
-        <div class="invisible absolute top-full left-1/2 -translate-x-1/2 pt-3.5 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-          <div class="grid w-72 grid-cols-1 gap-0.5 rounded-lg border border-(--color-line) bg-(--color-surface) p-2 shadow-xl">
-            {
-              CATEGORIES.map((c) => (
-                <a class="flex items-center gap-2.5 rounded-md px-3 py-2 text-sm text-(--color-ink-soft) hover:bg-(--color-surface-2) hover:text-(--color-ink)" href={`${base}/know-your-kidney/${c.slug}`}>
-                  <CategoryIcon slug={c.slug} class="h-4 w-4 flex-none" />
-                  <span class="i18n-bn bn">{c.labelBn}</span>
-                  <span class="i18n-en">{c.labelEn}</span>
-                </a>
-              ))
-            }
-            <a class="rounded-md px-3 py-2 text-sm text-(--color-ink-soft) hover:bg-(--color-surface-2) hover:text-(--color-ink)" href={`${base}/faq`}>
-              <span class="i18n-bn bn">প্রায় জিজ্ঞাসিত প্রশ্ন</span><span class="i18n-en">FAQ</span>
-            </a>
+      {menu.main.map((item) => (
+        item.hasChildren ? (
+          <div class="group relative flex">
+            <span class="flex cursor-default items-center gap-1 text-sm font-semibold" tabindex="0">
+              {item.name}
+              <Icon name="chevron-down" class="h-2.5 w-2.5 opacity-60" />
+            </span>
+            <div class="invisible absolute top-full left-1/2 -translate-x-1/2 pt-3.5 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              <div class="grid w-72 grid-cols-1 gap-0.5 rounded-lg border border-(--color-line) bg-(--color-surface) p-2 shadow-xl">
+                {childrenFor(item.children).map((child) => (
+                  <a class="flex items-center gap-2.5 rounded-md px-3 py-2 text-sm text-(--color-ink-soft) hover:bg-(--color-surface-2) hover:text-(--color-ink)" href={slugSelector(child.url, lang)}>
+                    <CategoryIcon slug={child.slug} class="h-4 w-4 flex-none" />
+                    {child.name}
+                  </a>
+                ))}
+                {item.children === "categories" && (
+                  <a class="rounded-md px-3 py-2 text-sm text-(--color-ink-soft) hover:bg-(--color-surface-2) hover:text-(--color-ink)" href={slugSelector("/faq", lang)}>
+                    {t.nav.faq}
+                  </a>
+                )}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        ) : (
+          <a class="text-sm font-semibold hover:text-(--color-deep)" href={slugSelector(item.url, lang)}>{item.name}</a>
+        )
+      ))}
 
-      <div class="group relative flex">
-        <span class="flex cursor-default items-center gap-1 text-sm font-semibold" tabindex="0">
-          <span class="i18n-bn bn">জরুরি যোগাযোগ</span><span class="i18n-en">Emergency Contacts</span>
-          <svg class="h-2.5 w-2.5 opacity-60" viewBox="0 0 20 20" fill="currentColor"><path d="M5 7l5 6 5-6z"></path></svg>
-        </span>
-        <div class="invisible absolute top-full left-1/2 -translate-x-1/2 pt-3.5 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-          <div class="grid w-64 grid-cols-1 gap-0.5 rounded-lg border border-(--color-line) bg-(--color-surface) p-2 shadow-xl">
-            {
-              EMERGENCY_CATEGORIES.map((c) => (
-                <a class="rounded-md px-3 py-2 text-sm text-(--color-ink-soft) hover:bg-(--color-surface-2) hover:text-(--color-ink)" href={`${base}/emergency-contacts/${c.slug}`}>
-                  <span class="i18n-bn bn">{c.labelBn}</span>
-                  <span class="i18n-en">{c.labelEn}</span>
-                </a>
-              ))
-            }
-          </div>
-        </div>
-      </div>
-
-      <a class="text-sm font-semibold hover:text-(--color-deep)" href={`${base}/contact`}>
-        <span class="i18n-bn bn">যোগাযোগ</span><span class="i18n-en">Contact Us</span>
-      </a>
-
-      <a class="rounded-md bg-(--color-deep) px-3.5 py-2 text-sm font-semibold text-(--color-deep-ink) hover:brightness-110" href={`${base}/find-help`}>
-        <span class="i18n-bn bn">সহায়তা খুঁজুন</span><span class="i18n-en">Find Help</span>
+      <a class="rounded-md bg-(--color-deep) px-3.5 py-2 text-sm font-semibold text-(--color-deep-ink) hover:brightness-110" href={slugSelector(menu.cta.url, lang)}>
+        {menu.cta.name}
       </a>
     </nav>
 
     <div class="flex items-center gap-2.5">
-      <button type="button" data-search-open class="inline-flex items-center gap-2 rounded-md border border-(--color-line) px-3 py-2.5 hover:bg-(--color-surface-2) lg:px-2 lg:py-2" aria-label="Search">
-        <svg class="h-5 w-5 lg:h-4.5 lg:w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="7"></circle>
-          <path d="m21 21-4.3-4.3"></path>
-        </svg>
-        <span class="text-sm font-semibold lg:hidden"><span class="i18n-bn bn">খুঁজুন</span><span class="i18n-en">Search</span></span>
+      <button type="button" data-search-open class="inline-flex items-center gap-2 rounded-md border border-(--color-line) px-3 py-2.5 hover:bg-(--color-surface-2) lg:px-2 lg:py-2" aria-label={t.search.label}>
+        <Icon name="search" class="h-5 w-5 lg:h-4.5 lg:w-4.5" />
+        <span class="text-sm font-semibold lg:hidden">{t.search.label}</span>
       </button>
-      <div class="hidden overflow-hidden rounded-full border border-(--color-line) font-mono text-xs font-semibold lg:flex" role="group" aria-label="Language">
-        <button type="button" data-lang-btn="bn" class="px-3 py-1.5 text-(--color-ink-soft) aria-pressed:bg-(--color-deep) aria-pressed:text-(--color-deep-ink)">বাংলা</button>
-        <button type="button" data-lang-btn="en" class="px-3 py-1.5 text-(--color-ink-soft) aria-pressed:bg-(--color-deep) aria-pressed:text-(--color-deep-ink)">EN</button>
+
+      {/*
+        Real links, not a client-side toggle. Each language is a distinct URL
+        that can be linked to, shared and indexed — a DOM toggle rendered both
+        languages into every page and let neither be addressed.
+      */}
+      <div class="hidden overflow-hidden rounded-full border border-(--color-line) font-mono text-xs font-semibold lg:flex" role="group" aria-label={t.common.language}>
+        {supportedLanguages.map((language) => (
+          <a
+            href={slugSelector(currentPath, language.languageCode)}
+            hreflang={language.languageCode}
+            aria-current={language.languageCode === lang ? "true" : undefined}
+            class:list={[
+              "px-3 py-1.5",
+              language.languageCode === lang
+                ? "bg-(--color-deep) text-(--color-deep-ink)"
+                : "text-(--color-ink-soft) hover:text-(--color-ink)",
+            ]}
+          >{language.languageName}</a>
+        ))}
       </div>
+
       <button
         id="mobile-toggle"
         class="inline-flex rounded-md border border-(--color-line) p-2 lg:hidden"
         aria-expanded="false"
         aria-controls="mobile-nav"
-        aria-label="Toggle menu"
+        aria-label={t.nav.toggle_menu}
       >
-        <svg class="h-4.5 w-4.5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 5h14M3 10h14M3 15h14"></path></svg>
+        <Icon name="menu" class="h-4.5 w-4.5" />
       </button>
     </div>
   </div>
 
   <div id="mobile-nav" class="hidden max-h-[calc(100dvh-var(--header-h,4rem))] overflow-y-auto overscroll-contain border-t border-(--color-line) px-6 pb-4 [&.open]:block lg:!hidden">
     <div class="flex justify-center py-3">
-      <div class="flex overflow-hidden rounded-full border border-(--color-line) font-mono text-xs font-semibold" role="group" aria-label="Language">
-        <button type="button" data-lang-btn="bn" class="px-5 py-2 text-(--color-ink-soft) aria-pressed:bg-(--color-deep) aria-pressed:text-(--color-deep-ink)">বাংলা</button>
-        <button type="button" data-lang-btn="en" class="px-5 py-2 text-(--color-ink-soft) aria-pressed:bg-(--color-deep) aria-pressed:text-(--color-deep-ink)">EN</button>
+      <div class="flex overflow-hidden rounded-full border border-(--color-line) font-mono text-xs font-semibold" role="group" aria-label={t.common.language}>
+        {supportedLanguages.map((language) => (
+          <a
+            href={slugSelector(currentPath, language.languageCode)}
+            hreflang={language.languageCode}
+            aria-current={language.languageCode === lang ? "true" : undefined}
+            class:list={[
+              "px-5 py-2",
+              language.languageCode === lang
+                ? "bg-(--color-deep) text-(--color-deep-ink)"
+                : "text-(--color-ink-soft)",
+            ]}
+          >{language.languageName}</a>
+        ))}
       </div>
     </div>
-    <a class="block border-b border-(--color-line) py-2.5 text-sm font-semibold" href={`${base}/`}><span class="i18n-bn bn">হোম</span><span class="i18n-en">Home</span></a>
-    <a class="block border-b border-(--color-line) py-2.5 text-sm font-semibold" href={`${base}/executive-body`}><span class="i18n-bn bn">কার্যনির্বাহী পরিষদ</span><span class="i18n-en">Executive Body</span></a>
-    <p class="pt-3 text-eyebrow text-(--color-ink-soft)"><span class="i18n-bn bn">কিডনি সম্পর্কে জানুন</span><span class="i18n-en">Know Your Kidney</span></p>
-    {CATEGORIES.map((c) => (
-      <a class="flex items-center gap-2.5 border-b border-(--color-line) py-2.5 text-sm font-semibold" href={`${base}/know-your-kidney/${c.slug}`}>
-        <CategoryIcon slug={c.slug} class="h-4 w-4 flex-none" />
-        <span class="i18n-bn bn">{c.labelBn}</span><span class="i18n-en">{c.labelEn}</span>
-      </a>
+
+    {menu.main.map((item) => (
+      item.hasChildren ? (
+        <>
+          <p class="pt-3 text-eyebrow text-(--color-ink-soft)">{item.name}</p>
+          {childrenFor(item.children).map((child) => (
+            <a class="flex items-center gap-2.5 border-b border-(--color-line) py-2.5 text-sm font-semibold" href={slugSelector(child.url, lang)}>
+              <CategoryIcon slug={child.slug} class="h-4 w-4 flex-none" />
+              {child.name}
+            </a>
+          ))}
+        </>
+      ) : (
+        <a class="block border-b border-(--color-line) py-2.5 text-sm font-semibold" href={slugSelector(item.url, lang)}>{item.name}</a>
+      )
     ))}
-    <p class="pt-3 text-eyebrow text-(--color-ink-soft)"><span class="i18n-bn bn">জরুরি যোগাযোগ</span><span class="i18n-en">Emergency Contacts</span></p>
-    {EMERGENCY_CATEGORIES.map((c) => (
-      <a class="block border-b border-(--color-line) py-2.5 text-sm font-semibold" href={`${base}/emergency-contacts/${c.slug}`}>
-        <span class="i18n-bn bn">{c.labelBn}</span><span class="i18n-en">{c.labelEn}</span>
-      </a>
-    ))}
-    <a class="block border-b border-(--color-line) py-2.5 text-sm font-semibold" href={`${base}/contact`}><span class="i18n-bn bn">যোগাযোগ</span><span class="i18n-en">Contact Us</span></a>
-    <a class="mt-3 block rounded-md bg-(--color-deep) px-3.5 py-2.5 text-center text-sm font-semibold text-(--color-deep-ink)" href={`${base}/find-help`}>
-      <span class="i18n-bn bn">সহায়তা খুঁজুন</span><span class="i18n-en">Find Help</span>
+
+    <a class="mt-3 block rounded-md bg-(--color-deep) px-3.5 py-2.5 text-center text-sm font-semibold text-(--color-deep-ink)" href={slugSelector(menu.cta.url, lang)}>
+      {menu.cta.name}
     </a>
   </div>
 </header>

@@ -1,4 +1,6 @@
 ---
+import { slugSelector } from "@/lib/languageParser";
+import { getTranslations } from "@/lib/translations";
 import { languagePaths } from "@/lib/languageParser";
 
 export function getStaticPaths() {
@@ -8,6 +10,8 @@ export function getStaticPaths() {
 const { lang } = Astro.props;
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { breadcrumbSchema } from "@/lib/schema";
+
+const t = getTranslations(lang);
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -30,22 +34,21 @@ const pageSchema = breadcrumbSchema([
 ]);
 ---
 
-<BaseLayout
-  title="Legal & Compliance"
+<BaseLayout lang={lang}
+  title={t.nav.legal}
   description="Legal terms, medical disclaimer, directory listing policy and privacy information for the BKPA Foundation website."
   schema={pageSchema}
 >
   <section class="bg-(--color-deep) py-10 text-(--color-deep-ink)">
     <div class="mx-auto max-w-3xl px-6 md:px-10">
       <p class="text-eyebrow opacity-75">
-        <span class="i18n-bn bn">আইনি তথ্য</span><span class="i18n-en">Legal Information</span>
+        {t.legal.legal_information}
       </p>
       <h1 class="mt-1.5 text-display-2">
-        <span class="i18n-bn bn">আইন ও সম্মতি</span><span class="i18n-en">Legal & Compliance</span>
+        {t.legal.legal_compliance}
       </h1>
       <p class="mt-2 text-sm opacity-80">
-        <span class="i18n-bn bn">সর্বশেষ হালনাগাদ: {LAST_UPDATED}</span>
-        <span class="i18n-en">Last updated: {LAST_UPDATED_EN}</span>
+        {t.legal.last_updated_last_updated_en}
       </p>
     </div>
   </section>
@@ -56,43 +59,35 @@ const pageSchema = breadcrumbSchema([
       <!-- The one that matters most on a site full of clinical information. -->
       <div class="rounded-lg border-2 border-(--color-accent-2) bg-(--color-surface) p-6">
         <h2 class="text-display-3 text-(--color-ink)">
-          <span class="i18n-bn bn">এটি চিকিৎসা পরামর্শ নয়</span>
-          <span class="i18n-en">This is not medical advice</span>
+          {t.legal.this_is_not_medical_advice}
         </h2>
         <div class="mt-3 space-y-3 text-(--color-ink-soft)">
           <p>
-            <span class="i18n-bn bn-body">এই ওয়েবসাইটের সব তথ্য শুধুমাত্র সাধারণ শিক্ষা ও সচেতনতার উদ্দেশ্যে প্রকাশিত। এটি কোনো চিকিৎসকের পরামর্শ, রোগ নির্ণয় বা চিকিৎসার বিকল্প নয়।</span>
-            <span class="i18n-en">Everything on this website is published for general education and awareness only. It is not a substitute for professional medical advice, diagnosis or treatment.</span>
+            {t.legal.everything_on_this_website_is_published_for_}
           </p>
           <p>
-            <span class="i18n-bn bn-body">আপনার স্বাস্থ্য সম্পর্কে কোনো সিদ্ধান্ত নেওয়ার আগে সবসময় একজন যোগ্য চিকিৎসকের সঙ্গে পরামর্শ করুন। এই ওয়েবসাইটে পড়া কোনো তথ্যের কারণে চিকিৎসকের পরামর্শ উপেক্ষা করবেন না বা চিকিৎসা নিতে দেরি করবেন না।</span>
-            <span class="i18n-en">Always consult a qualified physician before making decisions about your health. Never disregard professional medical advice, or delay seeking it, because of something you have read here.</span>
+            {t.legal.always_consult_a_qualified_physician_before_}
           </p>
           <p class="font-semibold text-(--color-ink)">
-            <span class="i18n-bn bn-body">জরুরি অবস্থায় সরাসরি নিকটস্থ হাসপাতালে যোগাযোগ করুন। এই ওয়েবসাইট কোনো জরুরি সেবা নয়।</span>
-            <span class="i18n-en">In an emergency, contact your nearest hospital directly. This website is not an emergency service.</span>
+            {t.legal.in_an_emergency_contact_your_nearest_hospita}
           </p>
           <p>
-            <span class="i18n-bn bn-body">এই ওয়েবসাইট ব্যবহারের মাধ্যমে আপনার ও বিকেপিএ ফাউন্ডেশনের মধ্যে কোনো ডাক্তার-রোগী সম্পর্ক তৈরি হয় না।</span>
-            <span class="i18n-en">Using this website does not create a doctor–patient relationship between you and BKPA Foundation.</span>
+            {t.legal.using_this_website_does_not_create_a_doctor_}
           </p>
         </div>
       </div>
 
       <div>
         <h2 class="text-display-3 text-(--color-ink)">
-          <span class="i18n-bn bn">প্রতিষ্ঠান পরিচিতি</span>
-          <span class="i18n-en">About the organisation</span>
+          {t.legal.about_the_organisation}
         </h2>
         <div class="mt-3 space-y-3 text-(--color-ink-soft)">
           <p>
-            <span class="i18n-bn bn-body">বাংলাদেশ কিডনি পেশেন্ট ফাউন্ডেশন (বিকেপিএ ফাউন্ডেশন) একটি অলাভজনক স্বেচ্ছাসেবী সামাজিক সংগঠন, যা ২০১৫ সালের এপ্রিল মাসে প্রতিষ্ঠিত। আমাদের কাজ কিডনি রোগ প্রতিরোধে সচেতনতা বৃদ্ধি, তথ্য আদান-প্রদান এবং রোগী ও তাঁদের পরিবারের পাশে দাঁড়ানো।</span>
-            <span class="i18n-en">Bangladesh Kidney Patient Foundation (BKPA Foundation) is a non-profit, volunteer-run social organisation formed in April 2015. Our work is awareness, information-sharing and support for kidney patients and their families.</span>
+            {t.legal.bangladesh_kidney_patient_foundation_bkpa_fo}
           </p>
           {REGISTRATION.number && (
             <p>
-              <span class="i18n-bn bn-body">নিবন্ধন নম্বর: {REGISTRATION.number} · নিবন্ধনকারী কর্তৃপক্ষ: {REGISTRATION.authority} · নিবন্ধনের তারিখ: {REGISTRATION.date}</span>
-              <span class="i18n-en">Registration number: {REGISTRATION.number} · Registering authority: {REGISTRATION.authority} · Registered: {REGISTRATION.date}</span>
+              {t.legal.registration_number_registration_number_regi}
             </p>
           )}
         </div>
@@ -102,124 +97,102 @@ const pageSchema = breadcrumbSchema([
            people, their photographs and their phone numbers. -->
       <div>
         <h2 class="text-display-3 text-(--color-ink)">
-          <span class="i18n-bn bn">তালিকাভুক্তি ও সুপারিশ</span>
-          <span class="i18n-en">Directory listings and endorsement</span>
+          {t.legal.directory_listings_and_endorsement}
         </h2>
         <div class="mt-3 space-y-3 text-(--color-ink-soft)">
           <p>
-            <span class="i18n-bn bn-body">এই ওয়েবসাইটে চিকিৎসক, হাসপাতাল, ডায়ালাইসিস সেন্টার ও ব্লাড ব্যাংকের যে তালিকা রয়েছে, তা জনসাধারণের সুবিধার্থে প্রকাশ্য উৎস থেকে সংগৃহীত।</span>
-            <span class="i18n-en">The listings of doctors, hospitals, dialysis centres and blood banks on this website are compiled from publicly available sources as a convenience to the public.</span>
+            {t.legal.the_listings_of_doctors_hospitals_dialysis_c}
           </p>
           <p>
-            <span class="i18n-bn bn-body">তালিকায় অন্তর্ভুক্তি কোনো সুপারিশ, অনুমোদন বা মানের নিশ্চয়তা নয়। বিকেপিএ ফাউন্ডেশন কোনো চিকিৎসক বা প্রতিষ্ঠানের যোগ্যতা, লাইসেন্স বা সেবার মান যাচাই করে না এবং তার দায়িত্ব নেয় না।</span>
-            <span class="i18n-en">Inclusion in a listing is not a recommendation, endorsement, or guarantee of quality. BKPA Foundation does not verify the credentials, licensing or standard of care of any listed practitioner or institution, and accepts no responsibility for them.</span>
+            {t.legal.inclusion_in_a_listing_is_not_a_recommendati}
           </p>
           <p>
-            <span class="i18n-bn bn-body">ফোন নম্বর, ঠিকানা ও চেম্বারের সময় পরিবর্তিত হতে পারে। যোগাযোগের আগে তথ্য যাচাই করে নিন।</span>
-            <span class="i18n-en">Phone numbers, addresses and chamber hours change. Please verify details before relying on them.</span>
+            {t.legal.phone_numbers_addresses_and_chamber_hours_ch}
           </p>
         </div>
       </div>
 
       <div class="rounded-lg border border-(--color-line) bg-(--color-surface) p-6">
         <h2 class="text-display-4 text-(--color-ink)">
-          <span class="i18n-bn bn">আপনার তথ্য সরাতে বা সংশোধন করতে চান?</span>
-          <span class="i18n-en">Want your details removed or corrected?</span>
+          {t.legal.want_your_details_removed_or_corrected}
         </h2>
         <p class="mt-2 text-(--color-ink-soft)">
-          <span class="i18n-bn bn-body">আপনি যদি এই ওয়েবসাইটে তালিকাভুক্ত একজন চিকিৎসক বা প্রতিষ্ঠান হন এবং আপনার নাম, ছবি, ফোন নম্বর বা অন্য কোনো তথ্য সরাতে বা সংশোধন করতে চান — আমাদের জানান। আমরা যাচাই করে দ্রুত ব্যবস্থা নেব। এর জন্য কোনো কারণ দেখানোর প্রয়োজন নেই।</span>
-          <span class="i18n-en">If you are a practitioner or institution listed on this website and would like your name, photograph, phone number or any other detail removed or corrected, please tell us. We will verify and act promptly. You do not need to give a reason.</span>
+          {t.legal.if_you_are_a_practitioner_or_institution_lis}
         </p>
-        <a class="mt-4 inline-flex items-center gap-2 rounded-md bg-(--color-deep) px-5 py-2.5 text-sm font-semibold text-(--color-deep-ink) hover:brightness-110" href={`${base}/contact`}>
-          <span class="i18n-bn bn">যোগাযোগ করুন</span><span class="i18n-en">Contact us</span>
+        <a class="mt-4 inline-flex items-center gap-2 rounded-md bg-(--color-deep) px-5 py-2.5 text-sm font-semibold text-(--color-deep-ink) hover:brightness-110" href={slugSelector(`/contact`, lang)}>
+          {t.legal.contact_us}
         </a>
       </div>
 
       <div>
         <h2 class="text-display-3 text-(--color-ink)">
-          <span class="i18n-bn bn">কোনো ফি বা আর্থিক লেনদেন নেই</span>
-          <span class="i18n-en">No fees, no financial intermediation</span>
+          {t.legal.no_fees_no_financial_intermediation}
         </h2>
         <div class="mt-3 space-y-3 text-(--color-ink-soft)">
           <p>
-            <span class="i18n-bn bn-body">এই ওয়েবসাইটের সব তথ্য ও সেবা সম্পূর্ণ বিনামূল্যে। তালিকাভুক্তির জন্য আমরা কোনো অর্থ নিই না এবং কারও কাছ থেকে অর্থ গ্রহণ করে কাউকে তালিকায় স্থান দিই না।</span>
-            <span class="i18n-en">Everything on this website is free of charge. We do not charge for listings, and no listing is placed or ranked in exchange for payment.</span>
+            {t.legal.everything_on_this_website_is_free_of_charge}
           </p>
           <p>
-            <span class="i18n-bn bn-body">বিকেপিএ ফাউন্ডেশন রোগী ও চিকিৎসক বা প্রতিষ্ঠানের মধ্যে কোনো আর্থিক লেনদেনে যুক্ত নয় এবং কোনো অর্থ গ্রহণ, সংরক্ষণ বা হস্তান্তর করে না।</span>
-            <span class="i18n-en">BKPA Foundation is not party to any financial transaction between a patient and a practitioner or institution, and does not receive, hold or transfer any funds on anyone's behalf.</span>
+            {t.legal.bkpa_foundation_is_not_party_to_any_financia}
           </p>
         </div>
       </div>
 
       <div>
         <h2 class="text-display-3 text-(--color-ink)">
-          <span class="i18n-bn bn">গোপনীয়তা ও আপনার তথ্য</span>
-          <span class="i18n-en">Privacy and your data</span>
+          {t.legal.privacy_and_your_data}
         </h2>
         <div class="mt-3 space-y-3 text-(--color-ink-soft)">
           <p>
-            <span class="i18n-bn bn-body">এই ওয়েবসাইটে কোনো অ্যাকাউন্ট নেই, কোনো ফর্ম নেই, এবং আমরা আপনার কাছ থেকে কোনো ব্যক্তিগত তথ্য সংগ্রহ করি না। আমাদের কোনো অ্যানালিটিকস বা ট্র্যাকিং কুকি নেই।</span>
-            <span class="i18n-en">This website has no accounts and no forms, and we collect no personal information from you. We use no analytics and no tracking cookies.</span>
+            {t.legal.this_website_has_no_accounts_and_no_forms_an}
           </p>
           <p>
-            <span class="i18n-bn bn-body">আপনার ভাষা পছন্দ এবং কোনো লেখায় আপনার দেওয়া রেটিং শুধুমাত্র আপনার ব্রাউজারেই সংরক্ষিত থাকে (localStorage)। এই তথ্য আমাদের কাছে পাঠানো হয় না।</span>
-            <span class="i18n-en">Your language preference and any rating you give an article are stored only in your own browser (localStorage). Neither is transmitted to us.</span>
+            {t.legal.your_language_preference_and_any_rating_you_}
           </p>
           <p>
-            <span class="i18n-bn bn-body">তবে দুটি তৃতীয় পক্ষের সেবা ব্যবহৃত হয়, যাদের নিজস্ব গোপনীয়তা নীতি রয়েছে: পাতার ফন্ট লোড করতে Google Fonts (এতে আপনার আইপি ঠিকানা Google-এর কাছে যায়), এবং আর্টিকেল পাতায় মন্তব্যের জন্য OpenRemark।</span>
-            <span class="i18n-en">Two third-party services are used, each with its own privacy policy: Google Fonts, to load the site's typefaces (which discloses your IP address to Google), and OpenRemark, for comments on article pages.</span>
+            {t.legal.two_third_party_services_are_used_each_with_}
           </p>
         </div>
       </div>
 
       <div>
         <h2 class="text-display-3 text-(--color-ink)">
-          <span class="i18n-bn bn">কপিরাইট ও ব্যবহার</span>
-          <span class="i18n-en">Copyright and use</span>
+          {t.legal.copyright_and_use}
         </h2>
         <div class="mt-3 space-y-3 text-(--color-ink-soft)">
           <p>
-            <span class="i18n-bn bn-body">এই ওয়েবসাইটের মূল লেখা ও নকশার স্বত্ব বিকেপিএ ফাউন্ডেশনের। শিক্ষামূলক ও অবাণিজ্যিক উদ্দেশ্যে সূত্র উল্লেখ করে আমাদের লেখা ব্যবহার বা বিতরণ করতে পারেন — এতে আমরা উৎসাহিত করি।</span>
-            <span class="i18n-en">The original text and design of this website belong to BKPA Foundation. You are welcome — encouraged, in fact — to use or share our material for educational, non-commercial purposes with attribution.</span>
+            {t.legal.the_original_text_and_design_of_this_website}
           </p>
           <p>
-            <span class="i18n-bn bn-body">চিকিৎসকদের ছবি সংশ্লিষ্ট ব্যক্তি বা প্রতিষ্ঠানের সম্পত্তি এবং শুধুমাত্র পরিচিতির উদ্দেশ্যে ব্যবহৃত। কোনো ছবি আপত্তিকরভাবে ব্যবহৃত হয়ে থাকলে জানালে আমরা তা সরিয়ে নেব।</span>
-            <span class="i18n-en">Photographs of practitioners remain the property of the individuals or institutions concerned and are used for identification only. If any image is used in a way you object to, tell us and we will remove it.</span>
+            {t.legal.photographs_of_practitioners_remain_the_prop}
           </p>
         </div>
       </div>
 
       <div>
         <h2 class="text-display-3 text-(--color-ink)">
-          <span class="i18n-bn bn">বাইরের লিংক</span>
-          <span class="i18n-en">External links</span>
+          {t.legal.external_links}
         </h2>
         <p class="mt-3 text-(--color-ink-soft)">
-          <span class="i18n-bn bn-body">এই ওয়েবসাইটে অন্য ওয়েবসাইটের লিংক থাকতে পারে। সেসব ওয়েবসাইটের বিষয়বস্তু বা গোপনীয়তা নীতির ওপর আমাদের কোনো নিয়ন্ত্রণ নেই এবং সেগুলোর জন্য আমরা দায়ী নই।</span>
-          <span class="i18n-en">This website may link to other websites. We have no control over their content or privacy practices and are not responsible for them.</span>
+          {t.legal.this_website_may_link_to_other_websites_we_h}
         </p>
       </div>
 
       <div>
         <h2 class="text-display-3 text-(--color-ink)">
-          <span class="i18n-bn bn">ভুল সংশোধন ও অভিযোগ</span>
-          <span class="i18n-en">Corrections and complaints</span>
+          {t.legal.corrections_and_complaints}
         </h2>
         <p class="mt-3 text-(--color-ink-soft)">
-          <span class="i18n-bn bn-body">আমাদের তথ্য যত্ন নিয়ে সংগ্রহ করা হলেও ভুল থেকে যেতে পারে। কোনো ভুল চোখে পড়লে বা কোনো অভিযোগ থাকলে আমাদের জানান — আমরা যাচাই করে সংশোধন করব।</span>
-          <span class="i18n-en">Our information is gathered with care, but errors are possible. If you notice a mistake or wish to raise a complaint, please tell us — we will check and correct it.</span>
+          {t.legal.our_information_is_gathered_with_care_but_er}
         </p>
       </div>
 
       <div>
         <h2 class="text-display-3 text-(--color-ink)">
-          <span class="i18n-bn bn">প্রযোজ্য আইন</span>
-          <span class="i18n-en">Governing law</span>
+          {t.legal.governing_law}
         </h2>
         <p class="mt-3 text-(--color-ink-soft)">
-          <span class="i18n-bn bn-body">এই ওয়েবসাইট ও এর ব্যবহার বাংলাদেশের প্রচলিত আইন দ্বারা পরিচালিত হবে।</span>
-          <span class="i18n-en">This website and its use are governed by the laws of Bangladesh.</span>
+          {t.legal.this_website_and_its_use_are_governed_by_the}
         </p>
       </div>
 

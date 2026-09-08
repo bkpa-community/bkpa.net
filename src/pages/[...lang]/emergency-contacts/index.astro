@@ -1,4 +1,6 @@
 ---
+import { slugSelector } from "@/lib/languageParser";
+import { getTranslations } from "@/lib/translations";
 import { languagePaths } from "@/lib/languageParser";
 
 export function getStaticPaths() {
@@ -11,6 +13,8 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { EMERGENCY_CATEGORIES } from "@/lib/categories";
 import { breadcrumbSchema } from "@/lib/schema";
 
+const t = getTranslations(lang);
+
 const all = await getEmergencyContacts(lang);
 const countFor = (slug: string) => all.find((e) => e.id === slug)?.data.items?.length ?? 0;
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
@@ -20,14 +24,14 @@ const pageSchema = breadcrumbSchema([
 ]);
 ---
 
-<BaseLayout title="Emergency Contacts" description="Emergency contact directory — nephrology doctors, vascular surgeons, dialysis centers, and blood banks, BKPA Foundation" schema={pageSchema}>
+<BaseLayout lang={lang} title={t.nav.emergency_contacts} description="Emergency contact directory — nephrology doctors, vascular surgeons, dialysis centers, and blood banks, BKPA Foundation" schema={pageSchema}>
   <section class="bg-(--color-deep) py-10 text-(--color-deep-ink)">
     <div class="mx-auto max-w-5xl px-6 md:px-10">
-      <p class="text-eyebrow opacity-75"><span class="i18n-bn bn">তাৎক্ষণিক প্রয়োজনে</span><span class="i18n-en">When you need it now</span></p>
+      <p class="text-eyebrow opacity-75">{t.emergency.when_you_need_it_now}</p>
       <h1 class="mt-1.5 text-display-2">
-        <span class="i18n-bn bn">জরুরি যোগাযোগ</span><span class="i18n-en">Emergency Contacts</span>
+        {t.emergency.emergency_contacts}
       </h1>
-      <p class="mt-2 max-w-xl opacity-90"><span class="i18n-bn bn-body">নেফ্রোলজিস্ট থেকে ব্লাড ব্যাংক পর্যন্ত — ক্যাটাগরি অনুযায়ী দ্রুত খুঁজে নিন।</span><span class="i18n-en">From nephrologists to blood banks — find the right contact by category, fast.</span></p>
+      <p class="mt-2 max-w-xl opacity-90">{t.emergency.from_nephrologists_to_blood_banks_find_the_r}</p>
     </div>
   </section>
 
@@ -35,14 +39,14 @@ const pageSchema = breadcrumbSchema([
     <div class="mx-auto max-w-5xl px-6 md:px-10">
       <div class="grid gap-4 sm:grid-cols-2">
         {EMERGENCY_CATEGORIES.map((c) => (
-          <a class="flex flex-col justify-between gap-4 rounded-lg border border-(--color-line) bg-(--color-surface) p-6 hover:border-(--color-deep)" href={`${base}/emergency-contacts/${c.slug}`}>
+          <a class="flex flex-col justify-between gap-4 rounded-lg border border-(--color-line) bg-(--color-surface) p-6 hover:border-(--color-deep)" href={slugSelector(`/emergency-contacts/${c.slug}`, lang)}>
             <div>
               <h2 class="text-display-4">
-                <span class="i18n-bn bn">{c.labelBn}</span><span class="i18n-en">{c.labelEn}</span>
+                {t.emergency.c_labelen}
               </h2>
             </div>
             <span class="font-mono text-xs text-(--color-ink-soft) tabular-nums">
-              {countFor(c.slug)} <span class="i18n-bn bn">টি এন্ট্রি</span><span class="i18n-en">entries</span>
+              {countFor(c.slug)} {t.emergency.entries}
             </span>
           </a>
         ))}

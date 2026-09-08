@@ -1,0 +1,23 @@
+---
+/**
+ * Renders an icon from public/images/icons/ by name.
+ *
+ * Drawn with mask-image rather than <img> so the glyph inherits the
+ * surrounding text colour: inside an <img> the SVG is its own document and
+ * stroke="currentColor" resolves to black, which would flatten every icon
+ * sitting on a coloured background.
+ */
+interface Props {
+  name: string;
+  class?: string;
+}
+
+const { name, class: className = "h-5 w-5" } = Astro.props;
+const src = `/images/icons/${name}.svg`;
+---
+
+<span
+  class={`inline-block flex-none bg-current ${className}`}
+  style={`-webkit-mask: url('${src}') center / contain no-repeat; mask: url('${src}') center / contain no-repeat;`}
+  aria-hidden="true"
+></span>

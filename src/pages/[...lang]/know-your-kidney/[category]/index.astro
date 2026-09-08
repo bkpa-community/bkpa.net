@@ -1,4 +1,6 @@
 ---
+import { slugSelector } from "@/lib/languageParser";
+import { getTranslations } from "@/lib/translations";
 import { getArticles } from "@/lib/content";
 import { langParam, supportedLanguages } from "@/lib/languageParser";
 import BaseLayout from "@/layouts/BaseLayout.astro";
@@ -6,7 +8,9 @@ import CategoryIcon from "@/components/CategoryIcon.astro";
 import { CATEGORIES, categoryBySlug } from "@/lib/categories";
 import { collectionPageSchema, breadcrumbSchema } from "@/lib/schema";
 
+
 const { lang } = Astro.props;
+const t = getTranslations(lang);
 
 export async function getStaticPaths() {
   return supportedLanguages.flatMap((language) =>
@@ -51,24 +55,22 @@ const pageSchema = [
 ];
 ---
 
-<BaseLayout title={cat.labelEn} description={`${cat.labelEn} — articles from BKPA Foundation`} schema={pageSchema}>
+<BaseLayout lang={lang} title={cat.labelEn} description={`${cat.labelEn} — articles from BKPA Foundation`} schema={pageSchema}>
   <section class="py-12">
     <div class="mx-auto max-w-6xl px-6 md:px-10">
       <p class="text-eyebrow text-(--color-ink-soft)">
-        <span class="i18n-bn bn">কিডনি সম্পর্কে জানুন</span><span class="i18n-en">Know Your Kidney</span>
+        {t.kidney.know_your_kidney}
       </p>
       <h1 class="mt-1.5 flex items-center gap-3 text-display-2 text-(--color-ink)">
         <CategoryIcon slug={cat.slug} class="h-8 w-8 flex-none text-(--color-deep)" />
         <span>
-          <span class="i18n-en">{cat.labelEn}</span>
-          <span class="i18n-bn bn block">{cat.labelBn}</span>
+          {t.kidney.cat_labelen}
         </span>
       </h1>
 
       {items.length === 0 && (
         <p class="mt-8 text-(--color-ink-soft)">
-          <span class="i18n-bn bn-body">এই ক্যাটাগরিতে এখনো কোনো আর্টিকেল যোগ করা হয়নি।</span>
-          <span class="i18n-en">No articles have been published in this category yet.</span>
+          {t.kidney.no_articles_have_been_published_in_this_cate}
         </p>
       )}
 
@@ -76,7 +78,7 @@ const pageSchema = [
         {items.map((a) => (
           <a
             class="group flex flex-col overflow-hidden rounded-lg border border-(--color-line) hover:border-(--color-deep)"
-            href={`${base}/know-your-kidney/${cat.slug}/${a.id.split("/").slice(1).join("/")}`}
+            href={slugSelector(`/know-your-kidney/${cat.slug}/${a.id.split("/").slice(1).join("/")}`, lang)}
           >
             {a.data.image && (
               <div class="aspect-video overflow-hidden bg-(--color-surface-2)">

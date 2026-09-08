@@ -1,61 +1,70 @@
 ---
-import { CATEGORIES, EMERGENCY_CATEGORIES } from "../lib/categories";
+import { CATEGORIES, EMERGENCY_CATEGORIES } from "@/lib/categories";
+import { slugSelector } from "@/lib/languageParser";
+import { getMenu, getTranslations } from "@/lib/translations";
 
-const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = getTranslations(lang);
+const menu = getMenu(lang);
+const label = (c: { labelEn: string; labelBn: string }) =>
+  lang === "en" ? c.labelEn : c.labelBn;
 ---
 
 <footer class="border-t border-(--color-line) bg-(--color-surface)">
   <div class="mx-auto grid max-w-6xl gap-9 px-6 py-12 md:grid-cols-[1.4fr_1fr_1fr_1fr] md:px-10">
     <div>
-      <a class="flex items-center no-underline" href={`${base}/`}>
-        <img class="logo-light h-9 w-auto" src={`${base}/images/logo.png`} alt="BKPA Foundation" width="420" height="127" />
-        <img class="logo-dark h-9 w-auto" src={`${base}/images/logo-white.png`} alt="BKPA Foundation" width="420" height="127" />
+      <a class="flex items-center no-underline" href={slugSelector("/", lang)}>
+        <img class="logo-light h-9 w-auto" src="/images/logo.png" alt="BKPA Foundation" width="420" height="127" />
+        <img class="logo-dark h-9 w-auto" src="/images/logo-white.png" alt="BKPA Foundation" width="420" height="127" />
       </a>
-      <p class="mt-3.5 max-w-sm text-[0.88rem] text-(--color-ink-soft)">
-        <span class="i18n-bn bn-body">বাংলাদেশ কিডনি পেশেন্ট অ্যাসোসিয়েশন ফাউন্ডেশন — কিডনি রোগ প্রতিরোধে সচেতনতা ও সম্প্রদায়ভিত্তিক উদ্যোগ। প্রতিষ্ঠা: এপ্রিল ২০১৫।</span>
-        <span class="i18n-en">Bangladesh Kidney Patient Association Foundation — building awareness and community around kidney disease prevention. Founded April 2015.</span>
-      </p>
+      <p class="mt-3.5 max-w-sm text-[0.88rem] text-(--color-ink-soft)">{t.footer.blurb}</p>
     </div>
+
     <div>
-      <h4 class="mb-3.5 text-eyebrow text-(--color-ink-soft)">
-        <span class="i18n-bn bn">কিডনি সম্পর্কে জানুন</span><span class="i18n-en">Know Your Kidney</span>
-      </h4>
+      <h4 class="mb-3.5 text-eyebrow text-(--color-ink-soft)">{t.nav.know_your_kidney}</h4>
       <ul class="flex flex-col gap-2.5">
         {CATEGORIES.slice(0, 4).map((c) => (
-          <li><a class="text-sm hover:text-(--color-deep)" href={`${base}/know-your-kidney/${c.slug}`}><span class="i18n-bn bn">{c.labelBn}</span><span class="i18n-en">{c.labelEn}</span></a></li>
+          <li><a class="text-sm hover:text-(--color-deep)" href={slugSelector(`/know-your-kidney/${c.slug}`, lang)}>{label(c)}</a></li>
         ))}
       </ul>
     </div>
+
     <div>
-      <h4 class="mb-3.5 text-eyebrow text-(--color-ink-soft)">
-        <span class="i18n-bn bn">জরুরি যোগাযোগ</span><span class="i18n-en">Emergency Contacts</span>
-      </h4>
+      <h4 class="mb-3.5 text-eyebrow text-(--color-ink-soft)">{t.nav.emergency_contacts}</h4>
       <ul class="flex flex-col gap-2.5">
         {EMERGENCY_CATEGORIES.slice(0, 4).map((c) => (
-          <li><a class="text-sm hover:text-(--color-deep)" href={`${base}/emergency-contacts/${c.slug}`}><span class="i18n-bn bn">{c.labelBn}</span><span class="i18n-en">{c.labelEn}</span></a></li>
+          <li><a class="text-sm hover:text-(--color-deep)" href={slugSelector(`/emergency-contacts/${c.slug}`, lang)}>{label(c)}</a></li>
         ))}
       </ul>
     </div>
+
     <div>
-      <h4 class="mb-3.5 text-eyebrow text-(--color-ink-soft)">
-        <span class="i18n-bn bn">সংগঠন</span><span class="i18n-en">Organization</span>
-      </h4>
+      <h4 class="mb-3.5 text-eyebrow text-(--color-ink-soft)">{t.nav.organization}</h4>
       <ul class="flex flex-col gap-2.5">
-        <li><a class="text-sm hover:text-(--color-deep)" href={`${base}/executive-body`}><span class="i18n-bn bn">কার্যনির্বাহী পরিষদ</span><span class="i18n-en">Executive Body</span></a></li>
-        <li><a class="text-sm hover:text-(--color-deep)" href="https://www.facebook.com/groups/bkpafoundation" target="_blank" rel="noopener">Facebook</a></li>
-        <li><a class="text-sm hover:text-(--color-deep)" href={`${base}/contact`}><span class="i18n-bn bn">যোগাযোগ</span><span class="i18n-en">Contact</span></a></li>
+        {menu.footer.map((item) => (
+          <li>
+            <a
+              class="text-sm hover:text-(--color-deep)"
+              href={item.external ? item.url : slugSelector(item.url, lang)}
+              {...(item.external ? { target: "_blank", rel: "noopener" } : {})}
+            >{item.name}</a>
+          </li>
+        ))}
       </ul>
     </div>
   </div>
+
   <div class="border-t border-(--color-line)">
     <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-4 text-[0.8rem] text-(--color-ink-soft) md:px-10">
-      <span
-        >© {new Date().getFullYear()} BKPA Foundation.<span class="i18n-bn bn"> সর্বস্বত্ব সংরক্ষিত।</span><span class="i18n-en"> All rights reserved.</span></span
-      >
+      <span>© {new Date().getFullYear()} BKPA Foundation. {t.common.all_rights}</span>
       <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
-        <a class="hover:text-(--color-deep) hover:underline" href={`${base}/legal`}>
-          <span class="i18n-bn bn">আইন ও সম্মতি</span><span class="i18n-en">Legal & Compliance</span>
-        </a>
+        {menu.footer_bottom.map((item) => (
+          <a class="hover:text-(--color-deep) hover:underline" href={slugSelector(item.url, lang)}>{item.name}</a>
+        ))}
         <a class="underline" href="https://mehedisharif.com" target="_blank" rel="noopener">Developed by Mehedi</a>
       </div>
     </div>

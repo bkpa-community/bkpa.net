@@ -1,4 +1,13 @@
 ---
+import Icon from "@/components/Icon.astro";
+import { getTranslations } from "@/lib/translations";
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = getTranslations(lang);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
@@ -7,35 +16,31 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   class="fixed inset-0 z-50 hidden items-start justify-center bg-black/50 backdrop-blur-sm sm:px-4 sm:pt-[10vh] [&.open]:flex"
   role="dialog"
   aria-modal="true"
-  aria-label="Site search"
+  aria-label={t.search.dialog_label}
 >
   <div class="flex h-dvh w-full flex-col overflow-hidden border-(--color-line) bg-(--color-surface) shadow-2xl sm:h-auto sm:max-h-[75vh] sm:max-w-xl sm:rounded-lg sm:border">
     <div class="flex items-center gap-3 border-b border-(--color-line) px-4 py-4 sm:gap-2.5 sm:py-3">
-      <svg class="h-5 w-5 flex-none text-(--color-ink-soft) sm:h-4.5 sm:w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="11" cy="11" r="7"></circle>
-        <path d="m21 21-4.3-4.3"></path>
-      </svg>
+      <Icon name="search" class="h-5 w-5 flex-none text-(--color-ink-soft) sm:h-4.5 sm:w-4.5" />
       <input
         id="search-input"
         type="search"
         autocomplete="off"
         class="min-w-0 flex-1 bg-transparent text-base text-(--color-ink) outline-none placeholder:text-(--color-ink-soft) sm:text-sm"
-        data-placeholder-bn="সাইটে খুঁজুন..."
-        data-placeholder-en="Search the site..."
+        placeholder={t.search.placeholder}
       />
-      <button id="search-close" type="button" class="flex-none rounded-md p-3 text-(--color-ink-soft) hover:bg-(--color-surface-2) hover:text-(--color-ink) sm:p-1" aria-label="Close search">
-        <svg class="h-5 w-5 sm:h-4.5 sm:w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+      <button id="search-close" type="button" class="flex-none rounded-md p-3 text-(--color-ink-soft) hover:bg-(--color-surface-2) hover:text-(--color-ink) sm:p-1" aria-label={t.search.close}>
+        <Icon name="close" class="h-5 w-5 sm:h-4.5 sm:w-4.5" />
       </button>
     </div>
     <div id="search-results" class="flex-1 overflow-y-auto p-2 [&_mark]:rounded-sm [&_mark]:bg-(--color-accent-2)/25 [&_mark]:px-0.5 [&_mark]:text-(--color-ink)">
       <p id="search-empty" class="px-3 py-8 text-center text-[1.0625rem] text-(--color-ink-soft) sm:text-sm">
-        <span class="i18n-bn bn">লিখতে শুরু করুন...</span><span class="i18n-en">Start typing to search...</span>
+        {t.search.start_typing}
       </p>
     </div>
   </div>
 </div>
 
-<script define:vars={{ base }}>
+<script define:vars={{ base, t: { startTyping: t.search.start_typing, noResults: t.search.no_results, unavailable: t.search.unavailable } }}>
   let modal, input, resultsEl, closeBtn;
 
   function grabElements() {
@@ -58,7 +63,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
           return mod.init();
         })
         .catch(() => {
-          resultsEl.innerHTML = '<p class="px-3 py-8 text-center text-[1.0625rem] text-(--color-ink-soft) sm:text-sm">Search is unavailable right now.</p>';
+          resultsEl.innerHTML = `<p class="px-3 py-8 text-center text-[1.0625rem] text-(--color-ink-soft) sm:text-sm">${t.unavailable}</p>`;
         });
     }
     return pagefindLoading;
@@ -67,8 +72,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   function openModal() {
     modal.classList.add("open");
     document.body.style.overflow = "hidden";
-    const lang = document.getElementById("page")?.getAttribute("data-lang") || "bn";
-    input.placeholder = lang === "en" ? input.dataset.placeholderEn : input.dataset.placeholderBn;
     loadPagefind();
     setTimeout(() => input.focus(), 30);
   }
@@ -90,7 +93,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     const query = input.value.trim();
     if (!query) {
       resultsEl.innerHTML =
-        '<p class="px-3 py-8 text-center text-[1.0625rem] text-(--color-ink-soft) sm:text-sm"><span class="i18n-bn bn">লিখতে শুরু করুন...</span><span class="i18n-en">Start typing to search...</span></p>';
+        '<p class="px-3 py-8 text-center text-[1.0625rem] text-(--color-ink-soft) sm:text-sm">{t.search.start_typing}</p>';
       return;
     }
     resultsEl.innerHTML = '<p class="px-3 py-8 text-center text-[1.0625rem] text-(--color-ink-soft) sm:text-sm">…</p>';
@@ -100,7 +103,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
       const search = await pagefind.search(query);
       if (search.results.length === 0) {
         resultsEl.innerHTML =
-          '<p class="px-3 py-8 text-center text-[1.0625rem] text-(--color-ink-soft) sm:text-sm"><span class="i18n-bn bn">কোনো ফলাফল পাওয়া যায়নি।</span><span class="i18n-en">No results found.</span></p>';
+          `<p class="px-3 py-8 text-center text-[1.0625rem] text-(--color-ink-soft) sm:text-sm">${t.noResults}</p>`;
         return;
       }
       const dataItems = await Promise.all(search.results.slice(0, 12).map((r) => r.data()));

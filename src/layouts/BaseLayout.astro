@@ -1,17 +1,29 @@
 ---
 import { ClientRouter } from "astro:transitions";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import SearchModal from "../components/SearchModal.astro";
-import "../styles/global.css";
-import { organizationSchema } from "../lib/schema";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import SearchModal from "@/components/SearchModal.astro";
+import "@/styles/global.css";
+import { organizationSchema } from "@/lib/schema";
+import {
+  defaultLanguage,
+  slugSelector,
+  stripLanguage,
+  supportedLanguages,
+} from "@/lib/languageParser";
 
 interface Props {
   title: string;
   description?: string;
   schema?: object | object[];
+  lang?: string;
 }
-const { title, description = "Bangladesh Kidney Patient Association (BKPA) Foundation", schema } = Astro.props;
+const {
+  title,
+  description = "Bangladesh Kidney Patient Association (BKPA) Foundation",
+  schema,
+  lang = defaultLanguage.languageCode,
+} = Astro.props;
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const pageTitle = `${title} · BKPA Foundation`;
@@ -21,13 +33,20 @@ const schemaBlocks = [organizationSchema(), ...(schema ? (Array.isArray(schema) 
 ---
 
 <!doctype html>
-<html lang="bn">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" href={`${base}/images/favicon.png`} />
+    <link rel="icon" href={slugSelector(`/images/favicon.png`, lang)} />
     <link rel="canonical" href={canonicalURL} />
+    {supportedLanguages.map((language) => (
+      <link
+        rel="alternate"
+        hreflang={language.languageCode}
+        href={new URL(slugSelector(stripLanguage(Astro.url.pathname), language.languageCode), Astro.site)}
+      />
+    ))}
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
 
@@ -65,60 +84,22 @@ const schemaBlocks = [organizationSchema(), ...(schema ? (Array.isArray(schema) 
     </noscript>
     <ClientRouter />
   </head>
-  <body id="page" data-lang="bn" class="overflow-x-hidden">
-    <Header />
+  <body id="page" data-lang={lang} class="overflow-x-hidden">
+    <Header lang={lang} />
     <main data-pagefind-body>
       <slot />
     </main>
-    <Footer />
-    <SearchModal />
+    <Footer lang={lang} />
+    <SearchModal lang={lang} />
     <script>
       /**
-       * Wiring for client-side routing.
+       * Only the mobile menu needs scripting now. Language used to be a
+       * client-side toggle over two copies of every string; it is a URL, so
+       * the page arrives in one language already rendered.
        *
-       * Astro replaces the whole body on navigation, so every element these
-       * listeners are attached to is discarded and rebuilt. Binding once on
-       * first load would therefore work exactly until the reader clicked
-       * something. Everything element-bound is instead (re)bound on
-       * astro:page-load, which fires on the initial load and after every
-       * navigation.
-       *
-       * Each bind is guarded by a data flag, so if this script is ever
-       * evaluated more than once no element ends up with duplicate handlers
-       * firing a toggle twice and cancelling itself out.
+       * Astro replaces the body on navigation, so this rebinds on
+       * astro:page-load and guards each element against double-binding.
        */
-      type Lang = "bn" | "en";
-      const LANG_KEY = "bkpa-lang";
-
-      function savedLang(): Lang | null {
-        try {
-          const value = localStorage.getItem(LANG_KEY);
-          return value === "en" || value === "bn" ? value : null;
-        } catch {
-          return null;
-        }
-      }
-
-      function applyLang(lang: Lang) {
-        document.body.setAttribute("data-lang", lang);
-        document.documentElement.lang = lang;
-        document.querySelectorAll<HTMLButtonElement>("[data-lang-btn]").forEach((btn) => {
-          btn.setAttribute("aria-pressed", String(btn.dataset.langBtn === lang));
-        });
-      }
-
-      function setLang(lang: Lang) {
-        applyLang(lang);
-        try {
-          localStorage.setItem(LANG_KEY, lang);
-        } catch {}
-      }
-
-      /** The body's data-lang resets to the server default on every swap. */
-      function restoreLang() {
-        applyLang(savedLang() ?? ((document.body.getAttribute("data-lang") as Lang) || "bn"));
-      }
-
       function syncMenuHeight() {
         const headerBar = document.querySelector("header > div");
         const mobNav = document.getElementById("mobile-nav");
@@ -127,18 +108,9 @@ const schemaBlocks = [organizationSchema(), ...(schema ? (Array.isArray(schema) 
       }
 
       function bind() {
-        restoreLang();
-
-        document.querySelectorAll<HTMLButtonElement>("[data-lang-btn]").forEach((btn) => {
-          if (btn.dataset.bound) return;
-          btn.dataset.bound = "1";
-          btn.addEventListener("click", () => setLang(btn.dataset.langBtn as Lang));
-        });
-
         const mobBtn = document.getElementById("mobile-toggle");
         const mobNav = document.getElementById("mobile-nav");
 
-        // A fresh body means a freshly closed menu; make the button agree.
         mobNav?.classList.remove("open");
         mobBtn?.setAttribute("aria-expanded", "false");
         syncMenuHeight();
@@ -153,13 +125,7 @@ const schemaBlocks = [organizationSchema(), ...(schema ? (Array.isArray(schema) 
         }
       }
 
-      // Correct the language before paint so the server default never flashes.
-      document.addEventListener("astro:after-swap", restoreLang);
-
-      // Fires on first load and after every client-side navigation.
       document.addEventListener("astro:page-load", bind);
-
-      // window survives navigation, so this binds once and stays valid.
       window.addEventListener("resize", syncMenuHeight);
     </script>
   </body>

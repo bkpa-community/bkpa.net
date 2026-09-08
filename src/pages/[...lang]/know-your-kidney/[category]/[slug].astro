@@ -1,4 +1,6 @@
 ---
+import { slugSelector } from "@/lib/languageParser";
+import { getTranslations } from "@/lib/translations";
 import { getArticles } from "@/lib/content";
 import { langParam, supportedLanguages } from "@/lib/languageParser";
 import BaseLayout from "@/layouts/BaseLayout.astro";
@@ -7,6 +9,7 @@ import OpenRemark from "@/components/OpenRemark.astro";
 import { render } from "astro:content";
 import { categoryBySlug } from "@/lib/categories";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
+
 
 
 export async function getStaticPaths() {
@@ -27,6 +30,7 @@ export async function getStaticPaths() {
 const { category } = Astro.params;
 const cat = categoryBySlug(category)!;
 const { entry, lang } = Astro.props;
+const t = getTranslations(lang);
 const { Content } = await render(entry);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const articlePath = `/know-your-kidney/${cat.slug}/${entry.id.split("/").slice(1).join("/")}`;
@@ -47,11 +51,11 @@ const pageSchema = [
 ];
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.description || cat.labelEn} schema={pageSchema}>
+<BaseLayout lang={lang} title={entry.data.title} description={entry.data.description || cat.labelEn} schema={pageSchema}>
   <article class="py-12">
     <div class="mx-auto max-w-6xl px-6 md:px-10">
-      <a class="text-eyebrow text-(--color-ink-soft) hover:text-(--color-deep)" href={`${base}/know-your-kidney/${cat.slug}`}>
-        ← <span class="i18n-en">{cat.labelEn}</span><span class="i18n-bn bn">{cat.labelBn}</span>
+      <a class="text-eyebrow text-(--color-ink-soft) hover:text-(--color-deep)" href={slugSelector(`/know-your-kidney/${cat.slug}`, lang)}>
+        ← {t.kidney.cat_labelen}
       </a>
       <h1 class="mt-3 text-display-2 text-balance text-(--color-ink)">{entry.data.title}</h1>
       {entry.data.date && (
@@ -64,7 +68,7 @@ const pageSchema = [
         <Content />
       </div>
       <div class="mt-10">
-        <ContentFeedback />
+        <ContentFeedback lang={lang} />
       </div>
       <div class="mt-10">
         <OpenRemark />

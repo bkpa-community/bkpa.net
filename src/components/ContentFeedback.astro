@@ -1,30 +1,35 @@
+---
+import Icon from "@/components/Icon.astro";
+import { getTranslations } from "@/lib/translations";
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = getTranslations(lang);
+---
+
 <div class="content-feedback rounded-xl border-2 border-(--color-accent-2) bg-(--color-surface) p-6 text-center md:p-8">
   <p class="text-display-4 text-(--color-ink)">
-    <span class="i18n-bn bn">এই কনটেন্টটি কতটা সহায়ক ছিল?</span>
-    <span class="i18n-en">How helpful was this content?</span>
+    {t.feedback.question}
   </p>
 
-  <div class="mt-4 flex items-center justify-center gap-1.5" role="radiogroup" aria-label="Content rating">
+  <div class="mt-4 flex items-center justify-center gap-1.5" role="radiogroup" aria-label={t.feedback.rating_label}>
     {[1, 2, 3, 4, 5].map((n) => (
       <button type="button" class="cf-star p-0.5" data-value={n} role="radio" aria-checked="false" aria-label={`${n} star${n > 1 ? "s" : ""}`}>
-        <svg viewBox="0 0 24 24" class="h-7 w-7 md:h-8 md:w-8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
-          <path d="M12 2.5l2.9 6.15 6.6.79-4.9 4.63 1.3 6.63L12 17.9l-5.9 2.8 1.3-6.63-4.9-4.63 6.6-.79L12 2.5Z"></path>
-        </svg>
+        <Icon name="star" class="cf-star-glyph h-7 w-7 md:h-8 md:w-8" />
       </button>
     ))}
   </div>
 
   <p class="cf-thanks mt-3 hidden text-sm font-semibold text-(--color-deep)">
-    <span class="i18n-bn bn">আপনার মতামতের জন্য ধন্যবাদ!</span>
-    <span class="i18n-en">Thanks for your feedback!</span>
+    {t.feedback.thanks}
   </p>
 
   <div class="mt-6 border-t border-(--color-line) pt-5 text-left text-xs text-(--color-ink-soft)">
-    <p class="i18n-en">
-      <strong class="text-(--color-ink)">Caution:</strong> BKPA is a voluntary social organization whose mission is to raise awareness, promote and share knowledge about kidney disease. BKPA does not provide any kind of medical advice directly or indirectly through social media or any other platform which should only be done by the nephrologist or registered doctor. This is prohibited to take any kind of medical treatment based on the information provided by BKPA.
-    </p>
-    <p class="i18n-bn bn-body">
-      <strong class="text-(--color-ink)">সতর্কতাঃ</strong> বিকেপিএ একটি স্বেচ্ছাসেবী সামাজিক সংগঠন যার লক্ষ্য কিডনি রোগ সম্পর্কে সামাজিক সচেতনতা বৃদ্ধি,প্রচার এবং সতর্ক করা। বিকেপিএতে সামাজিক মাধ্যম অথবা অন্য কোন মাধ্যম ব্যবহার করে বা সরাসরি প্রত্যক্ষ / পরোক্ষভাবে কোনো প্রকার চিকিৎসা সংক্রান্ত সেবা বা পরামর্শ প্রদান করা হয় না যা শুধুমাত্র আপনার নেফ্রোলজিস্ট এবং রেজিস্টার্ড চিকিৎসকের এখতিয়ার।বিকেপিএ প্রদত্ত তথ্যের উপর ভিত্তি করে কোন প্রকার চিকিৎসা গ্রহণ নিষিদ্ধ।
+    <p>
+      <strong class="text-(--color-ink)">{t.feedback.caution_label}</strong> {t.feedback.caution}
     </p>
   </div>
 </div>
@@ -34,9 +39,11 @@
     color: var(--color-line);
     transition: color 0.1s;
   }
-  .cf-star.is-filled svg {
-    color: var(--color-accent-2);
-    fill: var(--color-accent-2);
+  .cf-star .cf-star-glyph {
+    background-color: var(--color-line);
+  }
+  .cf-star.is-filled .cf-star-glyph {
+    background-color: var(--color-accent-2);
   }
 </style>
 
