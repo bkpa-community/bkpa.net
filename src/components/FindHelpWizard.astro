@@ -257,13 +257,22 @@ const DATA = { STEPS, TOPICS, PERSONA_INTRO };
   let stepIndex = 0; // index into visible STEPS, or -1 for topic-picker, or -2 for results
   let multiSelected = [];
 
-  const questionEl = document.getElementById("fh-question");
-  const titleEl = document.getElementById("fh-question-title");
-  const optionsEl = document.getElementById("fh-options");
-  const multiNextBtn = document.getElementById("fh-multi-next");
-  const backBtn = document.getElementById("fh-back");
-  const resultsEl = document.getElementById("fh-results");
-  const progressEl = document.getElementById("fh-progress");
+  // Re-queried on each navigation rather than captured once: with client-side
+  // routing these elements are replaced every time the body is swapped, and
+  // refs held from the first page would point at detached nodes.
+  let questionEl, titleEl, optionsEl, multiNextBtn, backBtn, resultsEl, progressEl;
+
+  function grabWizard() {
+    questionEl = document.getElementById("fh-question");
+    titleEl = document.getElementById("fh-question-title");
+    optionsEl = document.getElementById("fh-options");
+    multiNextBtn = document.getElementById("fh-multi-next");
+    backBtn = document.getElementById("fh-back");
+    resultsEl = document.getElementById("fh-results");
+    progressEl = document.getElementById("fh-progress");
+    // The wizard appears on the homepage and /find-help only.
+    return Boolean(questionEl && optionsEl && resultsEl);
+  }
 
   // Step visibility rules (kept in JS, not on the STEPS data, since Astro's
   // define:vars JSON-serializes DATA and functions don't survive that trip).
@@ -448,20 +457,7 @@ const DATA = { STEPS, TOPICS, PERSONA_INTRO };
     render();
   }
 
-  multiNextBtn.addEventListener("click", () => {
-    const steps = visibleSteps();
-    profile.comorbidities = multiSelected.length ? multiSelected : ["none"];
-    advance();
-  });
 
-  backBtn.addEventListener("click", () => {
-    if (stepIndex === -1) {
-      stepIndex = visibleSteps().length - 1;
-    } else if (stepIndex > 0) {
-      stepIndex--;
-    }
-    render();
-  });
 
   function showResults(topicId) {
     questionEl.classList.add("hidden");
@@ -496,29 +492,77 @@ const DATA = { STEPS, TOPICS, PERSONA_INTRO };
     resultsEl.dataset.topic = topicId;
   }
 
-  document.getElementById("fh-restart").addEventListener("click", () => {
+  let langObserver = null;
+
+  function bindOnce(el, handler) {
+    if (!el || el.dataset.fhBound) return;
+    el.dataset.fhBound = "1";
+    el.addEventListener("click", handler);
+  }
+
+  /**
+   * Runs on first load and after every client-side navigation.
+   *
+   * Without this the wizard rendered blank whenever the reader came back to a
+   * page carrying it: its markup is server-rendered empty and filled in by
+   * render(), which previously ran only once, on the very first page load.
+   *
+   * State is reset each time so returning to the homepage starts a fresh
+   * questionnaire rather than resuming a half-finished one from earlier.
+   */
+  function initWizard() {
+    if (!grabWizard()) return;
+
     profile.role = profile.condition = profile.stage = null;
     profile.comorbidities = [];
     stepIndex = 0;
-    render();
-  });
+    multiSelected = [];
 
-  const presetRole = new URLSearchParams(window.location.search).get("role");
-  if (presetRole && STEPS[0].options.some((o) => o.value === presetRole)) {
-    profile.role = presetRole;
-    advance();
-  } else {
-    render();
-  }
+    bindOnce(multiNextBtn, () => {
+      profile.comorbidities = multiSelected.length ? multiSelected : ["none"];
+      advance();
+    });
 
-  const pageEl = document.getElementById("page");
-  if (pageEl) {
-    new MutationObserver(() => {
-      if (!resultsEl.classList.contains("hidden") && resultsEl.dataset.topic) {
-        showResults(resultsEl.dataset.topic);
-      } else {
-        render();
+    bindOnce(backBtn, () => {
+      if (stepIndex === -1) {
+        stepIndex = visibleSteps().length - 1;
+      } else if (stepIndex > 0) {
+        stepIndex--;
       }
-    }).observe(pageEl, { attributes: true, attributeFilter: ["data-lang"] });
+      render();
+    });
+
+    bindOnce(document.getElementById("fh-restart"), () => {
+      profile.role = profile.condition = profile.stage = null;
+      profile.comorbidities = [];
+      stepIndex = 0;
+      render();
+    });
+
+    const presetRole = new URLSearchParams(window.location.search).get("role");
+    if (presetRole && STEPS[0].options.some((o) => o.value === presetRole)) {
+      profile.role = presetRole;
+      advance();
+    } else {
+      render();
+    }
+
+    // Re-render on a language change. Disconnected first, so navigating
+    // repeatedly does not stack observers all firing on one attribute change.
+    langObserver?.disconnect();
+    const pageEl = document.getElementById("page");
+    if (pageEl) {
+      langObserver = new MutationObserver(() => {
+        if (!resultsEl.classList.contains("hidden") && resultsEl.dataset.topic) {
+          showResults(resultsEl.dataset.topic);
+        } else {
+          render();
+        }
+      });
+      langObserver.observe(pageEl, { attributes: true, attributeFilter: ["data-lang"] });
+    }
   }
+
+  initWizard();
+  document.addEventListener("astro:page-load", initWizard);
 </script>
