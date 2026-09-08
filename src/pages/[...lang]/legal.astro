@@ -48,7 +48,7 @@ const pageSchema = breadcrumbSchema([
         {t.legal.legal_compliance}
       </h1>
       <p class="mt-2 text-sm opacity-80">
-        {t.legal.last_updated_last_updated_en}
+        {lang === "en" ? `Last updated: ${LAST_UPDATED_EN}` : `সর্বশেষ হালনাগাদ: ${LAST_UPDATED}`}
       </p>
     </div>
   </section>
@@ -87,7 +87,9 @@ const pageSchema = breadcrumbSchema([
           </p>
           {REGISTRATION.number && (
             <p>
-              {t.legal.registration_number_registration_number_regi}
+              {lang === "en"
+                ? `Registration number: ${REGISTRATION.number} · Registering authority: ${REGISTRATION.authority} · Registered: ${REGISTRATION.date}`
+                : `নিবন্ধন নম্বর: ${REGISTRATION.number} · নিবন্ধনকারী কর্তৃপক্ষ: ${REGISTRATION.authority} · নিবন্ধনের তারিখ: ${REGISTRATION.date}`}
             </p>
           )}
         </div>

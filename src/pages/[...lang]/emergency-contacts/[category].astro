@@ -67,7 +67,7 @@ const pageSchema = breadcrumbSchema([
     <div class="mx-auto max-w-5xl px-6 md:px-10">
       <p class="text-eyebrow opacity-75">{t.emergency.emergency_contacts}</p>
       <h1 class="mt-1.5 text-display-2">
-        {t.emergency.meta_labelen_entry_data_title}
+        {lang === "en" ? (meta?.labelEn ?? entry.data.title) : (meta?.labelBn ?? entry.data.title)}
       </h1>
     </div>
   </section>
@@ -81,7 +81,7 @@ const pageSchema = breadcrumbSchema([
           ]}
           href={slugSelector(`/emergency-contacts/${c.slug}`, lang)}
         >
-          {t.emergency.c_labelen}
+          {lang === "en" ? c.labelEn : c.labelBn}
         </a>
       ))}
     </div>

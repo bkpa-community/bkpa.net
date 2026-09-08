@@ -53,7 +53,6 @@
     "answer_a_few_quick_questions_and_we_ll_point": "কয়েকটি প্রশ্নের উত্তর দিন — আমরা আপনাকে সঠিক তথ্যের দিকে পথ দেখাবো।",
     "know_your_kidney": "আপনার কিডনি সম্পর্কে জানুন",
     "from_kidney_basics_to_dialysis_and_transplan": "কিডনির গঠন থেকে ডায়ালাইসিস ও প্রতিস্থাপন পর্যন্ত — প্রতিটি বিষয় সহজ বাংলায় ব্যাখ্যা করা।",
-    "c_labelen": "{c.labelBn}",
     "articles": "টি আর্টিকেল",
     "when_you_need_it_now": "তাৎক্ষণিক প্রয়োজনে",
     "emergency_contacts": "জরুরি যোগাযোগ",
@@ -78,8 +77,6 @@
   },
   "emergency": {
     "emergency_contacts": "জরুরি যোগাযোগ",
-    "meta_labelen_entry_data_title": "{meta?.labelBn}",
-    "c_labelen": "{c.labelBn}",
     "when_you_need_it_now": "তাৎক্ষণিক প্রয়োজনে",
     "from_nephrologists_to_blood_banks_find_the_r": "নেফ্রোলজিস্ট থেকে ব্লাড ব্যাংক পর্যন্ত — ক্যাটাগরি অনুযায়ী দ্রুত খুঁজে নিন।",
     "entries": "টি এন্ট্রি"
@@ -97,14 +94,12 @@
     "answer_a_few_quick_questions_and_we_ll_point": "কয়েকটি প্রশ্নের উত্তর দিন, আমরা আপনাকে সঠিক তথ্যের দিকে পথ দেখাবো।"
   },
   "kidney": {
-    "cat_labelen": "{cat.labelBn}",
     "know_your_kidney": "কিডনি সম্পর্কে জানুন",
     "no_articles_have_been_published_in_this_cate": "এই ক্যাটাগরিতে এখনো কোনো আর্টিকেল যোগ করা হয়নি।"
   },
   "legal": {
     "legal_information": "আইনি তথ্য",
     "legal_compliance": "আইন ও সম্মতি",
-    "last_updated_last_updated_en": "সর্বশেষ হালনাগাদ: {LAST_UPDATED}",
     "this_is_not_medical_advice": "এটি চিকিৎসা পরামর্শ নয়",
     "everything_on_this_website_is_published_for_": "এই ওয়েবসাইটের সব তথ্য শুধুমাত্র সাধারণ শিক্ষা ও সচেতনতার উদ্দেশ্যে প্রকাশিত। এটি কোনো চিকিৎসকের পরামর্শ, রোগ নির্ণয় বা চিকিৎসার বিকল্প নয়।",
     "always_consult_a_qualified_physician_before_": "আপনার স্বাস্থ্য সম্পর্কে কোনো সিদ্ধান্ত নেওয়ার আগে সবসময় একজন যোগ্য চিকিৎসকের সঙ্গে পরামর্শ করুন। এই ওয়েবসাইটে পড়া কোনো তথ্যের কারণে চিকিৎসকের পরামর্শ উপেক্ষা করবেন না বা চিকিৎসা নিতে দেরি করবেন না।",
@@ -112,7 +107,6 @@
     "using_this_website_does_not_create_a_doctor_": "এই ওয়েবসাইট ব্যবহারের মাধ্যমে আপনার ও বিকেপিএ ফাউন্ডেশনের মধ্যে কোনো ডাক্তার-রোগী সম্পর্ক তৈরি হয় না।",
     "about_the_organisation": "প্রতিষ্ঠান পরিচিতি",
     "bangladesh_kidney_patient_foundation_bkpa_fo": "বাংলাদেশ কিডনি পেশেন্ট ফাউন্ডেশন (বিকেপিএ ফাউন্ডেশন) একটি অলাভজনক স্বেচ্ছাসেবী সামাজিক সংগঠন, যা ২০১৫ সালের এপ্রিল মাসে প্রতিষ্ঠিত। আমাদের কাজ কিডনি রোগ প্রতিরোধে সচেতনতা বৃদ্ধি, তথ্য আদান-প্রদান এবং রোগী ও তাঁদের পরিবারের পাশে দাঁড়ানো।",
-    "registration_number_registration_number_regi": "নিবন্ধন নম্বর: {REGISTRATION.number} · নিবন্ধনকারী কর্তৃপক্ষ: {REGISTRATION.authority} · নিবন্ধনের তারিখ: {REGISTRATION.date}",
     "directory_listings_and_endorsement": "তালিকাভুক্তি ও সুপারিশ",
     "the_listings_of_doctors_hospitals_dialysis_c": "এই ওয়েবসাইটে চিকিৎসক, হাসপাতাল, ডায়ালাইসিস সেন্টার ও ব্লাড ব্যাংকের যে তালিকা রয়েছে, তা জনসাধারণের সুবিধার্থে প্রকাশ্য উৎস থেকে সংগৃহীত।",
     "inclusion_in_a_listing_is_not_a_recommendati": "তালিকায় অন্তর্ভুক্তি কোনো সুপারিশ, অনুমোদন বা মানের নিশ্চয়তা নয়। বিকেপিএ ফাউন্ডেশন কোনো চিকিৎসক বা প্রতিষ্ঠানের যোগ্যতা, লাইসেন্স বা সেবার মান যাচাই করে না এবং তার দায়িত্ব নেয় না।",

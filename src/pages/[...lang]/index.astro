@@ -100,7 +100,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
             <div>
               <CategoryIcon slug={c.slug} class="h-6 w-6 text-(--color-deep)" />
               <p class="mt-2.5 text-display-4">
-                {t.home.c_labelen}
+                {lang === "en" ? c.labelEn : c.labelBn}
               </p>
             </div>
             <span class="font-mono text-xs text-(--color-ink-soft) tabular-nums">{countFor(c.slug)} {t.home.articles}</span>
@@ -121,7 +121,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
       <div class="grid grid-cols-2 gap-3.5 sm:grid-cols-3">
         {EMERGENCY_CATEGORIES.map((c) => (
           <a class="rounded-lg border border-[color-mix(in_srgb,var(--color-deep-ink)_30%,transparent)] bg-[color-mix(in_srgb,var(--color-deep-ink)_12%,transparent)] p-4.5 hover:bg-[color-mix(in_srgb,var(--color-deep-ink)_20%,transparent)]" href={slugSelector(`/emergency-contacts/${c.slug}`, lang)}>
-            <span class="block text-sm font-semibold">{t.home.c_labelen}</span>
+            <span class="block text-sm font-semibold">{lang === "en" ? c.labelEn : c.labelBn}</span>
           </a>
         ))}
       </div>

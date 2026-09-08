@@ -53,7 +53,6 @@
     "answer_a_few_quick_questions_and_we_ll_point": "Answer a few quick questions and we'll point you to the right resources for you.",
     "know_your_kidney": "Know Your Kidney",
     "from_kidney_basics_to_dialysis_and_transplan": "From kidney basics to dialysis and transplantation — every topic explained in plain Bengali and English.",
-    "c_labelen": "{c.labelEn}",
     "articles": "articles",
     "when_you_need_it_now": "When you need it now",
     "emergency_contacts": "Emergency Contacts",
@@ -78,8 +77,6 @@
   },
   "emergency": {
     "emergency_contacts": "Emergency Contacts",
-    "meta_labelen_entry_data_title": "{meta?.labelEn ?? entry.data.title}",
-    "c_labelen": "{c.labelEn}",
     "when_you_need_it_now": "When you need it now",
     "from_nephrologists_to_blood_banks_find_the_r": "From nephrologists to blood banks — find the right contact by category, fast.",
     "entries": "entries"
@@ -97,14 +94,12 @@
     "answer_a_few_quick_questions_and_we_ll_point": "Answer a few quick questions and we'll point you to the right resources."
   },
   "kidney": {
-    "cat_labelen": "{cat.labelEn}",
     "know_your_kidney": "Know Your Kidney",
     "no_articles_have_been_published_in_this_cate": "No articles have been published in this category yet."
   },
   "legal": {
     "legal_information": "Legal Information",
     "legal_compliance": "Legal & Compliance",
-    "last_updated_last_updated_en": "Last updated: {LAST_UPDATED_EN}",
     "this_is_not_medical_advice": "This is not medical advice",
     "everything_on_this_website_is_published_for_": "Everything on this website is published for general education and awareness only. It is not a substitute for professional medical advice, diagnosis or treatment.",
     "always_consult_a_qualified_physician_before_": "Always consult a qualified physician before making decisions about your health. Never disregard professional medical advice, or delay seeking it, because of something you have read here.",
@@ -112,7 +107,6 @@
     "using_this_website_does_not_create_a_doctor_": "Using this website does not create a doctor–patient relationship between you and BKPA Foundation.",
     "about_the_organisation": "About the organisation",
     "bangladesh_kidney_patient_foundation_bkpa_fo": "Bangladesh Kidney Patient Foundation (BKPA Foundation) is a non-profit, volunteer-run social organisation formed in April 2015. Our work is awareness, information-sharing and support for kidney patients and their families.",
-    "registration_number_registration_number_regi": "Registration number: {REGISTRATION.number} · Registering authority: {REGISTRATION.authority} · Registered: {REGISTRATION.date}",
     "directory_listings_and_endorsement": "Directory listings and endorsement",
     "the_listings_of_doctors_hospitals_dialysis_c": "The listings of doctors, hospitals, dialysis centres and blood banks on this website are compiled from publicly available sources as a convenience to the public.",
     "inclusion_in_a_listing_is_not_a_recommendati": "Inclusion in a listing is not a recommendation, endorsement, or guarantee of quality. BKPA Foundation does not verify the credentials, licensing or standard of care of any listed practitioner or institution, and accepts no responsibility for them.",

@@ -55,7 +55,7 @@ const pageSchema = [
   <article class="py-12">
     <div class="mx-auto max-w-6xl px-6 md:px-10">
       <a class="text-eyebrow text-(--color-ink-soft) hover:text-(--color-deep)" href={slugSelector(`/know-your-kidney/${cat.slug}`, lang)}>
-        ← {t.kidney.cat_labelen}
+        ← {lang === "en" ? cat.labelEn : cat.labelBn}
       </a>
       <h1 class="mt-3 text-display-2 text-balance text-(--color-ink)">{entry.data.title}</h1>
       {entry.data.date && (

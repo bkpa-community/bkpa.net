@@ -42,7 +42,7 @@ const pageSchema = breadcrumbSchema([
           <a class="flex flex-col justify-between gap-4 rounded-lg border border-(--color-line) bg-(--color-surface) p-6 hover:border-(--color-deep)" href={slugSelector(`/emergency-contacts/${c.slug}`, lang)}>
             <div>
               <h2 class="text-display-4">
-                {t.emergency.c_labelen}
+                {lang === "en" ? c.labelEn : c.labelBn}
               </h2>
             </div>
             <span class="font-mono text-xs text-(--color-ink-soft) tabular-nums">

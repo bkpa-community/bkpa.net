@@ -64,7 +64,7 @@ const pageSchema = [
       <h1 class="mt-1.5 flex items-center gap-3 text-display-2 text-(--color-ink)">
         <CategoryIcon slug={cat.slug} class="h-8 w-8 flex-none text-(--color-deep)" />
         <span>
-          {t.kidney.cat_labelen}
+          {lang === "en" ? cat.labelEn : cat.labelBn}
         </span>
       </h1>
 

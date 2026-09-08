@@ -93,7 +93,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     const query = input.value.trim();
     if (!query) {
       resultsEl.innerHTML =
-        '<p class="px-3 py-8 text-center text-[1.0625rem] text-(--color-ink-soft) sm:text-sm">{t.search.start_typing}</p>';
+        `<p class="px-3 py-8 text-center text-[1.0625rem] text-(--color-ink-soft) sm:text-sm">${t.startTyping}</p>`;
       return;
     }
     resultsEl.innerHTML = '<p class="px-3 py-8 text-center text-[1.0625rem] text-(--color-ink-soft) sm:text-sm">…</p>';
