@@ -36,10 +36,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 </div>
 
 <script define:vars={{ base }}>
-  const modal = document.getElementById("search-modal");
-  const input = document.getElementById("search-input");
-  const resultsEl = document.getElementById("search-results");
-  const closeBtn = document.getElementById("search-close");
+  let modal, input, resultsEl, closeBtn;
+
+  function grabElements() {
+    modal = document.getElementById("search-modal");
+    input = document.getElementById("search-input");
+    resultsEl = document.getElementById("search-results");
+    closeBtn = document.getElementById("search-close");
+    return Boolean(modal && input && resultsEl && closeBtn);
+  }
+  grabElements();
 
   let pagefind = null;
   let pagefindLoading = null;
@@ -72,17 +78,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     document.body.style.overflow = "";
   }
 
-  document.querySelectorAll("[data-search-open]").forEach((btn) => btn.addEventListener("click", openModal));
-  closeBtn.addEventListener("click", closeModal);
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeModal();
-  });
+  // Bound once: document outlives every navigation.
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+    if (e.key === "Escape" && modal?.classList.contains("open")) closeModal();
   });
 
   let debounceTimer;
-  input.addEventListener("input", () => {
+
+  function onSearchInput() {
     clearTimeout(debounceTimer);
     const query = input.value.trim();
     if (!query) {
@@ -113,5 +116,42 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         resultsEl.appendChild(a);
       }
     }, 200);
-  });
+  }
+
+  /**
+   * Astro swaps the body on navigation, so the modal and the header's search
+   * button are new elements each time and their handlers have to be attached
+   * again. Guarded per element, so a repeated pass cannot double-bind and make
+   * one click toggle the modal twice.
+   *
+   * Pagefind's loaded index deliberately stays at module scope above: it is
+   * fetched once and reused, not re-downloaded on every page.
+   */
+  function bindSearch() {
+    if (!grabElements()) return;
+
+    document.querySelectorAll("[data-search-open]").forEach((btn) => {
+      if (btn.dataset.searchBound) return;
+      btn.dataset.searchBound = "1";
+      btn.addEventListener("click", openModal);
+    });
+
+    if (!closeBtn.dataset.searchBound) {
+      closeBtn.dataset.searchBound = "1";
+      closeBtn.addEventListener("click", closeModal);
+    }
+    if (!modal.dataset.searchBound) {
+      modal.dataset.searchBound = "1";
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+    }
+    if (!input.dataset.searchBound) {
+      input.dataset.searchBound = "1";
+      input.addEventListener("input", onSearchInput);
+    }
+  }
+
+  bindSearch();
+  document.addEventListener("astro:page-load", bindSearch);
 </script>

@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import SearchModal from "../components/SearchModal.astro";
@@ -62,6 +63,7 @@ const schemaBlocks = [organizationSchema(), ...(schema ? (Array.isArray(schema) 
         rel="stylesheet"
       />
     </noscript>
+    <ClientRouter />
   </head>
   <body id="page" data-lang="bn" class="overflow-x-hidden">
     <Header />
@@ -71,56 +73,94 @@ const schemaBlocks = [organizationSchema(), ...(schema ? (Array.isArray(schema) 
     <Footer />
     <SearchModal />
     <script>
-      const page = document.getElementById("page")!;
-      const saved = (() => {
+      /**
+       * Wiring for client-side routing.
+       *
+       * Astro replaces the whole body on navigation, so every element these
+       * listeners are attached to is discarded and rebuilt. Binding once on
+       * first load would therefore work exactly until the reader clicked
+       * something. Everything element-bound is instead (re)bound on
+       * astro:page-load, which fires on the initial load and after every
+       * navigation.
+       *
+       * Each bind is guarded by a data flag, so if this script is ever
+       * evaluated more than once no element ends up with duplicate handlers
+       * firing a toggle twice and cancelling itself out.
+       */
+      type Lang = "bn" | "en";
+      const LANG_KEY = "bkpa-lang";
+
+      function savedLang(): Lang | null {
         try {
-          return localStorage.getItem("bkpa-lang");
+          const value = localStorage.getItem(LANG_KEY);
+          return value === "en" || value === "bn" ? value : null;
         } catch {
           return null;
         }
-      })();
-      if (saved === "en" || saved === "bn") {
-        page.setAttribute("data-lang", saved);
-        document.documentElement.lang = saved;
       }
 
-      function setLang(lang: "bn" | "en") {
-        page.setAttribute("data-lang", lang);
+      function applyLang(lang: Lang) {
+        document.body.setAttribute("data-lang", lang);
         document.documentElement.lang = lang;
         document.querySelectorAll<HTMLButtonElement>("[data-lang-btn]").forEach((btn) => {
           btn.setAttribute("aria-pressed", String(btn.dataset.langBtn === lang));
         });
+      }
+
+      function setLang(lang: Lang) {
+        applyLang(lang);
         try {
-          localStorage.setItem("bkpa-lang", lang);
+          localStorage.setItem(LANG_KEY, lang);
         } catch {}
       }
-      document.querySelectorAll<HTMLButtonElement>("[data-lang-btn]").forEach((btn) => {
-        btn.setAttribute("aria-pressed", String(btn.dataset.langBtn === page.getAttribute("data-lang")));
-        btn.addEventListener("click", () => setLang(btn.dataset.langBtn as "bn" | "en"));
-      });
 
-      const mobBtn = document.getElementById("mobile-toggle");
-      const mobNav = document.getElementById("mobile-nav");
-
-      // The open menu is capped at the viewport minus the bar above it, so a
-      // long menu scrolls instead of running off the bottom with no way back.
-      // Measured rather than assumed: the bar's height changes with the
-      // viewport, and a hardcoded guess either clips the last item or leaves
-      // a dead gap under it.
-      const headerBar = document.querySelector("header > div");
-      function syncMenuHeight() {
-        if (!headerBar || !mobNav) return;
-        const barHeight = headerBar.getBoundingClientRect().height;
-        mobNav.style.setProperty("--header-h", `${barHeight}px`);
+      /** The body's data-lang resets to the server default on every swap. */
+      function restoreLang() {
+        applyLang(savedLang() ?? ((document.body.getAttribute("data-lang") as Lang) || "bn"));
       }
-      syncMenuHeight();
-      window.addEventListener("resize", syncMenuHeight);
 
-      mobBtn?.addEventListener("click", () => {
+      function syncMenuHeight() {
+        const headerBar = document.querySelector("header > div");
+        const mobNav = document.getElementById("mobile-nav");
+        if (!headerBar || !mobNav) return;
+        mobNav.style.setProperty("--header-h", `${headerBar.getBoundingClientRect().height}px`);
+      }
+
+      function bind() {
+        restoreLang();
+
+        document.querySelectorAll<HTMLButtonElement>("[data-lang-btn]").forEach((btn) => {
+          if (btn.dataset.bound) return;
+          btn.dataset.bound = "1";
+          btn.addEventListener("click", () => setLang(btn.dataset.langBtn as Lang));
+        });
+
+        const mobBtn = document.getElementById("mobile-toggle");
+        const mobNav = document.getElementById("mobile-nav");
+
+        // A fresh body means a freshly closed menu; make the button agree.
+        mobNav?.classList.remove("open");
+        mobBtn?.setAttribute("aria-expanded", "false");
         syncMenuHeight();
-        const open = mobNav?.classList.toggle("open");
-        mobBtn.setAttribute("aria-expanded", String(!!open));
-      });
+
+        if (mobBtn && !mobBtn.dataset.bound) {
+          mobBtn.dataset.bound = "1";
+          mobBtn.addEventListener("click", () => {
+            syncMenuHeight();
+            const open = document.getElementById("mobile-nav")?.classList.toggle("open");
+            mobBtn.setAttribute("aria-expanded", String(!!open));
+          });
+        }
+      }
+
+      // Correct the language before paint so the server default never flashes.
+      document.addEventListener("astro:after-swap", restoreLang);
+
+      // Fires on first load and after every client-side navigation.
+      document.addEventListener("astro:page-load", bind);
+
+      // window survives navigation, so this binds once and stays valid.
+      window.addEventListener("resize", syncMenuHeight);
     </script>
   </body>
 </html>

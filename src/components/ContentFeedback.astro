@@ -87,5 +87,12 @@
     });
   }
 
-  document.querySelectorAll(".content-feedback").forEach((el) => initContentFeedback(el));
+  function initAll() {
+    document.querySelectorAll(".content-feedback").forEach((el) => initContentFeedback(el));
+  }
+
+  initAll();
+  // This component is page content, so it is replaced on every client-side
+  // navigation and has to be wired up again each time.
+  document.addEventListener("astro:page-load", initAll);
 </script>
