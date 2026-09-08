@@ -1,6 +1,13 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import FindHelpWizard from "../components/FindHelpWizard.astro";
+import { languagePaths } from "@/lib/languageParser";
+
+export function getStaticPaths() {
+  return languagePaths();
+}
+
+const { lang } = Astro.props;
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import FindHelpWizard from "@/components/FindHelpWizard.astro";
 ---
 
 <BaseLayout title="Find Help" description="Answer a few quick questions and we'll point you to the right BKPA Foundation resources.">

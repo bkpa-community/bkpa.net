@@ -1,15 +1,20 @@
 ---
 import { getArticles } from "@/lib/content";
-import { defaultLanguage } from "@/lib/languageParser";
-import BaseLayout from "../../../layouts/BaseLayout.astro";
-import CategoryIcon from "../../../components/CategoryIcon.astro";
-import { CATEGORIES, categoryBySlug } from "../../../lib/categories";
-import { collectionPageSchema, breadcrumbSchema } from "../../../lib/schema";
+import { langParam, supportedLanguages } from "@/lib/languageParser";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import CategoryIcon from "@/components/CategoryIcon.astro";
+import { CATEGORIES, categoryBySlug } from "@/lib/categories";
+import { collectionPageSchema, breadcrumbSchema } from "@/lib/schema";
 
-const lang = defaultLanguage.languageCode;
+const { lang } = Astro.props;
 
 export async function getStaticPaths() {
-  return CATEGORIES.map((c) => ({ params: { category: c.slug } }));
+  return supportedLanguages.flatMap((language) =>
+    CATEGORIES.map((c) => ({
+      params: { lang: langParam(language.languageCode), category: c.slug },
+      props: { lang: language.languageCode },
+    })),
+  );
 }
 
 function excerpt(markdown: string, maxLength = 160) {

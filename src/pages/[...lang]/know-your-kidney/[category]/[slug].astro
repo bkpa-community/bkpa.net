@@ -1,26 +1,32 @@
 ---
 import { getArticles } from "@/lib/content";
-import { defaultLanguage } from "@/lib/languageParser";
-import BaseLayout from "../../../layouts/BaseLayout.astro";
-import ContentFeedback from "../../../components/ContentFeedback.astro";
-import OpenRemark from "../../../components/OpenRemark.astro";
+import { langParam, supportedLanguages } from "@/lib/languageParser";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ContentFeedback from "@/components/ContentFeedback.astro";
+import OpenRemark from "@/components/OpenRemark.astro";
 import { render } from "astro:content";
-import { categoryBySlug } from "../../../lib/categories";
-import { articleSchema, breadcrumbSchema } from "../../../lib/schema";
+import { categoryBySlug } from "@/lib/categories";
+import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 
-const lang = defaultLanguage.languageCode;
 
 export async function getStaticPaths() {
-  const all = (await getArticles(defaultLanguage.languageCode)).filter((a) => !a.data.draft);
-  return all.map((a) => {
-    const [category, ...rest] = a.id.split("/");
-    return { params: { category, slug: rest.join("/") }, props: { entry: a } };
-  });
+  const paths = [];
+  for (const language of supportedLanguages) {
+    const all = (await getArticles(language.languageCode)).filter((a) => !a.data.draft);
+    for (const a of all) {
+      const [category, ...rest] = a.id.split("/");
+      paths.push({
+        params: { lang: langParam(language.languageCode), category, slug: rest.join("/") },
+        props: { entry: a, lang: language.languageCode },
+      });
+    }
+  }
+  return paths;
 }
 
 const { category } = Astro.params;
 const cat = categoryBySlug(category)!;
-const { entry } = Astro.props;
+const { entry, lang } = Astro.props;
 const { Content } = await render(entry);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const articlePath = `/know-your-kidney/${cat.slug}/${entry.id.split("/").slice(1).join("/")}`;

@@ -1,19 +1,30 @@
 ---
 import { getEmergencyContacts } from "@/lib/content";
-import { defaultLanguage } from "@/lib/languageParser";
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import { langParam, supportedLanguages } from "@/lib/languageParser";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 import { render } from "astro:content";
-import { EMERGENCY_CATEGORIES } from "../../lib/categories";
-import { breadcrumbSchema } from "../../lib/schema";
+import { EMERGENCY_CATEGORIES } from "@/lib/categories";
+import { breadcrumbSchema } from "@/lib/schema";
 
-const lang = defaultLanguage.languageCode;
 
 export async function getStaticPaths() {
-  const all = await getEmergencyContacts(defaultLanguage.languageCode);
-  return all.map((entry) => ({ params: { category: entry.id }, props: { entry } }));
+  // One route per language per category. The content itself falls back to
+  // Bengali inside getEmergencyContacts, so an English route exists even
+  // before an English file does.
+  const paths = [];
+  for (const language of supportedLanguages) {
+    const all = await getEmergencyContacts(language.languageCode);
+    for (const entry of all) {
+      paths.push({
+        params: { lang: langParam(language.languageCode), category: entry.id },
+        props: { entry, lang: language.languageCode },
+      });
+    }
+  }
+  return paths;
 }
 
-const { entry } = Astro.props;
+const { entry, lang } = Astro.props;
 const meta = EMERGENCY_CATEGORIES.find((c) => c.slug === entry.id);
 const { Content } = await render(entry);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");

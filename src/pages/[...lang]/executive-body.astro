@@ -1,10 +1,14 @@
 ---
-import { getSiteAbout, getTeam } from "@/lib/content";
-import { defaultLanguage } from "@/lib/languageParser";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { breadcrumbSchema } from "../lib/schema";
+import { languagePaths } from "@/lib/languageParser";
 
-const lang = defaultLanguage.languageCode;
+export function getStaticPaths() {
+  return languagePaths();
+}
+
+const { lang } = Astro.props;
+import { getSiteAbout, getTeam } from "@/lib/content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { breadcrumbSchema } from "@/lib/schema";
 
 const about = (await getSiteAbout(lang))!.data;
 const members = (await getTeam(lang)).sort((a, b) => a.data.order - b.data.order);

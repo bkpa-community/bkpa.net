@@ -1,11 +1,15 @@
 ---
-import { getEmergencyContacts } from "@/lib/content";
-import { defaultLanguage } from "@/lib/languageParser";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import { EMERGENCY_CATEGORIES } from "../../lib/categories";
-import { breadcrumbSchema } from "../../lib/schema";
+import { languagePaths } from "@/lib/languageParser";
 
-const lang = defaultLanguage.languageCode;
+export function getStaticPaths() {
+  return languagePaths();
+}
+
+const { lang } = Astro.props;
+import { getEmergencyContacts } from "@/lib/content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { EMERGENCY_CATEGORIES } from "@/lib/categories";
+import { breadcrumbSchema } from "@/lib/schema";
 
 const all = await getEmergencyContacts(lang);
 const countFor = (slug: string) => all.find((e) => e.id === slug)?.data.items?.length ?? 0;

@@ -1,12 +1,16 @@
 ---
-import { getArticles, getGallery, getSiteHome } from "@/lib/content";
-import { defaultLanguage } from "@/lib/languageParser";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import CategoryIcon from "../components/CategoryIcon.astro";
-import FindHelpWizard from "../components/FindHelpWizard.astro";
-import { CATEGORIES, EMERGENCY_CATEGORIES } from "../lib/categories";
+import { languagePaths } from "@/lib/languageParser";
 
-const lang = defaultLanguage.languageCode;
+export function getStaticPaths() {
+  return languagePaths();
+}
+
+const { lang } = Astro.props;
+import { getArticles, getGallery, getSiteHome } from "@/lib/content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import CategoryIcon from "@/components/CategoryIcon.astro";
+import FindHelpWizard from "@/components/FindHelpWizard.astro";
+import { CATEGORIES, EMERGENCY_CATEGORIES } from "@/lib/categories";
 
 const home = (await getSiteHome(lang))!.data;
 

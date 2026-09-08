@@ -1,6 +1,13 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { breadcrumbSchema } from "../lib/schema";
+import { languagePaths } from "@/lib/languageParser";
+
+export function getStaticPaths() {
+  return languagePaths();
+}
+
+const { lang } = Astro.props;
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { breadcrumbSchema } from "@/lib/schema";
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
