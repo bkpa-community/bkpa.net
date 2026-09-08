@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "home": "Home",
+    "executive_body": "Executive Body",
+    "know_your_kidney": "Know Your Kidney",
+    "emergency_contacts": "Emergency Contacts",
+    "contact": "Contact Us",
+    "find_help": "Find Help",
+    "faq": "FAQ",
+    "legal": "Legal & Compliance",
+    "organization": "Organization",
+    "toggle_menu": "Menu"
+  },
+  "common": {
+    "language": "Language",
+    "all_rights": "All rights reserved.",
+    "articles_count": "articles",
+    "read_more": "Read more",
+    "back": "Back"
+  },
+  "search": {
+    "label": "Search",
+    "placeholder": "Search the site...",
+    "start_typing": "Start typing to search...",
+    "no_results": "No results found.",
+    "unavailable": "Search is unavailable right now.",
+    "close": "Close search",
+    "dialog_label": "Site search"
+  },
+  "feedback": {
+    "question": "How helpful was this content?",
+    "thanks": "Thanks for your feedback!"
+  },
+  "home": {
+    "eyebrow_org": "Non-profit Charitable Association · Founded 2015",
+    "emergency_help": "Emergency Help",
+    "educational_resource": "Educational Resource",
+    "know_your_kidney_heading": "Know Your Kidney",
+    "know_your_kidney_intro": "From kidney basics to dialysis and transplantation — every topic explained in plain Bengali and English.",
+    "when_you_need_it": "When you need it now",
+    "find_help_eyebrow": "Find Help",
+    "find_help_heading": "How can we help you?",
+    "find_help_intro": "Answer a few questions and we will point you to the right information."
+  },
+  "wizard": {
+    "step": "Step",
+    "restart": "Start over",
+    "next": "Next"
+  },
+  "footer": {
+    "org_full_name": "Bangladesh Kidney Patient Association Foundation",
+    "developed_by": "Developed by"
+  }
+}

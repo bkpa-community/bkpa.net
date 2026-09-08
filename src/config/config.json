@@ -1,0 +1,30 @@
+{
+  "site": {
+    "title": "BKPA Foundation",
+    "base_url": "https://www.bkpa.net",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/favicon.png",
+    "logo": "/images/logo.png",
+    "logo_darkmode": "/images/logo-white.png",
+    "logo_width": "420",
+    "logo_height": "127",
+    "logo_text": "BKPA Foundation"
+  },
+  "settings": {
+    "search": true,
+    "sticky_header": true,
+    "theme_switcher": true,
+    "default_theme": "system",
+    "pagination": 12
+  },
+  "params": {
+    "contact_form_action": "",
+    "copyright": "BKPA Foundation"
+  },
+  "metadata": {
+    "meta_author": "BKPA Foundation",
+    "meta_image": "/images/logo.png",
+    "meta_description": "Bangladesh Kidney Patient Foundation — kidney health awareness, education and emergency contacts."
+  }
+}

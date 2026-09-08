@@ -1,0 +1,16 @@
+[
+  {
+    "languageName": "বাংলা",
+    "languageCode": "bn",
+    "contentDir": "bn",
+    "weight": 1,
+    "default": true
+  },
+  {
+    "languageName": "English",
+    "languageCode": "en",
+    "contentDir": "en",
+    "weight": 2,
+    "default": false
+  }
+]

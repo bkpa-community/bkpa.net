@@ -1,0 +1,53 @@
+{
+  "main": [
+    {
+      "name": "হোম",
+      "url": "/"
+    },
+    {
+      "name": "কার্যনির্বাহী পরিষদ",
+      "url": "/executive-body"
+    },
+    {
+      "name": "কিডনি সম্পর্কে জানুন",
+      "url": "/know-your-kidney",
+      "hasChildren": true,
+      "children": "categories"
+    },
+    {
+      "name": "জরুরি যোগাযোগ",
+      "url": "/emergency-contacts",
+      "hasChildren": true,
+      "children": "emergencyCategories"
+    },
+    {
+      "name": "যোগাযোগ",
+      "url": "/contact"
+    }
+  ],
+  "cta": {
+    "name": "সহায়তা খুঁজুন",
+    "url": "/find-help"
+  },
+  "footer": [
+    {
+      "name": "কার্যনির্বাহী পরিষদ",
+      "url": "/executive-body"
+    },
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/groups/bkpafoundation",
+      "external": true
+    },
+    {
+      "name": "যোগাযোগ",
+      "url": "/contact"
+    }
+  ],
+  "footer_bottom": [
+    {
+      "name": "আইন ও সম্মতি",
+      "url": "/legal"
+    }
+  ]
+}

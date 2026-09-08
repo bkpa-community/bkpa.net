@@ -1,0 +1,53 @@
+{
+  "main": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Executive Body",
+      "url": "/executive-body"
+    },
+    {
+      "name": "Know Your Kidney",
+      "url": "/know-your-kidney",
+      "hasChildren": true,
+      "children": "categories"
+    },
+    {
+      "name": "Emergency Contacts",
+      "url": "/emergency-contacts",
+      "hasChildren": true,
+      "children": "emergencyCategories"
+    },
+    {
+      "name": "Contact Us",
+      "url": "/contact"
+    }
+  ],
+  "cta": {
+    "name": "Find Help",
+    "url": "/find-help"
+  },
+  "footer": [
+    {
+      "name": "Executive Body",
+      "url": "/executive-body"
+    },
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/groups/bkpafoundation",
+      "external": true
+    },
+    {
+      "name": "Contact Us",
+      "url": "/contact"
+    }
+  ],
+  "footer_bottom": [
+    {
+      "name": "Legal & Compliance",
+      "url": "/legal"
+    }
+  ]
+}
