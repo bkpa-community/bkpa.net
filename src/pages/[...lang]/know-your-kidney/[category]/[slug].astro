@@ -51,7 +51,7 @@ const pageSchema = [
 ];
 ---
 
-<BaseLayout lang={lang} title={entry.data.title} description={entry.data.description || cat.labelEn} schema={pageSchema}>
+<BaseLayout lang={lang} title={entry.data.title} description={entry.data.description || cat.labelEn} schema={pageSchema} image={entry.data.image} ogType="article">
   <article class="py-12">
     <div class="mx-auto max-w-6xl px-6 md:px-10">
       <a class="text-eyebrow text-(--color-ink-soft) hover:text-(--color-deep)" href={slugSelector(`/know-your-kidney/${cat.slug}`, lang)}>
