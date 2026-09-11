@@ -190,9 +190,47 @@ body {
      for links and actions in article bodies. --color-ink rather than #000 so
      it stays legible in dark mode. */
   color: var(--color-ink);
-  margin-top: 1.6em;
-  margin-bottom: 0.5em;
   font-weight: 600;
+  /* Tighter than body text — a heading is one or two lines and reads as a
+     unit — but not so tight that Bengali matras collide between lines. */
+  line-height: 1.3;
+  margin-bottom: 0.5em;
+  text-wrap: balance;
+}
+
+/* Heading scale for article bodies.
+
+   Tailwind's reset sets every heading to the body size, and nothing here set
+   one back, so h1 through h6 all rendered at 16px and differed from paragraphs
+   by weight alone — no hierarchy at all.
+
+   The scale is weighted to how the articles are actually written: across 95
+   posts, h3 is the primary section heading (81 uses), h4 the subsection (34),
+   h5 beneath that (17), while h1 and h2 barely appear in bodies. So h3 is
+   sized as a real section break, and the levels above it exist mainly so
+   nothing renders undersized if an author does use them.
+
+   Margins scale with size: a larger heading closes a larger section and
+   needs more air above it. */
+.prose-bkpa h1 { font-size: clamp(1.75rem, 1.5rem + 1vw, 2.125rem); margin-top: 2em; }
+.prose-bkpa h2 { font-size: clamp(1.55rem, 1.35rem + 0.8vw, 1.875rem); margin-top: 1.9em; }
+.prose-bkpa h3 { font-size: clamp(1.35rem, 1.2rem + 0.6vw, 1.5rem); margin-top: 1.8em; }
+.prose-bkpa h4 { font-size: clamp(1.2rem, 1.1rem + 0.4vw, 1.25rem); margin-top: 1.6em; }
+.prose-bkpa h5 { font-size: 1.1rem; margin-top: 1.5em; }
+.prose-bkpa h6 {
+  font-size: 0.95rem;
+  margin-top: 1.5em;
+  /* The lowest level reads as a label rather than a smaller heading. */
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
+/* The first heading in a body should not push the text down from the header
+   illustration by its full section gap. */
+.prose-bkpa > :is(h1, h2, h3, h4, h5, h6):first-child {
+  margin-top: 0;
 }
 .prose-bkpa p {
   margin-block: 1em;
