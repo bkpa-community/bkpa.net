@@ -28,7 +28,7 @@ const label = (c: { labelEn: string; labelBn: string }) =>
       <h4 class="mb-3.5 text-eyebrow text-(--color-ink-soft)">{t.nav.know_your_kidney}</h4>
       <ul class="flex flex-col gap-2.5">
         {CATEGORIES.slice(0, 4).map((c) => (
-          <li><a class="text-sm hover:text-(--color-deep)" href={slugSelector(`/know-your-kidney/${c.slug}`, lang)}>{label(c)}</a></li>
+          <li><a class="text-sm hover:text-(--color-deep)" href={slugSelector(`/${c.slug}`, lang)}>{label(c)}</a></li>
         ))}
       </ul>
     </div>

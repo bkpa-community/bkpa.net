@@ -22,7 +22,7 @@ const menu = getMenu(lang);
 const CHILDREN = {
   categories: CATEGORIES.map((c) => ({
     name: lang === "en" ? c.labelEn : c.labelBn,
-    url: `/know-your-kidney/${c.slug}`,
+    url: `/${c.slug}`,
     slug: c.slug,
   })),
   emergencyCategories: EMERGENCY_CATEGORIES.map((c) => ({

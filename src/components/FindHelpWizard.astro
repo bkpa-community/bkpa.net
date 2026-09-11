@@ -24,7 +24,7 @@ function excerpt(markdown: string, maxLength = 140) {
 
 const allArticles = (await getArticles(lang)).filter((a) => !a.data.draft);
 const articleByHref = new Map(
-  allArticles.map((a) => [`${base}/know-your-kidney/${a.id}`, a])
+  allArticles.map((a) => [`${base}/${a.id}`, a])
 );
 
 const STEPS = [
@@ -97,105 +97,105 @@ const STEPS = [
 const TOPICS: Record<string, { bn: string; en: string; desc: { bn: string; en: string }; links: { bn: string; en: string; href: string }[] }> = {
   diet: {
     bn: "রেনাল ডায়েট", en: "Renal Diet", desc: { bn: "কী খাবেন, কী খাবেন না", en: "What to eat and avoid" },
-    links: [{ bn: "রেনাল ডায়েট নির্দেশিকা", en: "Renal diet guideline", href: `${base}/know-your-kidney/renal-diet/renal-diet-guideline` }],
+    links: [{ bn: "রেনাল ডায়েট নির্দেশিকা", en: "Renal diet guideline", href: `${base}/renal-diet/renal-diet-guideline` }],
   },
   potassium: {
     bn: "পটাসিয়াম নিয়ন্ত্রণ", en: "Potassium Control", desc: { bn: "সবজি থেকে পটাসিয়াম কমানো", en: "Reducing potassium from vegetables" },
-    links: [{ bn: "পটাসিয়াম ও CKD", en: "Potassium & CKD", href: `${base}/know-your-kidney/renal-diet/electrolyte-balance-potassium-during-ckd` }],
+    links: [{ bn: "পটাসিয়াম ও CKD", en: "Potassium & CKD", href: `${base}/renal-diet/electrolyte-balance-potassium-during-ckd` }],
   },
   phosphorus: {
     bn: "ফসফরাস নিয়ন্ত্রণ", en: "Phosphorus Control", desc: { bn: "হাড় সুরক্ষা ও খাদ্য", en: "Bone protection & diet" },
-    links: [{ bn: "ফসফরাস বা ফসফেট", en: "Phosphorus or Phosphate", href: `${base}/know-your-kidney/renal-diet/phosphorus-or-phosphate` }],
+    links: [{ bn: "ফসফরাস বা ফসফেট", en: "Phosphorus or Phosphate", href: `${base}/renal-diet/phosphorus-or-phosphate` }],
   },
   water: {
     bn: "পানি নিয়ন্ত্রণ", en: "Water Intake", desc: { bn: "দৈনিক পানির পরিমাণ", en: "Daily fluid amount" },
-    links: [{ bn: "পানি ব্যালেন্স (ডায়ালাইসিস)", en: "Water balance (dialysis)", href: `${base}/know-your-kidney/renal-diet/water-balance-in-dialysis` }],
+    links: [{ bn: "পানি ব্যালেন্স (ডায়ালাইসিস)", en: "Water balance (dialysis)", href: `${base}/renal-diet/water-balance-in-dialysis` }],
   },
   salt: {
     bn: "লবন নিয়ন্ত্রণ", en: "Salt Control", desc: { bn: "সোডিয়াম সীমিত রাখা", en: "Limiting sodium" },
-    links: [{ bn: "লবন / সোডিয়াম (NaCl)", en: "Salt intake (NaCl)", href: `${base}/know-your-kidney/renal-diet/salt-intake-nacl` }],
+    links: [{ bn: "লবন / সোডিয়াম (NaCl)", en: "Salt intake (NaCl)", href: `${base}/renal-diet/salt-intake-nacl` }],
   },
   dialysis_prep: {
     bn: "ডায়ালাইসিস প্রস্তুতি", en: "Dialysis Prep", desc: { bn: "কখন ও কিভাবে শুরু হয়", en: "When & how it starts" },
-    links: [{ bn: "ডায়ালাইসিস কী, কয় প্রকার ও কেন প্রয়োজন", en: "About Dialysis", href: `${base}/know-your-kidney/dialysis/ডায়ালাইসিস-কি-কয়-প্রকার-এবং-এর-প্রয়োজন-কেন` }],
+    links: [{ bn: "ডায়ালাইসিস কী, কয় প্রকার ও কেন প্রয়োজন", en: "About Dialysis", href: `${base}/dialysis/ডায়ালাইসিস-কি-কয়-প্রকার-এবং-এর-প্রয়োজন-কেন` }],
   },
   dialysis_process: {
     bn: "ডায়ালাইসিস প্রক্রিয়া", en: "Dialysis Process", desc: { bn: "HD ও PD সম্পর্কে জানুন", en: "Learn about HD & PD" },
-    links: [{ bn: "ডায়ালাইসিসের আদ্যপান্ত", en: "All About Dialysis", href: `${base}/know-your-kidney/dialysis/what-is-dialysis-all-about-dialysis` }],
+    links: [{ bn: "ডায়ালাইসিসের আদ্যপান্ত", en: "All About Dialysis", href: `${base}/dialysis/what-is-dialysis-all-about-dialysis` }],
   },
   fistula: {
     bn: "ফিস্টুলা পরিচর্যা", en: "Fistula Care", desc: { bn: "লাইফলাইন রক্ষা করুন", en: "Protect your lifeline" },
     links: [
-      { bn: "ফিস্টুলার ব্যবহারবিধি ও পরিচর্যা", en: "Fistula use & care", href: `${base}/know-your-kidney/dialysis/কিডনি-রোগীদের-লাইফ-লাইন-ফিস্টুলার-ব্যবহারবিধি-এবং-পরিচর্যা` },
+      { bn: "ফিস্টুলার ব্যবহারবিধি ও পরিচর্যা", en: "Fistula use & care", href: `${base}/dialysis/কিডনি-রোগীদের-লাইফ-লাইন-ফিস্টুলার-ব্যবহারবিধি-এবং-পরিচর্যা` },
       { bn: "ভাস্কুলার / ফিস্টুলা সার্জন তালিকা", en: "Vascular / Fistula Surgeons directory", href: `${base}/emergency-contacts/vascular-surgeons` },
     ],
   },
   dry_weight: {
     bn: "ড্রাই ওয়েট", en: "Dry Weight", desc: { bn: "শরীরের পানি ব্যালেন্স", en: "Body fluid balance" },
-    links: [{ bn: "ফ্লুইড ম্যানেজমেন্ট ও ড্রাই ওয়েট", en: "Fluid management & dry weight", href: `${base}/know-your-kidney/dialysis/fluid-management-dry-weight` }],
+    links: [{ bn: "ফ্লুইড ম্যানেজমেন্ট ও ড্রাই ওয়েট", en: "Fluid management & dry weight", href: `${base}/dialysis/fluid-management-dry-weight` }],
   },
   transplant: {
     bn: "ট্রান্সপ্লান্ট", en: "Transplant", desc: { bn: "কিডনি প্রতিস্থাপন", en: "Kidney transplantation" },
     links: [
-      { bn: "কিডনি ট্রান্সপ্লান্টেশন কী", en: "What is kidney transplantation", href: `${base}/know-your-kidney/renal-transplantation/what-is-kidney-transplantation` },
+      { bn: "কিডনি ট্রান্সপ্লান্টেশন কী", en: "What is kidney transplantation", href: `${base}/renal-transplantation/what-is-kidney-transplantation` },
       { bn: "নেফ্রোলজি ডাক্তার তালিকা", en: "Nephrology Doctors directory", href: `${base}/emergency-contacts/nephrology-doctors` },
     ],
   },
   anemia: {
     bn: "রক্তশূন্যতা", en: "Anemia", desc: { bn: "কারণ ও চিকিৎসা", en: "Causes & treatment" },
-    links: [{ bn: "রক্তশূন্যতা ও কিডনি রোগ", en: "Anemia & kidney disease", href: `${base}/know-your-kidney/ckd/anemia` }],
+    links: [{ bn: "রক্তশূন্যতা ও কিডনি রোগ", en: "Anemia & kidney disease", href: `${base}/ckd/anemia` }],
   },
   bone: {
     bn: "হাড়ের সুরক্ষা", en: "Bone Protection", desc: { bn: "ক্যালসিয়াম ও ভিটামিন D", en: "Calcium & Vitamin D" },
-    links: [{ bn: "কিডনি ও বোন মিনারেল ডিজিজ", en: "Kidney & bone mineral disease", href: `${base}/know-your-kidney/ckd/কিডনি-এবং-বন-মিনারেল-ডিজিজ-হাড্ডির-রোগ` }],
+    links: [{ bn: "কিডনি ও বোন মিনারেল ডিজিজ", en: "Kidney & bone mineral disease", href: `${base}/ckd/কিডনি-এবং-বন-মিনারেল-ডিজিজ-হাড্ডির-রোগ` }],
   },
   bp: {
     bn: "রক্তচাপ নিয়ন্ত্রণ", en: "Blood Pressure Control", desc: { bn: "সঠিকভাবে BP মাপা ও নিয়ন্ত্রণ", en: "Measuring & controlling BP" },
-    links: [{ bn: "সঠিকভাবে ব্লাড প্রেশার মাপার নিয়ম", en: "How to measure blood pressure accurately", href: `${base}/know-your-kidney/others/tips-how-to-measure-blood-pressure-accurately` }],
+    links: [{ bn: "সঠিকভাবে ব্লাড প্রেশার মাপার নিয়ম", en: "How to measure blood pressure accurately", href: `${base}/others/tips-how-to-measure-blood-pressure-accurately` }],
   },
   sugar: {
     bn: "সুগার নিয়ন্ত্রণ", en: "Blood Sugar Control", desc: { bn: "ডায়াবেটিস ও কিডনি", en: "Diabetes & kidneys" },
-    links: [{ bn: "ডায়াবেটিস ও নিয়ন্ত্রণ", en: "Diabetes & control", href: `${base}/know-your-kidney/diabetes/ডায়াবেটিস-ও-নিয়ন্ত্রণ` }],
+    links: [{ bn: "ডায়াবেটিস ও নিয়ন্ত্রণ", en: "Diabetes & control", href: `${base}/diabetes/ডায়াবেটিস-ও-নিয়ন্ত্রণ` }],
   },
   tests: {
     bn: "কিডনি পরীক্ষা", en: "Kidney Tests", desc: { bn: "কোন কোন টেস্ট করবেন", en: "Which tests to get" },
-    links: [{ bn: "কিডনি রোগ নিরূপণে প্রয়োজনীয় টেস্ট", en: "Tests to check for kidney disease", href: `${base}/know-your-kidney/kidney-basic/কিডনী-রোগ-নিরুপনের-জন্য-বা-সতর্ক-হতে-সাধারণত-কি-কি-টেস্ট-বা-পরীক্ষা-করতে-হবে` }],
+    links: [{ bn: "কিডনি রোগ নিরূপণে প্রয়োজনীয় টেস্ট", en: "Tests to check for kidney disease", href: `${base}/kidney-basic/কিডনী-রোগ-নিরুপনের-জন্য-বা-সতর্ক-হতে-সাধারণত-কি-কি-টেস্ট-বা-পরীক্ষা-করতে-হবে` }],
   },
   infection: {
     bn: "সংক্রমণ প্রতিরোধ", en: "Infection Prevention", desc: { bn: "ভাইরাস ও ভ্যাকসিন", en: "Viruses & vaccines" },
-    links: [{ bn: "CKD ও ট্রান্সপ্লান্ট আর্টিকেল সমূহ", en: "CKD articles (infections)", href: `${base}/know-your-kidney/ckd` }],
+    links: [{ bn: "CKD ও ট্রান্সপ্লান্ট আর্টিকেল সমূহ", en: "CKD articles (infections)", href: `${base}/ckd` }],
   },
   vaccine: {
     bn: "ভ্যাকসিন গাইড", en: "Vaccine Guide", desc: { bn: "CKD/ট্রান্সপ্লান্ট ভ্যাকসিন", en: "CKD/transplant vaccines" },
-    links: [{ bn: "CKD ও ট্রান্সপ্লান্ট রোগীদের ভ্যাকসিন গাইডলাইন", en: "Vaccine guidelines for CKD/transplant patients", href: `${base}/know-your-kidney/ckd/vaccine-guidelines-for-ckd-transplant-recipient` }],
+    links: [{ bn: "CKD ও ট্রান্সপ্লান্ট রোগীদের ভ্যাকসিন গাইডলাইন", en: "Vaccine guidelines for CKD/transplant patients", href: `${base}/ckd/vaccine-guidelines-for-ckd-transplant-recipient` }],
   },
   symptoms: {
     bn: "কিডনি রোগের লক্ষণ", en: "Kidney Disease Symptoms", desc: { bn: "কিভাবে বুঝবেন", en: "How to recognize it" },
-    links: [{ bn: "কিডনি বেসিক আর্টিকেল সমূহ", en: "Kidney Basics articles", href: `${base}/know-your-kidney/kidney-basic` }],
+    links: [{ bn: "কিডনি বেসিক আর্টিকেল সমূহ", en: "Kidney Basics articles", href: `${base}/kidney-basic` }],
   },
   prevention: {
     bn: "কিডনি সুরক্ষা", en: "Kidney Protection", desc: { bn: "১০ সুনিয়ম", en: "10 golden rules" },
-    links: [{ bn: "কিডনি সুস্থ রাখার ১০ টি উপায়", en: "10 golden rules for healthy kidneys", href: `${base}/know-your-kidney/kidney-basic/golden-rules-to-keep-your-kidneys-healthy` }],
+    links: [{ bn: "কিডনি সুস্থ রাখার ১০ টি উপায়", en: "10 golden rules for healthy kidneys", href: `${base}/kidney-basic/golden-rules-to-keep-your-kidneys-healthy` }],
   },
   fasting: {
     bn: "রোযা ও কিডনি", en: "Fasting & Kidneys", desc: { bn: "রোযা রাখা যাবে কিনা", en: "Is fasting safe" },
-    links: [{ bn: "কিডনি রোগ এবং রোযা", en: "Kidney disease & fasting", href: `${base}/know-your-kidney/ckd/কিডনি-রোগ-এবং-রোযা` }],
+    links: [{ bn: "কিডনি রোগ এবং রোযা", en: "Kidney disease & fasting", href: `${base}/ckd/কিডনি-রোগ-এবং-রোযা` }],
   },
   pregnancy: {
     bn: "গর্ভাবস্থা ও কিডনি", en: "Pregnancy & Kidneys", desc: { bn: "ঝুঁকি ও সতর্কতা", en: "Risks & precautions" },
-    links: [{ bn: "কিডনি রোগ ও গর্ভাবস্থা আর্টিকেল সমূহ", en: "Kidney Disease & Pregnancy articles", href: `${base}/know-your-kidney/kidney-disease-and-pregnancy` }],
+    links: [{ bn: "কিডনি রোগ ও গর্ভাবস্থা আর্টিকেল সমূহ", en: "Kidney Disease & Pregnancy articles", href: `${base}/kidney-disease-and-pregnancy` }],
   },
   stages: {
     bn: "CKD স্টেজ বুঝুন", en: "Understand CKD Stages", desc: { bn: "স্টেজ ১ থেকে ৫", en: "Stage 1 through 5" },
-    links: [{ bn: "কিডনি রোগের স্টেজ / স্তর / অগ্রগতির পর্ব", en: "Stages of kidney disease", href: `${base}/know-your-kidney/kidney-basic/কিডনি-রোগের-স্টেজ-স্তর-অগ্রগতির-পর্ব` }],
+    links: [{ bn: "কিডনি রোগের স্টেজ / স্তর / অগ্রগতির পর্ব", en: "Stages of kidney disease", href: `${base}/kidney-basic/কিডনি-রোগের-স্টেজ-স্তর-অগ্রগতির-পর্ব` }],
   },
   medicine: {
     bn: "ওষুধ সতর্কতা", en: "Medicine Caution", desc: { bn: "কোন ওষুধ ক্ষতিকর", en: "Which medicines are harmful" },
-    links: [{ bn: "প্রতিস্থাপন পরবর্তী ওষুধ সেবনবিধি", en: "Immunosuppressive medicine after transplant", href: `${base}/know-your-kidney/renal-transplantation/how-to-take-immunosuppressive-medicine-after-transplant` }],
+    links: [{ bn: "প্রতিস্থাপন পরবর্তী ওষুধ সেবনবিধি", en: "Immunosuppressive medicine after transplant", href: `${base}/renal-transplantation/how-to-take-immunosuppressive-medicine-after-transplant` }],
   },
   uric_acid: {
     bn: "ইউরিক অ্যাসিড", en: "Uric Acid", desc: { bn: "কারণ ও খাদ্য তালিকা", en: "Causes & diet" },
-    links: [{ bn: "ইউরিক অ্যাসিড", en: "Uric Acid", href: `${base}/know-your-kidney/renal-diet/uric-acid` }],
+    links: [{ bn: "ইউরিক অ্যাসিড", en: "Uric Acid", href: `${base}/renal-diet/uric-acid` }],
   },
   contacts: {
     bn: "জরুরি যোগাযোগ", en: "Emergency Contacts", desc: { bn: "ডাক্তার ও হাসপাতাল", en: "Doctors & hospitals" },

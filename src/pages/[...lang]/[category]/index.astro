@@ -45,12 +45,12 @@ const pageSchema = [
   collectionPageSchema({
     name: cat.labelEn,
     description: `${cat.labelEn} — articles from BKPA Foundation`,
-    path: `/know-your-kidney/${cat.slug}`,
-    items: items.map((a) => ({ name: a.data.title, path: `/know-your-kidney/${cat.slug}/${a.id.split("/").slice(1).join("/")}` })),
+    path: `/${cat.slug}`,
+    items: items.map((a) => ({ name: a.data.title, path: `/${cat.slug}/${a.id.split("/").slice(1).join("/")}` })),
   }),
   breadcrumbSchema([
     { name: "Home", path: "/" },
-    { name: cat.labelEn, path: `/know-your-kidney/${cat.slug}` },
+    { name: cat.labelEn, path: `/${cat.slug}` },
   ]),
 ];
 ---
@@ -78,7 +78,7 @@ const pageSchema = [
         {items.map((a) => (
           <a
             class="group flex flex-col overflow-hidden rounded-lg border border-(--color-line) hover:border-(--color-deep)"
-            href={slugSelector(`/know-your-kidney/${cat.slug}/${a.id.split("/").slice(1).join("/")}`, lang)}
+            href={slugSelector(`/${cat.slug}/${a.id.split("/").slice(1).join("/")}`, lang)}
           >
             {a.data.image && (
               <div class="aspect-video overflow-hidden bg-(--color-surface-2)">

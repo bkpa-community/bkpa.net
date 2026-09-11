@@ -96,7 +96,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
       </div>
       <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
         {CATEGORIES.map((c) => (
-          <a class="flex min-h-[9.5rem] flex-col justify-between gap-3 rounded-lg border border-(--color-line) bg-(--color-surface) p-5 hover:border-(--color-deep)" href={slugSelector(`/know-your-kidney/${c.slug}`, lang)}>
+          <a class="flex min-h-[9.5rem] flex-col justify-between gap-3 rounded-lg border border-(--color-line) bg-(--color-surface) p-5 hover:border-(--color-deep)" href={slugSelector(`/${c.slug}`, lang)}>
             <div>
               <CategoryIcon slug={c.slug} class="h-6 w-6 text-(--color-deep)" />
               <p class="mt-2.5 text-display-4">
