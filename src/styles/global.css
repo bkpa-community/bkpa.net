@@ -182,9 +182,14 @@ body {
 .prose-bkpa h1,
 .prose-bkpa h2,
 .prose-bkpa h3,
-.prose-bkpa h4 {
+.prose-bkpa h4,
+.prose-bkpa h5,
+.prose-bkpa h6 {
   font-family: var(--font-display);
-  color: var(--color-deep);
+  /* Ink, not the brand green: headings mark structure, and green is reserved
+     for links and actions in article bodies. --color-ink rather than #000 so
+     it stays legible in dark mode. */
+  color: var(--color-ink);
   margin-top: 1.6em;
   margin-bottom: 0.5em;
   font-weight: 600;
