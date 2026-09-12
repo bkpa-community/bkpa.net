@@ -15,11 +15,27 @@ export interface LanguageConfig {
   contentDir: string;
   weight: number;
   default: boolean;
+  /**
+   * Off means the language is configured but not published: no routes are
+   * built for it, it is absent from the switcher and from hreflang tags.
+   * Its dictionary, menu and content directory all stay in place, so turning
+   * it back on is this one flag.
+   */
+  enabled?: boolean;
 }
 
-export const supportedLanguages: LanguageConfig[] = [...languages].sort(
+/** Every configured language, published or not. */
+export const allLanguages: LanguageConfig[] = [...languages].sort(
   (a, b) => a.weight - b.weight,
 );
+
+/** The languages the site actually serves. Everything routing-related reads this. */
+export const supportedLanguages: LanguageConfig[] = allLanguages.filter(
+  (l) => l.enabled !== false,
+);
+
+/** True when there is a second language to switch to. */
+export const isMultilingual = supportedLanguages.length > 1;
 
 export const defaultLanguage: LanguageConfig =
   supportedLanguages.find((l) => l.default) ?? supportedLanguages[0];

@@ -7,6 +7,7 @@ import "@/styles/global.css";
 import { organizationSchema } from "@/lib/schema";
 import {
   defaultLanguage,
+  isMultilingual,
   slugSelector,
   stripLanguage,
   supportedLanguages,
@@ -56,7 +57,7 @@ const schemaBlocks = [organizationSchema(), ...(schema ? (Array.isArray(schema) 
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" href={slugSelector(`/images/favicon.png`, lang)} />
     <link rel="canonical" href={canonicalURL} />
-    {supportedLanguages.map((language) => (
+    {isMultilingual && supportedLanguages.map((language) => (
       <link
         rel="alternate"
         hreflang={language.languageCode}
