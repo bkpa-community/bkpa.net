@@ -2,7 +2,7 @@
 title: Kidney Basics/কিডনি সম্পর্কে প্রাথমিক ধারণা।
 description: ''
 date: 2022-02-17T18:00:00.000Z
-image: /images/kidney-basics-banner-1200x630.webp
+image: /images/kidney-care-banner-1200x630.webp
 ---
 ## Kidney Basics/কিডনি সম্পর্কে প্রাথমিক ধারণা।
 
