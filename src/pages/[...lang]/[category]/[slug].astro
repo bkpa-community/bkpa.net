@@ -63,7 +63,22 @@ const pageSchema = [
           {entry.data.date.toLocaleDateString("en-CA")}
         </time>
       )}
-      {entry.data.image && <img class="mt-6 h-56 w-full rounded-lg border border-(--color-line) object-cover sm:h-72 md:h-96" src={encodeURI(`${base}${entry.data.image}`)} alt="" loading="eager" />}
+      {/*
+        Shown whole, at the image's own proportions. The header used to be a
+        fixed-height band with object-cover, which cut the top and bottom off
+        anything that wasn't roughly 3:1 — on a site where the images are
+        checklists and labelled diagrams, that removed the part people needed
+        to read. A max-height keeps a portrait image from becoming a wall;
+        past that cap it is letterboxed, never cropped.
+      */}
+      {entry.data.image && (
+        <img
+          class="mt-6 h-auto max-h-[40rem] w-full rounded-lg border border-(--color-line) bg-(--color-surface-2) object-contain"
+          src={encodeURI(`${base}${entry.data.image}`)}
+          alt=""
+          loading="eager"
+        />
+      )}
       <div class="prose-bkpa mt-8">
         <Content />
       </div>
