@@ -1,0 +1,31 @@
+---
+/**
+ * A static redirect page.
+ *
+ * GitHub Pages cannot issue HTTP 301s, so a moved URL has to keep serving a
+ * page. This one sends the browser on immediately and, for anything that
+ * reads the HTML rather than following the refresh, declares the new URL as
+ * canonical so search engines transfer the old ranking rather than indexing a
+ * duplicate. noindex keeps the stub itself out of results.
+ */
+interface Props {
+  to: string;
+}
+
+const { to } = Astro.props;
+const target = new URL(to, Astro.site);
+---
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <meta http-equiv="refresh" content={`0;url=${to}`} />
+    <link rel="canonical" href={target} />
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <p>This page has moved to <a href={to}>{to}</a>.</p>
+  </body>
+</html>

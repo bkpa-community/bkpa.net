@@ -2,23 +2,61 @@
 import { slugSelector } from "@/lib/languageParser";
 import { getTranslations } from "@/lib/translations";
 import { getArticles } from "@/lib/content";
-import { langParam, supportedLanguages } from "@/lib/languageParser";
+import { defaultLanguage, langParam, supportedLanguages } from "@/lib/languageParser";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import CategoryIcon from "@/components/CategoryIcon.astro";
+import Redirect from "@/components/Redirect.astro";
 import { CATEGORIES, categoryBySlug } from "@/lib/categories";
 import { collectionPageSchema, breadcrumbSchema } from "@/lib/schema";
 
 
-const { lang } = Astro.props;
+const { lang, redirectTo } = Astro.props;
 const t = getTranslations(lang);
 
 export async function getStaticPaths() {
-  return supportedLanguages.flatMap((language) =>
+  const categoryPages = supportedLanguages.flatMap((language) =>
     CATEGORIES.map((c) => ({
       params: { lang: langParam(language.languageCode), category: c.slug },
-      props: { lang: language.languageCode },
+      props: { lang: language.languageCode, redirectTo: null as string | null },
     })),
   );
+
+  // Redirects from the old Hugo site, which served every article at the root
+  // under its filename (permalink "/:filename/"). Those URLs were live for
+  // years and are what is indexed and shared, so each one forwards to the
+  // article's current home.
+  //
+  // This lives in the same route as the category listing because both occupy
+  // the single root segment, and Astro will not accept two dynamic routes
+  // there. The targets come from the built entry ids, not filenames — Astro
+  // slugifies on the way in (lowercase, spaces to hyphens, trailing dots
+  // dropped), and a redirect built from the raw filename missed 15 of them.
+  //
+  // Bengali only: the old site had no English tree.
+  const bn = defaultLanguage.languageCode;
+  const articles = (await getArticles(bn))
+    .filter((a) => !a.data.draft)
+    // "others" sorts last, so when a slug exists in two categories the
+    // specific one claims the redirect.
+    .sort((a, b) => Number(a.id.startsWith("others/")) - Number(b.id.startsWith("others/")));
+  const claimed = new Set<string>();
+  const legacy = articles.flatMap((a) => {
+    const [category, ...rest] = a.id.split("/");
+    const slug = rest.join("/");
+    const rawName = a.filePath?.split("/").pop()?.replace(/\.md$/, "");
+    // The slugified id is always a source; the raw filename too, when it
+    // differs, since Hugo's own normalisation may have produced either.
+    const sources = new Set([slug, rawName].filter(Boolean) as string[]);
+    return [...sources]
+      .filter((src) => !CATEGORIES.some((c) => c.slug === src))
+      .filter((src) => !claimed.has(src) && claimed.add(src))
+      .map((src) => ({
+        params: { lang: undefined, category: src },
+        props: { lang: bn, redirectTo: `/${category}/${slug}` },
+      }));
+  });
+
+  return [...categoryPages, ...legacy];
 }
 
 function excerpt(markdown: string, maxLength = 160) {
@@ -34,27 +72,33 @@ function excerpt(markdown: string, maxLength = 160) {
 }
 
 const { category } = Astro.params;
-const cat = categoryBySlug(category)!;
+const cat = redirectTo ? null : categoryBySlug(category)!;
+const catSlug = cat?.slug ?? "";
 const all = (await getArticles(lang)).filter((a) => !a.data.draft);
 const items = all
-  .filter((a) => a.id.startsWith(`${cat.slug}/`))
+  .filter((a) => a.id.startsWith(`${catSlug}/`))
   .sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0));
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
-const pageSchema = [
-  collectionPageSchema({
-    name: cat.labelEn,
-    description: `${cat.labelEn} — articles from BKPA Foundation`,
-    path: `/${cat.slug}`,
-    items: items.map((a) => ({ name: a.data.title, path: `/${cat.slug}/${a.id.split("/").slice(1).join("/")}` })),
-  }),
-  breadcrumbSchema([
-    { name: "Home", path: "/" },
-    { name: cat.labelEn, path: `/${cat.slug}` },
-  ]),
-];
+const pageSchema = cat
+  ? [
+      collectionPageSchema({
+        name: cat.labelEn,
+        description: `${cat.labelEn} — articles from BKPA Foundation`,
+        path: `/${cat.slug}`,
+        items: items.map((a) => ({ name: a.data.title, path: `/${cat.slug}/${a.id.split("/").slice(1).join("/")}` })),
+      }),
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: cat.labelEn, path: `/${cat.slug}` },
+      ]),
+    ]
+  : [];
 ---
 
+{cat === null ? (
+  <Redirect to={redirectTo!} />
+) : (
 <BaseLayout lang={lang} title={cat.labelEn} description={`${cat.labelEn} — articles from BKPA Foundation`} schema={pageSchema}>
   <section class="py-12">
     <div class="mx-auto max-w-6xl px-6 md:px-10">
@@ -102,3 +146,4 @@ const pageSchema = [
     </div>
   </section>
 </BaseLayout>
+)}
