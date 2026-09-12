@@ -1,5 +1,4 @@
 ---
-import Icon from "@/components/Icon.astro";
 import { getTranslations } from "@/lib/translations";
 
 interface Props {
@@ -18,7 +17,7 @@ const t = getTranslations(lang);
   <div class="mt-4 flex items-center justify-center gap-1.5" role="radiogroup" aria-label={t.feedback.rating_label}>
     {[1, 2, 3, 4, 5].map((n) => (
       <button type="button" class="cf-star p-0.5" data-value={n} role="radio" aria-checked="false" aria-label={`${n} star${n > 1 ? "s" : ""}`}>
-        <Icon name="star" class="cf-star-glyph h-7 w-7 md:h-8 md:w-8" />
+        <span class="cf-star-glyph inline-block h-7 w-7 md:h-8 md:w-8" aria-hidden="true"></span>
       </button>
     ))}
   </div>
@@ -35,15 +34,24 @@ const t = getTranslations(lang);
 </div>
 
 <style>
-  .cf-star svg {
-    color: var(--color-line);
-    transition: color 0.1s;
-  }
-  .cf-star .cf-star-glyph {
-    background-color: var(--color-line);
+  /*
+    Two icon files, one per state, swapped by mask. A single mask cannot draw
+    an outline for "empty" and a solid for "rated", which is what the stars
+    need to read as a control rather than a row of filled shapes.
+
+    A new visitor sees five outlines in a soft grey; hovering previews the
+    rating in gold; clicking keeps it.
+  */
+  .cf-star-glyph {
+    background-color: var(--color-ink-soft);
+    -webkit-mask: url("/images/icons/star.svg") center / contain no-repeat;
+    mask: url("/images/icons/star.svg") center / contain no-repeat;
+    transition: background-color 0.1s;
   }
   .cf-star.is-filled .cf-star-glyph {
     background-color: var(--color-accent-2);
+    -webkit-mask-image: url("/images/icons/star-filled.svg");
+    mask-image: url("/images/icons/star-filled.svg");
   }
 </style>
 
