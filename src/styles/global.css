@@ -18,32 +18,11 @@
   --color-line: #d7d2bf;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --color-ink: #ece9dd;
-    --color-ink-soft: #b9c2b4;
-    --color-paper: #101715;
-    --color-surface: #182421;
-    --color-surface-2: #20302b;
-    --color-deep: #5ce092;
-    --color-deep-ink: #0e2517;
-    --color-accent-2: #e3ae58;
-    --color-line: #2c3830;
-  }
-}
-:root[data-theme="dark"] {
-  --color-ink: #ece9dd;
-  --color-ink-soft: #b9c2b4;
-  --color-paper: #101715;
-  --color-surface: #182421;
-  --color-surface-2: #20302b;
-  --color-deep: #5ce092;
-  --color-deep-ink: #0e2517;
-  --color-accent-2: #e3ae58;
-  --color-line: #2c3830;
-}
-
 html {
+  /* Light only. The palette above has no dark counterpart, and color-scheme
+     keeps native controls (form fields, scrollbars) from going dark on their
+     own when the OS is in dark mode. */
+  color-scheme: light;
   scroll-behavior: smooth;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -75,28 +54,6 @@ body {
   line-height: 1.8;
 }
 
-
-.logo-dark {
-  display: none;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    .logo-light {
-      display: none;
-    }
-    .logo-dark {
-      display: block;
-    }
-  }
-}
-:root[data-theme="dark"] {
-  .logo-light {
-    display: none;
-  }
-  .logo-dark {
-    display: block;
-  }
-}
 
 :focus-visible {
   outline: 2px solid var(--color-deep);
@@ -187,8 +144,7 @@ body {
 .prose-bkpa h6 {
   font-family: var(--font-display);
   /* Ink, not the brand green: headings mark structure, and green is reserved
-     for links and actions in article bodies. --color-ink rather than #000 so
-     it stays legible in dark mode. */
+     for links and actions in article bodies. */
   color: var(--color-ink);
   font-weight: 600;
   /* Tighter than body text — a heading is one or two lines and reads as a
