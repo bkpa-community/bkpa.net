@@ -13,11 +13,12 @@
   "settings": {
     "search": true,
     "sticky_header": true,
-    "theme_switcher": true,
-    "default_theme": "system",
+    "theme_switcher": false,
+    "default_theme": "light",
     "pagination": 12
   },
   "params": {
+    "google_analytics_id": "G-8VJ3KEYHKB",
     "contact_form_action": "",
     "copyright": "BKPA Foundation"
   },

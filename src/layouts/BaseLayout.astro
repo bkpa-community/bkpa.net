@@ -4,6 +4,7 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import SearchModal from "@/components/SearchModal.astro";
 import "@/styles/global.css";
+import config from "@/config/config.json";
 import { organizationSchema } from "@/lib/schema";
 import {
   defaultLanguage,
@@ -47,6 +48,7 @@ const ogImageURL = new URL(encodeURI(shareImagePath), Astro.site);
 // letterboxed into a wide frame.
 const twitterCard = image ? "summary_large_image" : "summary";
 const schemaBlocks = [organizationSchema(), ...(schema ? (Array.isArray(schema) ? schema : [schema]) : [])];
+const gaId = config.params.google_analytics_id;
 ---
 
 <!doctype html>
@@ -101,6 +103,35 @@ const schemaBlocks = [organizationSchema(), ...(schema ? (Array.isArray(schema) 
       />
     </noscript>
     <ClientRouter />
+    {
+      gaId && (
+        <>
+          <script async is:inline src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
+          {/*
+            is:inline so the tag survives view transitions: ClientRouter keeps
+            head scripts whose markup is unchanged, so this runs exactly once
+            per real page load and the astro:page-load listener below then
+            reports every client-side navigation. send_page_view is off
+            because astro:page-load also fires on the initial load — letting
+            config() send its own page_view as well would count it twice.
+          */}
+          <script is:inline define:vars={{ gaId }}>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", gaId, { send_page_view: false });
+            document.addEventListener("astro:page-load", () => {
+              gtag("event", "page_view", {
+                page_title: document.title,
+                page_location: location.href,
+              });
+            });
+          </script>
+        </>
+      )
+    }
   </head>
   <body id="page" data-lang={lang} class="overflow-x-hidden">
     <Header lang={lang} />
