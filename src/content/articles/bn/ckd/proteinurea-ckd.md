@@ -2,7 +2,7 @@
 title: Chronic Kidney Disease(CKD) / Proteinurea.
 description: ''
 date: 2022-03-07 18:00:00+00:00
-image: /images/fb_img_1626069100358.jpg
+image: /images/proteinuria-ckd.webp
 ---
 
 ### Proteinurea/Chronic Kidney Disease (CKD).
