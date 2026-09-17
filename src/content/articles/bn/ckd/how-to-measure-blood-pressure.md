@@ -3,6 +3,8 @@ title: How to measure Blood Pressure-  সঠিকভাবে ব্লাড�
 description: ''
 date: '2022-02-05T18:00:00.000Z'
 image: /images/fb_img_1625950732209.jpg
+aliases:
+  - "সঠিকভাবে-ব্লাডপ্রেসার-মাপার-নিয়ম"
 ---
 
 ### সঠিকভাবে ব্লাডপ্রেসার মাপার নিয়মঃ

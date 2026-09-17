@@ -3,6 +3,8 @@ title: Kidney Disease & Fasting - কিডনি রোগ এবং রোয�
 description: ''
 date: 2022-02-03 18:00:00+00:00
 image: /images/image-412505-1618653669.jpeg
+aliases:
+  - "কিডনি-রোগ-এবং-রোযা"
 ---
 
 ### **কিডনি রোগ এবং রোযা.**

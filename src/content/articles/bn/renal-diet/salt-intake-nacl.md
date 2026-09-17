@@ -3,6 +3,8 @@ title: Salt Intake - খাবার লবন সোডিয়াম ক্ল�
 description: ''
 date: '2022-02-07T18:00:00.000Z'
 image: /images/images-18.jpeg
+aliases:
+  - "bkpa-nacl"
 ---
 
 খাবার লবন সোডিয়াম ক্লোরাইড (NaCl)

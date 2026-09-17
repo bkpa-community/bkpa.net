@@ -27,23 +27,23 @@ draft: true
 
 আরো জানতে লিংকের পোস্ট পড়তে পারেন।
 
-[https://bkpa.net/bkpa-nacl](https://bkpa.net/bkpa-nacl "https://bkpa.net/bkpa-nacl")
+[https://www.bkpa.net/renal-diet/salt-intake-nacl](/renal-diet/salt-intake-nacl "https://www.bkpa.net/renal-diet/salt-intake-nacl")
 
 **প্রোটিনঃ** প্রটিনের পরিমাণ ও কোন ধরনের প্রোটিন খাবেন সেটি নেফ্রোলোজিস্ট ও ডায়েটেশিয়ানের সাথে পরামর্শ করে নিতে হবে। ডায়ালাইসিস রুগি হলে প্রোটিন বেশি খেতে হবে।
 
 **পটাশিয়ামঃ** এ সম্পর্কে লিংকের পোস্টে পাবেন।
 
-[https://bkpa.net/potassium_food-ckd/](https://bkpa.net/potassium_food-ckd/ "https://bkpa.net/potassium_food-ckd/")
+[https://www.bkpa.net/ckd/potassium_food-ckd](/ckd/potassium_food-ckd "https://www.bkpa.net/ckd/potassium_food-ckd")
 
-যেকোনো ভেজিটেবলস বা সবজি থেকে **পটাসিয়াম** কমানোর পদ্ধতি সম্পর্কে জানতে নিচের [লিংকটি](https://bkpa.net/%E0%A6%AF%E0%A7%87%E0%A6%95%E0%A7%8B%E0%A6%A8%E0%A7%8B-%E0%A6%AD%E0%A7%87%E0%A6%9C%E0%A6%BF%E0%A6%9F%E0%A7%87%E0%A6%AC%E0%A6%B2%E0%A6%B8-%E0%A6%AC%E0%A6%BE-%E0%A6%B8%E0%A6%AC%E0%A6%9C%E0%A6%BF-%E0%A6%A5%E0%A7%87%E0%A6%95%E0%A7%87-%E0%A6%AA%E0%A6%9F%E0%A6%BE%E0%A6%B8%E0%A6%BF%E0%A7%9F%E0%A6%BE%E0%A6%AE-%E0%A6%95%E0%A6%AE%E0%A6%BE%E0%A6%A8%E0%A7%8B%E0%A6%B0-%E0%A6%AA%E0%A6%A6%E0%A7%8D%E0%A6%A7%E0%A6%A4%E0%A6%BF/) পড়ুন-
+যেকোনো ভেজিটেবলস বা সবজি থেকে **পটাসিয়াম** কমানোর পদ্ধতি সম্পর্কে জানতে নিচের [লিংকটি](/ckd/how-to-reduce-potassium-in-vegetables) পড়ুন-
 
 অধিক ফসফেট সমৃদ্ধ খাবার এভয়েড করতে হবে। যেমনঃ দুধ, দুধ দিয়ে বানানো সব খাবার, দই, পনির, রেডমিট, মাছের কাঁটা-মাথা, ছোট মাছ, ডাল ও বিচি জাতীয় খাবার, সফট ড্রিংক্স ইত্যাদি।
 
-[https://bkpa.net/%E0%A6%AB%E0%A6%B8%E0%A6%AB%E0%A6%B0%E0%A6%BE%E0%A6%B8-%E0%A6%AC%E0%A6%BE-%E0%A6%AB%E0%A6%B8%E0%A6%AB%E0%A7%87%E0%A6%9F/](https://bkpa.net/%E0%A6%AB%E0%A6%B8%E0%A6%AB%E0%A6%B0%E0%A6%BE%E0%A6%B8-%E0%A6%AC%E0%A6%BE-%E0%A6%AB%E0%A6%B8%E0%A6%AB%E0%A7%87%E0%A6%9F/ "ফসফেট ডায়েট")
+[https://www.bkpa.net/ckd/phosphorus-phosphate-ckd](/ckd/phosphorus-phosphate-ckd "ফসফেট ডায়েট")
 
 **ইউরিক এসিডঃ** এ সম্পর্কে লিংকের পোস্টে পাবেন।
 
-[https://bkpa.net/uric-acid/](https://bkpa.net/uric-acid/ "https://bkpa.net/uric-acid/")
+[https://www.bkpa.net/ckd/uric-acid](/ckd/uric-acid "https://www.bkpa.net/ckd/uric-acid")
 
 - ফলের মধ্যে আপেল, নাশপাতি, পেয়ারা, পাকা পেপে, আনারস খাওয়া যাবে।
 

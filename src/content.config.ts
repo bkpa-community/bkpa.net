@@ -28,6 +28,12 @@ const articlesSchema = z.object({
     description: z.string().optional().default(""),
     image: z.string().optional(),
     draft: z.boolean().optional().default(false),
+    // Slugs this article used to live at. Each one becomes a redirect to the
+    // current URL — under its category and, for the old Hugo site, at the
+    // root — so renaming a file never breaks a shared or indexed link.
+    // Filenames should be ASCII; put the Bengali slug an article was created
+    // with here and rename the file.
+    aliases: z.array(z.string()).optional().default([]),
   });
 
 const articlesBn = defineCollection({

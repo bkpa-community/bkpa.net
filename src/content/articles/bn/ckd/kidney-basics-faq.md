@@ -4,6 +4,8 @@ description: ''
 date: '2021-08-09T10:00:00.000Z'
 image: /images/images-45.jpeg
 draft: true
+aliases:
+  - "কিডনী-বেসিক-বা-কিডনি-সম্পর্কে-প্রাথমিক-ধারণা"
 ---
 
 ### Kidney Basics/কিডনি সম্পর্কে প্রাথমিক ধারণা।

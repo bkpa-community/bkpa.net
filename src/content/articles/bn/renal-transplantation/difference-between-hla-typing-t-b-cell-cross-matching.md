@@ -20,7 +20,7 @@ HLA Typing ও T & B Cell Cross Matching দুটা টেস্টের ম�
 
 _HLA Typing সম্পর্কে ভালভাবে জানতে এই লিংকের পোস্ট পড়তে পারেন।_
 
-[HLA & Tissue Typing]( https://bkpa.net/hla-tissue-typing/  "HLA & Tissue Typing")
+[HLA & Tissue Typing](/renal-transplantation/hla-tissue-typing "HLA & Tissue Typing")
 
 **২য় টেস্ট T & B cell crossmatching..**
 

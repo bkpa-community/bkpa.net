@@ -45,14 +45,17 @@ export async function getStaticPaths() {
     const slug = rest.join("/");
     const rawName = a.filePath?.split("/").pop()?.replace(/\.md$/, "");
     // The slugified id is always a source; the raw filename too, when it
-    // differs, since Hugo's own normalisation may have produced either.
-    const sources = new Set([slug, rawName].filter(Boolean) as string[]);
+    // differs, since Hugo's own normalisation may have produced either; and
+    // every alias, since a renamed article's old root URL must keep working.
+    const sources = new Set([slug, rawName, ...a.data.aliases].filter(Boolean) as string[]);
     return [...sources]
       .filter((src) => !CATEGORIES.some((c) => c.slug === src))
       .filter((src) => !claimed.has(src) && claimed.add(src))
       .map((src) => ({
         params: { lang: undefined, category: src },
-        props: { lang: bn, redirectTo: `/${category}/${slug}` },
+        // Trailing slash, as the page's own canonical has: GitHub Pages
+        // would otherwise add one with a second redirect.
+        props: { lang: bn, redirectTo: `/${category}/${slug}/` },
       }));
   });
 

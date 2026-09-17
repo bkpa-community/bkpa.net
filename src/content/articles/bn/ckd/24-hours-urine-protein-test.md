@@ -21,7 +21,7 @@ image: /images/161335273_10225246352529061_4741228291592592703_n.jpeg
 
 #### ***TOPICS :- PROTEINUREA সম্পকে বিস্তারিত জানতে*** ***এই পোস্টটি পড়ুন।***
 
-> **[Proteinurea/Chronic Kidney Disease(CKD)](https://bkpa.net/proteinurea-ckd/ "Proteinurea/Chronic Kidney Disease(CKD)")**
+> **[Proteinurea/Chronic Kidney Disease(CKD)](/ckd/proteinurea-ckd "Proteinurea/Chronic Kidney Disease(CKD)")**
 
 ** কাদের ২৪ ঘণ্টা ইউরিন প্রোটিন টেস্ট টা করা জরুরি ???**
 
@@ -29,7 +29,7 @@ image: /images/161335273_10225246352529061_4741228291592592703_n.jpeg
 
 অনেক সময় কিডনি ট্রান্সপ্ল্যান্ট করার পর পরই ইমুনুসাপ্রেসিভ ওষুধ খাওয়ার ফলে সুগার লেভেল বেড়ে যায় ( বিস্তারিত পড়ুন ,
 
-> **[New On Set Diabetes After Transplant (NODAT)](https://bkpa.net/new-on-set-diabetes-after-transplant-nodat/ "New On Set Diabetes After Transplant (NODAT)")**
+> **[New On Set Diabetes After Transplant (NODAT)](/diabetes/new-on-set-diabetes-after-transplant-nodat "New On Set Diabetes After Transplant (NODAT)")**
 
 ফলে প্রস্রাবের সাথে অনেক বেশি পরিমান প্রোটিন নিগ্রত হতে থাকে এবং খুব দ্রুত ট্রান্সপ্ল্যান্ট করা কিডনি বিকল হতে থাকে। তাই এখন থেকে কায়িক পরিশ্রম বারায় দিন এবং প্রতি ৬ মাস পর পর একবার করে HBA1C test টি করে আপনার সুগার লেভেলের আসল পরিমাপ দেখে নিন।
 
@@ -57,7 +57,7 @@ image: /images/161335273_10225246352529061_4741228291592592703_n.jpeg
 
 ***ICDDR,B তে টেস্ট করার নিয়ম-***
 
-> **[Urine Protein Test](https://bkpa.net/urine-protein-test/ "Urine Protein Test")**
+> **[Urine Protein Test](/ckd/urine-protein-test "Urine Protein Test")**
 
 **24 Hours Urine Protein test সতর্কতা –**
 

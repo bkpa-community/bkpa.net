@@ -3,6 +3,8 @@ title: When should fistula need to be done for Dialysis ? ডায়ালাই�
 description: ''
 date: '2022-02-13T18:00:00.000Z'
 image: /images/images-48.jpeg
+aliases:
+  - "ডায়ালাইসিস-ফিস্টুলা-কখন-করে-রাখা-উচিত"
 ---
 
 **ডায়ালাইসিস ফিস্টুলা কখন করে রাখা উচিত?**

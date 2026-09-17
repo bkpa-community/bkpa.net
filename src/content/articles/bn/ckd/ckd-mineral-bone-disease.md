@@ -3,6 +3,8 @@ title: Kidney and Bone mineral Diseases - কিডনি এবং বন ম�
 description: ''
 date: '2022-02-07T18:00:00.000Z'
 image: /images/fb_img_1625947643534.jpg
+aliases:
+  - "কিডনি-এবং-বন-মিনারেল-ডিজিজ-হাড্ডির-রোগ"
 ---
 
 ### কিডনি এবং বন মিনারেল ডিজিজ/হাড্ডির রোগ- Kidney and Bone mineral Diseases

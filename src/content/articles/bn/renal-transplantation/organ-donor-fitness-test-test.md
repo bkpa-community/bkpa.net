@@ -105,6 +105,6 @@ image: /images/organ-donation-lou.jpg
 
 **_Gynaecology:_** female ডোনার হলে এটা প্রযোজ্য। এখান থেকে দেয়া হতে পারে urine for Pregnancy test; PAP Smear এই টেস্টগুলো।
 
-অপারেশনের তারিখ নির্ধারিত হওয়ার পর অপারেশনের আগের ৭২ ঘন্টার মধ্যে T & B cell/ [Tissue Crossmatching](https://bkpa.net/hla-tissue-typing/) রিপিট করানো হবে। এছাড়া অপারেশনের আগেরদিন রাতে বা ভোরে PT With INR রিপিট করানো হবে।
+অপারেশনের তারিখ নির্ধারিত হওয়ার পর অপারেশনের আগের ৭২ ঘন্টার মধ্যে T & B cell/ [Tissue Crossmatching](/renal-transplantation/hla-tissue-typing) রিপিট করানো হবে। এছাড়া অপারেশনের আগেরদিন রাতে বা ভোরে PT With INR রিপিট করানো হবে।
 
 ⒸBKPA

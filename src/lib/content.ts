@@ -21,9 +21,30 @@ const DEFAULT = defaultLanguage.languageCode;
 const isDefault = (lang: string) => lang === DEFAULT;
 
 export async function getArticles(lang: string) {
-  if (isDefault(lang)) return getCollection("articlesBn");
+  if (isDefault(lang)) return warnNonAsciiSlugs(await getCollection("articlesBn"));
   const entries = await getCollection("articlesEn");
-  return entries.length > 0 ? entries : getCollection("articlesBn");
+  return entries.length > 0 ? warnNonAsciiSlugs(entries) : warnNonAsciiSlugs(await getCollection("articlesBn"));
+}
+
+/**
+ * Article URLs are meant to be ASCII: a Bengali-script filename becomes a
+ * URL of percent-encoded bytes the moment it is shared, and the sitemap
+ * treats such paths as redirect stubs. Warn rather than fail, so an editor
+ * who names a file in Bengali from the CMS gets a live page and a note in
+ * the deploy log, not a broken deploy.
+ */
+const warned = new Set<string>();
+function warnNonAsciiSlugs<T extends { id: string; filePath?: string }>(entries: T[]): T[] {
+  for (const e of entries) {
+    // eslint-disable-next-line no-control-regex
+    if (/[^\x00-\x7f]/.test(e.id) && !warned.has(e.id)) {
+      warned.add(e.id);
+      console.warn(
+        `[articles] "${e.filePath ?? e.id}" has a non-ASCII filename. Rename it to an English slug and list the old name under \`aliases\` in its frontmatter so the old URL redirects.`,
+      );
+    }
+  }
+  return entries;
 }
 
 export async function getEmergencyContacts(lang: string) {

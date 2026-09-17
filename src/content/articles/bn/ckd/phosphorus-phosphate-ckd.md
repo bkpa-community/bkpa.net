@@ -3,6 +3,8 @@ title: Phosphorus or Phosphate -ফসফরাস বা ফসফেট
 description: ''
 date: '2022-02-27T18:00:00.000Z'
 image: /images/fb_img_1626288619813.jpg
+aliases:
+  - "ফসফরাস-বা-ফসফেট"
 ---
 
 ### ফসফরাস বা ফসফেট-  Phosphorus or Phosphate

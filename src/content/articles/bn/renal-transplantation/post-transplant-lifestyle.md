@@ -33,7 +33,7 @@ image: /images/images-38.jpeg
 
 বন বা মিনারেল ডিজিজ সম্পর্কে নিচের লিংকটি পড়তে পারেন:-
 
-**→**    **[কিডনি এবং বন মিনারেল ডিজিজ/হাড্ডির রোগ- Kidney and Bone mineral Diseases](https://bkpa.net/%E0%A6%95%E0%A6%BF%E0%A6%A1%E0%A6%A8%E0%A6%BF-%E0%A6%8F%E0%A6%AC%E0%A6%82-%E0%A6%AC%E0%A6%A8-%E0%A6%AE%E0%A6%BF%E0%A6%A8%E0%A6%BE%E0%A6%B0%E0%A7%87%E0%A6%B2-%E0%A6%A1%E0%A6%BF%E0%A6%9C%E0%A6%BF%E0%A6%9C-%E0%A6%B9%E0%A6%BE%E0%A6%A1%E0%A7%8D%E0%A6%A1%E0%A6%BF%E0%A6%B0-%E0%A6%B0%E0%A7%8B%E0%A6%97/)**
+**→**    **[কিডনি এবং বন মিনারেল ডিজিজ/হাড্ডির রোগ- Kidney and Bone mineral Diseases](/ckd/ckd-mineral-bone-disease)**
 
 - ট্রান্সপ্লান্ট এর পড় ব্লাডপ্রেশার অনেকের ক্ষেত্রেই কমন তাই নিয়মিত চেকাপ/মনিটর এবং বাড়তি থাকলে সে অনুযায়ি ওষুধগ্রহন এবং কঠোরভাবে নিয়ন্ত্রণ করতে হবে,অসংখ রিসার্চ বলে ব্লাডপ্রেশার নিয়ন্ত্রণ না থাকলে কিডনি গ্র্যাফ্ট survival কমে যায়।
 
@@ -41,23 +41,23 @@ image: /images/images-38.jpeg
 
 - ব্লাড সুগারের ব্যাপারে নিচের লিংকটি পড়তে পারেন :-
 
-[https://bkpa.net/%E0%A6%A1%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A6%BE%E0%A6%AC%E0%A7%87%E0%A6%9F%E0%A6%BF%E0%A6%B8-%E0%A6%93-%E0%A6%A8%E0%A6%BF%E0%A6%AF%E0%A6%BC%E0%A6%A8%E0%A7%8D%E0%A6%A4%E0%A7%8D%E0%A6%B0%E0%A6%A3/](https://bkpa.net/%E0%A6%A1%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A6%BE%E0%A6%AC%E0%A7%87%E0%A6%9F%E0%A6%BF%E0%A6%B8-%E0%A6%93-%E0%A6%A8%E0%A6%BF%E0%A6%AF%E0%A6%BC%E0%A6%A8%E0%A7%8D%E0%A6%A4%E0%A7%8D%E0%A6%B0%E0%A6%A3/)
+[https://www.bkpa.net/diabetes/how-to-control-diabetes](/diabetes/how-to-control-diabetes)
 
 \*আরেকটা সমস্যা হচ্ছে ইম্মুনোসাপ্রেসিভ বিশেষ করে স্টেরোয়েড/prednisolone এর কারণে লিপিডও বেড়ে যায় তাই চর্বি এবং তৈলাক্ত জাতীয় খাবারের ব্যাপারে সতর্কতা মেনে চলা উচিত বা একেবারে কম খাওয়া উচিত।
 
 - লিপিডের ব্যাপারে নিচের লিংকটি পড়তে পারেন :-
 
-**→**    **[Lipid Profile/লিপিড প্রোফাইল](https://bkpa.net/%E0%A6%B2%E0%A6%BF%E0%A6%AA%E0%A6%BF%E0%A6%A1-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A7%8B%E0%A6%AB%E0%A6%BE%E0%A6%87%E0%A6%B2/ "Lipid Profile/লিপিড প্রোফাইল")**
+**→**    **[Lipid Profile/লিপিড প্রোফাইল](/ckd/lipid-profile-test "Lipid Profile/লিপিড প্রোফাইল")**
 
 - প্রোটিন স্বাভাবিক মাত্রায় খাওয়া উচিত ধরুন দুপুরে/রাতে এক পিছ মাঝারি সাইজ এর মাছ বা মাংস যেহেতু কিডনি ফাঙ্কশন স্বাভাবিক হয়ে যায় ট্রান্সপ্লান্টের পর.প্রোটিন এর ক্ষেত্রে চিকেন,মাছ,ডিমের সাদা অংশ ইত্যাদি বেশি প্রাধান্য দিবেন। রেড মিট এবং অর্গান মিট(কলিজা,গুর্দা ইত্যাদি) অল্প বা মাঝে মাঝে অকেশনালী খেতে পারেন যেহেতু রেড মিট এবং অর্গান মিট লিপিড/চর্বি এবং ইউরিক অ্যাসিড বাড়ায় তাই নিয়মিত খাওয়া কখনো উচিত নয়।
 
 - ইউরিক অ্যাসিড সম্পর্কে জানতে নিচের লিংক পড়ুন :-
 
-[https://bkpa.net/uric-acid/](https://bkpa.net/uric-acid/ "Uric Acid")
+[https://www.bkpa.net/ckd/uric-acid](/ckd/uric-acid "Uric Acid")
 
 - ট্রান্সপ্লান্ট এরপর আস্তে আস্তে অল্প অল্প করে হাটা শুরু করবেন যা সময়ের সাথে সাথে বাড়াবেন।
 
-**→**     **[Walk/Exercise](https://bkpa.net/walk-exercise/ "Walk/Exercise")**
+**→**     **[Walk/Exercise](/others/walk-exercise "Walk/Exercise")**
 
 - ওজন স্ট্রীক্টলী মেইনটেইন করবেন ।
 

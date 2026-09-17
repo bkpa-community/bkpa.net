@@ -6,6 +6,7 @@ import { langParam, supportedLanguages } from "@/lib/languageParser";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import ContentFeedback from "@/components/ContentFeedback.astro";
 import OpenRemark from "@/components/OpenRemark.astro";
+import Redirect from "@/components/Redirect.astro";
 import { render } from "astro:content";
 import { categoryBySlug } from "@/lib/categories";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
@@ -15,13 +16,39 @@ import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 export async function getStaticPaths() {
   const paths = [];
   for (const language of supportedLanguages) {
-    const all = (await getArticles(language.languageCode)).filter((a) => !a.data.draft);
+    const lang = language.languageCode;
+    const all = (await getArticles(lang)).filter((a) => !a.data.draft);
+    // Astro keeps the last of two paths with the same params, so an alias
+    // that matched a live slug would quietly replace that article with a
+    // redirect to itself. Refuse to build instead.
+    const taken = new Map(all.map((a) => [a.id, a.filePath ?? a.id]));
     for (const a of all) {
       const [category, ...rest] = a.id.split("/");
+      const slug = rest.join("/");
       paths.push({
-        params: { lang: langParam(language.languageCode), category, slug: rest.join("/") },
-        props: { entry: a, lang: language.languageCode },
+        params: { lang: langParam(lang), category, slug },
+        props: { entry: a, lang, redirectTo: null as string | null },
       });
+      // A renamed article keeps answering at its old slugs, each a stub that
+      // forwards to the current URL. Same category: an alias only records the
+      // slug, since a category move would change the meaning of the article,
+      // not just its address.
+      for (const alias of a.data.aliases) {
+        const id = `${category}/${alias}`;
+        if (taken.has(id)) {
+          throw new Error(
+            `Alias "${alias}" in ${a.filePath ?? a.id} is already the URL of ${taken.get(id)}. An alias must be a slug no live article in the same category uses.`,
+          );
+        }
+        taken.set(id, a.filePath ?? a.id);
+        paths.push({
+          params: { lang: langParam(lang), category, slug: alias },
+          // Trailing slash, as the page's own canonical has: GitHub Pages
+          // would otherwise add one with a second redirect. slugSelector
+          // strips it, so it goes on after.
+          props: { entry: a, lang, redirectTo: `${slugSelector(`/${category}/${slug}`, lang)}/` },
+        });
+      }
     }
   }
   return paths;
@@ -29,9 +56,10 @@ export async function getStaticPaths() {
 
 const { category } = Astro.params;
 const cat = categoryBySlug(category)!;
-const { entry, lang } = Astro.props;
+const { entry, lang, redirectTo } = Astro.props;
 const t = getTranslations(lang);
-const { Content } = await render(entry);
+// A redirect stub has no body to render.
+const { Content } = redirectTo ? { Content: null } : await render(entry);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const articlePath = `/${cat.slug}/${entry.id.split("/").slice(1).join("/")}`;
 
@@ -51,6 +79,7 @@ const pageSchema = [
 ];
 ---
 
+{redirectTo ? <Redirect to={redirectTo} /> : (
 <BaseLayout lang={lang} title={entry.data.title} description={entry.data.description || cat.labelEn} schema={pageSchema} image={entry.data.image} ogType="article">
   <article class="py-12">
     <div class="mx-auto max-w-6xl px-6 md:px-10">
@@ -80,7 +109,7 @@ const pageSchema = [
         />
       )}
       <div class="prose-bkpa mt-8">
-        <Content />
+        {Content && <Content />}
       </div>
       <div class="mt-10">
         <ContentFeedback lang={lang} />
@@ -91,3 +120,4 @@ const pageSchema = [
     </div>
   </article>
 </BaseLayout>
+)}

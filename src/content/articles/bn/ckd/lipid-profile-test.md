@@ -3,6 +3,8 @@ title: Lipid Profile/লিপিড প্রোফাইল
 description: ''
 date: '2022-02-23T18:00:00.000Z'
 image: /images/fb_img_1625945037993.jpg
+aliases:
+  - "লিপিড-প্রোফাইল"
 ---
 
 ### Lipid Profile/লিপিড প্রোফাইল
