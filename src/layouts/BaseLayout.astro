@@ -6,6 +6,7 @@ import SearchModal from "@/components/SearchModal.astro";
 import "@/styles/global.css";
 import config from "@/config/config.json";
 import { organizationSchema } from "@/lib/schema";
+import { publicImageMeta } from "@/lib/images";
 import {
   defaultLanguage,
   isMultilingual,
@@ -42,11 +43,13 @@ const pageTitle = `${title} · BKPA Foundation`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // encodeURI because filenames here contain spaces and other characters that
 // are legal on disk but break an unescaped URL in a scraper.
-const shareImagePath = image ? `${base}${image}` : `${base}/images/logo.png`;
+const shareImage = image ?? config.metadata.meta_image;
+const shareImagePath = `${base}${shareImage}`;
 const ogImageURL = new URL(encodeURI(shareImagePath), Astro.site);
-// A real photo deserves the large card; the logo does not, since it would be
-// letterboxed into a wide frame.
-const twitterCard = image ? "summary_large_image" : "summary";
+const ogImageMeta = await publicImageMeta(shareImage);
+// The large card wants a wide image; anything narrower than Facebook's own
+// 600px minimum for it is better as the small square.
+const twitterCard = ogImageMeta && ogImageMeta.width >= 600 ? "summary_large_image" : "summary";
 const schemaBlocks = [organizationSchema(), ...(schema ? (Array.isArray(schema) ? schema : [schema]) : [])];
 const gaId = config.params.google_analytics_id;
 ---
@@ -75,6 +78,15 @@ const gaId = config.params.google_analytics_id;
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={ogImageURL} />
+    {
+      ogImageMeta && (
+        <>
+          <meta property="og:image:type" content={ogImageMeta.type} />
+          <meta property="og:image:width" content={String(ogImageMeta.width)} />
+          <meta property="og:image:height" content={String(ogImageMeta.height)} />
+        </>
+      )
+    }
     <meta property="og:image:alt" content={title} />
     <meta name="twitter:card" content={twitterCard} />
     <meta name="twitter:title" content={pageTitle} />
