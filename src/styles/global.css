@@ -246,6 +246,37 @@ body {
   font-style: italic;
   margin-block: 1.2em;
 }
+/* Tables. Nothing on the site had one until an article arrived with a stage
+   chart, and an unstyled table is an unreadable run of words.
+
+   display:block turns the table itself into the scroll container — the only
+   way to do this without a wrapper element, which the markdown pipeline does
+   not give us. min-width keeps the columns from crushing on a phone; the
+   table scrolls sideways instead of forcing the whole page to. */
+.prose-bkpa table {
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin-block: 1.5em;
+  font-size: 0.95em;
+}
+.prose-bkpa thead {
+  background: var(--color-surface-2);
+}
+.prose-bkpa th,
+.prose-bkpa td {
+  border: 1px solid var(--color-line);
+  padding: 0.6em 0.75em;
+  text-align: left;
+  vertical-align: top;
+}
+.prose-bkpa th {
+  font-weight: 600;
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
 .prose-bkpa hr {
   border: none;
   border-top: 1px solid var(--color-line);
