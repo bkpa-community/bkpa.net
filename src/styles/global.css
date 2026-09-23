@@ -2,9 +2,14 @@
 
 @theme {
   --font-display: "Fraunces", "Tiro Bangla", ui-serif, Georgia, serif;
-  --font-body: "Source Sans 3", "Hind Siliguri", ui-sans-serif, system-ui, sans-serif;
-  --font-bn-display: "Tiro Bangla", "Fraunces", serif;
-  --font-bn-body: "Hind Siliguri", "Source Sans 3", sans-serif;
+  --font-body: "Source Sans 3", "Noto Sans Bengali", ui-sans-serif, system-ui, sans-serif;
+  --font-bn-display: "Tiro Bangla", "Noto Sans Bengali", serif;
+  /* Noto Sans Bengali sets the inline English too — "GFR", "eGFR", "mL/min"
+     appear in nearly every sentence here, and a Latin face in front of this
+     stack meant two unrelated typefaces inside one line. It is also the
+     Android system Bengali font, so the pre-load fallback is the same
+     typeface: no reflow mid-article on a slow connection. */
+  --font-bn-body: "Noto Sans Bengali", "Nirmala UI", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
   --color-ink: #172420;
@@ -120,20 +125,23 @@ body {
 
 /* Prose styling for article/emergency-contact bodies rendered from markdown */
 .prose-bkpa {
-  max-width: none;
+  /* Bengali is a three-deck script — vowel signs above the matra, conjunct
+     feet below the baseline — with no x-height to carry size the way Latin
+     does. The same number sets perceptibly smaller: 16px Bengali reads about
+     like 12px Latin. Every Bengali daily sets long-form well above that
+     (Prothom Alo 18, bdnews24 20, Kaler Kantho 22). 20px, and the same on
+     both breakpoints — the old rule SHRANK to 16px on desktop, which is
+     backwards. Line length is held by the measure below instead. */
+  font-family: var(--font-bn-body);
+  max-width: 36rem;
   color: var(--color-ink);
   line-height: 1.8;
-  /* The longest-read surface on the site, and most of it is Bengali. 17px on a
-     phone rather than 16 — the measure is only ~327px there, so lines are
-     short and the extra size costs no comfortable line length. Back to 16px
-     from sm up, where lines are long enough that larger text would push the
-     measure past a comfortable count. */
-  font-size: 1.0625rem;
+  font-size: 1.25rem;
 }
 @media (min-width: 640px) {
   .prose-bkpa {
-    font-size: 1rem;
-    line-height: 1.75;
+    /* Size holds; only the measure grows. */
+    max-width: 38rem;
   }
 }
 .prose-bkpa h1,
@@ -148,8 +156,9 @@ body {
   color: var(--color-ink);
   font-weight: 600;
   /* Tighter than body text — a heading is one or two lines and reads as a
-     unit — but not so tight that Bengali matras collide between lines. */
-  line-height: 1.3;
+     unit — but not so tight that Bengali matras collide between lines. 1.3
+     was right at the clipping edge for stacked vowel signs. */
+  line-height: 1.35;
   margin-bottom: 0.5em;
   text-wrap: balance;
 }
@@ -275,6 +284,15 @@ body {
   font-weight: 600;
   color: var(--color-ink);
   white-space: nowrap;
+}
+
+/* Bengali letters hang from an unbroken headline (মাত্রা). Tracking punches
+   gaps in it and the word stops reading as a word, so the tracking that
+   suits Latin small-caps labels is removed for Bengali. */
+:lang(bn) .text-eyebrow,
+:lang(bn) .prose-bkpa h6 {
+  letter-spacing: normal;
+  word-spacing: 0.08em;
 }
 
 .prose-bkpa hr {
