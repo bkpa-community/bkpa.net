@@ -196,7 +196,39 @@ body {
   margin-block: 1em;
   padding-inline-start: 1.4em;
 }
+/* Tailwind's reset strips every list marker, which is right for navigation
+   built out of lists and wrong here: in an article a list is content, and
+   without markers it reads as a run of stray lines. */
+.prose-bkpa ul {
+  list-style: disc;
+}
+.prose-bkpa ul ul {
+  list-style: circle;
+}
+.prose-bkpa ul ul ul {
+  list-style: square;
+}
+.prose-bkpa ol {
+  list-style: decimal;
+}
+.prose-bkpa ol ol {
+  list-style: lower-alpha;
+}
+/* Bengali articles number themselves ১, ২, ৩ in their own prose; an ordered
+   list in the same article should not switch to 1, 2, 3. Browsers without
+   the bengali counter style fall back to decimal on their own. */
+:lang(bn) .prose-bkpa ol {
+  list-style-type: bengali;
+}
 .prose-bkpa li {
+  margin-block: 0.35em;
+}
+.prose-bkpa li::marker {
+  color: var(--color-ink-soft);
+}
+/* A nested list belongs to its parent item, not to the section. */
+.prose-bkpa li > ul,
+.prose-bkpa li > ol {
   margin-block: 0.35em;
 }
 .prose-bkpa a {
