@@ -18,6 +18,14 @@
     "read_more": "Read more",
     "back": "Back"
   },
+  "not_found": {
+    "title": "We could not find that page",
+    "lead": "The address you are looking for is not on this site. The link may be out of date, or the address may have been mistyped.",
+    "search_cta": "Search the site",
+    "home_cta": "Go to the homepage",
+    "browse": "Or browse by topic",
+    "emergency": "In an emergency, contact your nearest hospital directly. This website is not an emergency service."
+  },
   "search": {
     "label": "Search",
     "placeholder": "Search the site...",
