@@ -16,50 +16,39 @@ image: /images/images-42.jpeg
 5. FBS+2 hour after breakfast bloodsugar
 6. Urine r/e
 
-#### প্রতি ৩ মাসে ১ বার করবেন
+### প্রতি ৩ মাসে ১ বার করবেন
 
 1. 24 hour UTP
 2. HbA1C(ডায়াবেটিক হলে)
 
-#### প্রতি ৬ মাসে ১ বার করবেন
+### প্রতি ৬ মাসে ১ বার করবেন
 
-1. 1.LFT(Serum bilirubin , SGPT , SGOT)
+1. LFT(Serum bilirubin , SGPT , SGOT)
 2. Fasting lipid profile
 3. Serum Uric acid
 
-#### প্রতি বছরে ১ বার করবেন
+### প্রতি বছরে ১ বার করবেন
 
-1.BK Virus DNA PCR
+1. BK Virus DNA PCR
+2. CMV DNA PCR
+3. Serum Calcium
+4. Serum Inorganic Phosphate
+5. 5.PTH
+6. \##১ম বছর পার হওয়ার পর (Creatinine ফিক্স হওয়ার পর)
 
-2.CMV DNA PCR
+### প্রতি ২ বা ৩ মাসে ১ বার করবেন
 
-3.Serum Calcium
-
-4.Serum Inorganic Phosphate
-
-5.PTH
-
-\##১ম বছর পার হওয়ার পর (Creatinine ফিক্স হওয়ার পর)
-
-#### প্রতি ২ বা ৩ মাসে ১ বার করবেন
-
-1.Hb%+TC of WBC অথবা CBC
-
-2.Serum Creatinine
-
-3.Serum Urea
-
-4.Serum Potassium অথবা Serum Electrolyte
-
-5.FBS+2 hour after breakfast bloodsugar
-
-6.Urine r/e
-
-7.HbA1C(ডায়াবেটিক হলে)
+1. 1.Hb%+TC of WBC অথবা CBC
+2. 2.Serum Creatinine
+3. 3.Serum Urea
+4. Serum Potassium অথবা Serum Electrolyte
+5. &#x20;FBS+2 hour after breakfast blood sugar
+6. &#x20;Urine r/e
+7. &#x20;HbA1C(ডায়াবেটিক হলে)
 
 #### প্রতি ৬ মাসে ১ বার করবেন
 
-1. LFT(Serum Bilitubin , SGPT , SGOT)
+1. LFT(Serum Bilirubin , SGPT , SGOT)
 2. Fasting lipid profile
 3. Serum Uric acid
 
@@ -73,12 +62,14 @@ image: /images/images-42.jpeg
 6. Vitamin D লেভেল (নরমাল না হওয়া পর্যন্ত)
 7. 24 hour UTP (প্রতি ৬ মাসেও একবার করা যায়)
 
+​
+
 #### উপরের সব টেস্টগুলো রেগুলার ফলো আপের টেস্ট।এছাড়াও সবসময় লক্ষ্য রাখবেন
 
 ​
 
 - যদি প্রস্রাবে জ্বালা পোড়া; তলপেট ব্যাথা সাথে জ্বর আসা বা জ্বর জ্বর ভাব হওয়া হলে Urine c/s করতে হবে।
 - ইউরিনে ফেনা লক্ষ্য করলে বিলম্ব না করে 24 hour UTP করতে হবে।
-- ডাক্তারের পরামর্শ অনুযায়ী সময়মত বিভিন্ন ড্রাগের লেভেল টেস্ট করতে হবে যেমন tacrolimus level test; MMF Level test; Cyclosporin level test…. ট্রান্সপ্লান্টের পর ১ম বছর লেভেল টেস্ট ঘন ঘন করতে হয় কারন তখন ড্রাগ লেভেল ওঠা নামা করে। ১ বছর পর ধীরে ধীরে ফিক্স হয়ে যায় এবং বছরে ১ বার করতে হয়।
-- ডাক্তারের পরামর্শ মত Ultrasonogram of graft kidney করতে হতে পারে।
+- ডাক্তারের পরামর্শ অনুযায়ী সময়মত বিভিন্ন ড্রাগের লেভেল টেস্ট করতে হবে যেমন **tacrolimus level test** , **MMF Level test** , **Cyclosporin level test  .** ট্রান্সপ্লান্টের পর ১ম বছর লেভেল টেস্ট ঘন ঘন করতে হয় কারন তখন ড্রাগ লেভেল ওঠা নামা করে। ১ বছর পর ধীরে ধীরে ফিক্স হয়ে যায় এবং বছরে ১ বার করতে হয়।
+- ডাক্তারের পরামর্শ মত **Ultrasonogram of graft kidney** করতে হতে পারে।
 - এছাড়াও ডাক্তার শারীরিক সমস্যা অনুযায়ী অন্যান্য টেস্ট করতে দিতে পারেন।
