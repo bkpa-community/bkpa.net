@@ -16,3 +16,7 @@ npm-debug.log*
 
 # macOS
 .DS_Store
+
+# Local agent tooling, not part of the site
+.agents/
+.codex/

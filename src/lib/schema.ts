@@ -1,4 +1,4 @@
-const SITE = "https://www.bkpa.net";
+const SITE = "https://bkpa.net";
 const BASE = "";
 const ORIGIN = `${SITE}${BASE}`;
 

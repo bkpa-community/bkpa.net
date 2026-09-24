@@ -126,7 +126,7 @@ T & B cell cross match-এটা মেলাটা জরুরি সাকস
 
 **কে কোন রক্তের গ্রুপ এর কিডনি সাধারণত নিতে পারবেন বা দিতে পারবেন এ ব্যাপারে জানতে নিচের লিংকটি দেখুন :-**
 
-[https://www.bkpa.net/renal-transplantation/blood-group-transplant](/renal-transplantation/blood-group-transplant)
+[https://bkpa.net/renal-transplantation/blood-group-transplant](/renal-transplantation/blood-group-transplant)
 
 DTPA রেনোগ্রাম-এই টেস্ট টা গুরুত্বপূর্ণ ,আপনার কিডনি যত ভালোই কাজ করুক না কেন,এই টেস্ট এর মাধ্যমে ডোনার এর দুইটি কিডনি এর মধ্যে কোন কিডনি কতটুকু কাজ করছে সেটা জানার জন্য এই টেস্ট করা হয়।
 
@@ -174,7 +174,7 @@ DTPA রেনোগ্রাম-এই টেস্ট টা গুরুত�
 
 ব্যাকটেরিয়াল ইনফেকশন কন্ট্রোল,কালচার এবং এন্টিবাযোটিক্স এর ব্যাপারে পড়তে নিচের \*লিংকটি পড়ুন-
 
-[https://www.bkpa.net/ckd/bacterial-infection-culture-antibiotics](/ckd/bacterial-infection-culture-antibiotics)
+[https://bkpa.net/ckd/bacterial-infection-culture-antibiotics](/ckd/bacterial-infection-culture-antibiotics)
 
 - ভাইরাল ইনফেকশন - আগে থেকে অনেক রোগীর hepatitis যেমন-hepatitis B ,C থাকে সেটা নেগেটিভ না থাকলে বা ঠিক মতো কন্ট্রোল না থাকলে।\
 ট্রান্সপ্লান্ট এর পর BK , CMV দ্বারা আক্রান্ত হলেন কিন্তু সঠিক উপায়ে চিকিৎসা নিলেন না ইত্যাদি।
@@ -249,7 +249,7 @@ Terminal Compliment pathway ইনহিবিটর : Eculizumab
 
 - ব্লাড সুগারের ব্যাপারে নিচের লিংকটি পড়তে পারেন :-
 
-[https://www.bkpa.net/diabetes/how-to-control-diabetes](/diabetes/how-to-control-diabetes)
+[https://bkpa.net/diabetes/how-to-control-diabetes](/diabetes/how-to-control-diabetes)
 
 \*\*আরেকটা সমস্যা হচ্ছে ইম্মুনোসাপ্রেসিভ বিশেষ করে স্টেরোয়েড/prednisolone এর কারণে লিপিডও বেড়ে যায় তাই চর্বি এবং তৈলাক্ত জাতীয় খাবারের ব্যাপারে সতর্কতা মেনে চলা উচিত বা একেবারে কম খাওয়া উচিত।
 
@@ -260,10 +260,10 @@ Terminal Compliment pathway ইনহিবিটর : Eculizumab
 - প্রোটিন স্বাভাবিক মাত্রায় খাওয়া উচিত ধরুন দুপুরে/রাতে এক পিছ মাঝারি সাইজ এর মাছ বা মাংস যেহেতু কিডনি ফাঙ্কশন স্বাভাবিক হয়ে যায় ট্রান্সপ্লান্টের পর.প্রোটিন এর ক্ষেত্রে চিকেন,মাছ,ডিমের সাদা অংশ ইত্যাদি বেশি প্রাধান্য দিবেন। রেড মিট এবং অর্গান মিট(কলিজা,গুর্দা ইত্যাদি) অল্প বা মাঝে মাঝে অকেশনালী খেতে পারেন যেহেতু রেড মিট এবং অর্গান মিট লিপিড/চর্বি এবং ইউরিক অ্যাসিড বাড়ায় তাই নিয়মিত খাওয়া কখনো উচিত নয়।
 
 - ইউরিক অ্যাসিড সম্পর্কে জানতে নিচের লিংক পড়ুন :-\
-[https://www.bkpa.net/ckd/uric-acid](/ckd/uric-acid "https://www.bkpa.net/ckd/uric-acid")
+[https://bkpa.net/ckd/uric-acid](/ckd/uric-acid "https://bkpa.net/ckd/uric-acid")
 
 - ট্রান্সপ্লান্ট এরপর আস্তে আস্তে অল্প অল্প করে হাটা শুরু করবেন যা সময়ের সাথে সাথে বাড়াবেন।\
-[https://www.bkpa.net/others/walk-exercise](/others/walk-exercise "https://www.bkpa.net/others/walk-exercise")
+[https://bkpa.net/others/walk-exercise](/others/walk-exercise "https://bkpa.net/others/walk-exercise")
 
 - ওজন স্ট্রীক্টলী মেইনটেইন করবেন ।
 
@@ -271,7 +271,7 @@ Terminal Compliment pathway ইনহিবিটর : Eculizumab
 
 - বাংলাদেশে যারা ট্রান্সপ্লান্ট করতে চান এবং আইননানুগ বিষয়গুলো জানতে চান তারা নিচের লিংকটি পড়তে পারেন-
 
-[https://www.bkpa.net/renal-transplantation/transplant-law-legal-aspects](/renal-transplantation/transplant-law-legal-aspects "https://www.bkpa.net/renal-transplantation/transplant-law-legal-aspects")
+[https://bkpa.net/renal-transplantation/transplant-law-legal-aspects](/renal-transplantation/transplant-law-legal-aspects "https://bkpa.net/renal-transplantation/transplant-law-legal-aspects")
 
 - কিডনি প্রতিস্থাপনে দালালদের বিভিন্ন প্রতিবন্ধকতা এবং ঝামেলা নিয়ে নিচের পোস্টটি পড়তে পারেন:-
 

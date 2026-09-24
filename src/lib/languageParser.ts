@@ -4,7 +4,7 @@ import languages from "@/config/language.json";
  * Language plumbing for the multilingual architecture.
  *
  * One rule shapes everything here: the default language is served unprefixed.
- * www.bkpa.net/legal must keep working, because it is a live site with inbound
+ * bkpa.net/legal must keep working, because it is a live site with inbound
  * links and search rankings — moving every Bengali page to /bn/ would break
  * both. Only non-default languages carry a prefix.
  */

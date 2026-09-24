@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "BKPA Foundation",
-    "base_url": "https://www.bkpa.net",
+    "base_url": "https://bkpa.net",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",

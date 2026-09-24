@@ -26,7 +26,7 @@ image: /images/images-41.jpeg
 
 - ব্যাকটেরিয়াল ইনফেকশন কন্ট্রোল,কালচার এবং এন্টিবাযোটিক্স এর ব্যাপারে পড়তে নিচের লিংকটি পড়ুন-
 
-[https://www.bkpa.net/ckd/bacterial-infection-culture-antibiotics](/ckd/bacterial-infection-culture-antibiotics)
+[https://bkpa.net/ckd/bacterial-infection-culture-antibiotics](/ckd/bacterial-infection-culture-antibiotics)
 
 - ভাইরাল ইনফেকশন - আগে থেকে অনেক রোগীর Hepatitis যেমন-hepatitis B ,C থাকে সেটা নেগেটিভ না থাকলে বা ঠিক মতো কন্ট্রোল না থাকলে।\
 ট্রান্সপ্লান্ট এর পর BK , CMV দ্বারা আক্রান্ত হলেন কিন্তু সঠিক উপায়ে চিকিৎসা নিলেন না ইত্যাদি।

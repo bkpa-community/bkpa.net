@@ -56,7 +56,7 @@ function isRenamedStub(url) {
 }
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.bkpa.net",
+  site: "https://bkpa.net",
   build: {
     inlineStylesheets: "always",
   },

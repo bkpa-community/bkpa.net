@@ -41,7 +41,7 @@ image: /images/images-38.jpeg
 
 - ব্লাড সুগারের ব্যাপারে নিচের লিংকটি পড়তে পারেন :-
 
-[https://www.bkpa.net/diabetes/how-to-control-diabetes](/diabetes/how-to-control-diabetes)
+[https://bkpa.net/diabetes/how-to-control-diabetes](/diabetes/how-to-control-diabetes)
 
 \*আরেকটা সমস্যা হচ্ছে ইম্মুনোসাপ্রেসিভ বিশেষ করে স্টেরোয়েড/prednisolone এর কারণে লিপিডও বেড়ে যায় তাই চর্বি এবং তৈলাক্ত জাতীয় খাবারের ব্যাপারে সতর্কতা মেনে চলা উচিত বা একেবারে কম খাওয়া উচিত।
 
@@ -53,7 +53,7 @@ image: /images/images-38.jpeg
 
 - ইউরিক অ্যাসিড সম্পর্কে জানতে নিচের লিংক পড়ুন :-
 
-[https://www.bkpa.net/ckd/uric-acid](/ckd/uric-acid "Uric Acid")
+[https://bkpa.net/ckd/uric-acid](/ckd/uric-acid "Uric Acid")
 
 - ট্রান্সপ্লান্ট এরপর আস্তে আস্তে অল্প অল্প করে হাটা শুরু করবেন যা সময়ের সাথে সাথে বাড়াবেন।
 
