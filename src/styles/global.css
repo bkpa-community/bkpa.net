@@ -133,10 +133,8 @@ body {
      both breakpoints — the old rule SHRANK to 16px on desktop, which is
      backwards. Line length is held by the measure below instead. */
   font-family: var(--font-bn-body);
-  /* The reading measure is the article column itself (max-w-3xl on the
-     article page), so the heading, the image and the text all share one
-     width. A second, narrower cap here left the text short of the image
-     and the right-hand side looked broken. */
+  /* No cap: the text fills the article column, so the heading, the image
+     and the body all share one width. */
   max-width: none;
   color: var(--color-ink);
   line-height: 1.8;
