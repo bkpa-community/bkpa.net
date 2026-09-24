@@ -3,7 +3,7 @@ title: Water Intake for Kidney Patients - কিডনি রোগি ও ড�
   পানির পরিমান.
 description: ''
 date: '2022-02-25T18:00:00.000Z'
-image: /images/water-intake-for-kidney-patients-কিডনি-রোগি-ও-ডায়ালাইসিস-রোগিদের-জন্য-পানির-পরিমান.webp
+image: /images/water-intake-for-kidney-patients.webp
 aliases:
   - কিডনি-রোগি-ও-ডায়ালাইসিস-রোগিদের-জন্য-পানির-পরিমান
 ---
