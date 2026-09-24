@@ -28,6 +28,12 @@ interface Props {
   image?: string;
   /** "article" for posts, so shares render with the article treatment. */
   ogType?: "website" | "article";
+  /**
+   * Keep the page out of search engines and out of the site's own search.
+   * The page still answers at its URL — this is for a page handed out by
+   * link rather than found.
+   */
+  noindex?: boolean;
 }
 const {
   title,
@@ -36,6 +42,7 @@ const {
   lang = defaultLanguage.languageCode,
   image,
   ogType = "website",
+  noindex = false,
 } = Astro.props;
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
@@ -114,6 +121,7 @@ const gaId = config.params.google_analytics_id;
         rel="stylesheet"
       />
     </noscript>
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <ClientRouter />
     {
       gaId && (
@@ -147,7 +155,9 @@ const gaId = config.params.google_analytics_id;
   </head>
   <body id="page" data-lang={lang} class="overflow-x-hidden">
     <Header lang={lang} />
-    <main data-pagefind-body>
+    {/* Pagefind indexes what carries data-pagefind-body, so an unlisted
+        page simply does not carry it and stays out of the site search. */}
+    <main data-pagefind-body={noindex ? undefined : true}>
       <slot />
     </main>
     <Footer lang={lang} />

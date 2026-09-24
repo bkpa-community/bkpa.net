@@ -85,9 +85,9 @@ const pageSchema = [
 ---
 
 {redirectTo ? <Redirect to={redirectTo} /> : (
-<BaseLayout lang={lang} title={entry.data.title} description={description} schema={pageSchema} image={entry.data.image} ogType="article">
+<BaseLayout lang={lang} title={entry.data.title} description={description} schema={pageSchema} image={entry.data.image} ogType="article" noindex={entry.data.unlisted}>
   <article class="py-12">
-    <div class="mx-auto max-w-6xl px-6 md:px-10">
+    <div class="mx-auto max-w-3xl px-6 md:px-10">
       <a class="text-eyebrow text-(--color-ink-soft) hover:text-(--color-deep)" href={slugSelector(`/${cat.slug}`, lang)}>
         ← {lang === "en" ? cat.labelEn : cat.labelBn}
       </a>

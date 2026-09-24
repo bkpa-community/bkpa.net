@@ -133,15 +133,19 @@ body {
      both breakpoints — the old rule SHRANK to 16px on desktop, which is
      backwards. Line length is held by the measure below instead. */
   font-family: var(--font-bn-body);
-  max-width: 36rem;
+  /* The reading measure is the article column itself (max-w-3xl on the
+     article page), so the heading, the image and the text all share one
+     width. A second, narrower cap here left the text short of the image
+     and the right-hand side looked broken. */
+  max-width: none;
   color: var(--color-ink);
   line-height: 1.8;
   font-size: 1.25rem;
 }
 @media (min-width: 640px) {
   .prose-bkpa {
-    /* Size holds; only the measure grows. */
-    max-width: 38rem;
+    /* Size holds at every width; the column sets the measure. */
+    max-width: none;
   }
 }
 .prose-bkpa h1,

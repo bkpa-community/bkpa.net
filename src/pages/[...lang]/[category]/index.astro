@@ -36,7 +36,10 @@ export async function getStaticPaths() {
   // Bengali only: the old site had no English tree.
   const bn = defaultLanguage.languageCode;
   const articles = (await getArticles(bn))
-    .filter((a) => !a.data.draft)
+    // Unlisted articles get no root-level address either: these stubs exist
+    // to preserve old Hugo URLs, and a page meant to be reachable only by
+    // its link should have exactly one address.
+    .filter((a) => !a.data.draft && !a.data.unlisted)
     // "others" sorts last, so when a slug exists in two categories the
     // specific one claims the redirect.
     .sort((a, b) => Number(a.id.startsWith("others/")) - Number(b.id.startsWith("others/")));
@@ -66,7 +69,7 @@ export async function getStaticPaths() {
 const { category } = Astro.params;
 const cat = redirectTo ? null : categoryBySlug(category)!;
 const catSlug = cat?.slug ?? "";
-const all = (await getArticles(lang)).filter((a) => !a.data.draft);
+const all = (await getArticles(lang)).filter((a) => !a.data.draft && !a.data.unlisted);
 const items = all
   .filter((a) => a.id.startsWith(`${catSlug}/`))
   .sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0));

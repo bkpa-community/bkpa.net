@@ -18,7 +18,7 @@ const t = getTranslations(lang);
 
 const home = (await getSiteHome(lang))!.data;
 
-const articles = (await getArticles(lang)).filter((a) => !a.data.draft);
+const articles = (await getArticles(lang)).filter((a) => !a.data.draft && !a.data.unlisted);
 const countFor = (slug: string) => articles.filter((a) => a.id.startsWith(`${slug}/`)).length;
 const photos = (await getGallery(lang)).sort((a, b) => a.data.order - b.data.order);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");

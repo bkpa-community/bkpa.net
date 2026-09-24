@@ -22,7 +22,7 @@ function excerpt(markdown: string, maxLength = 140) {
   return plain.length > maxLength ? `${plain.slice(0, maxLength).trim()}...` : plain;
 }
 
-const allArticles = (await getArticles(lang)).filter((a) => !a.data.draft);
+const allArticles = (await getArticles(lang)).filter((a) => !a.data.draft && !a.data.unlisted);
 const articleByHref = new Map(
   allArticles.map((a) => [`${base}/${a.id}`, a])
 );

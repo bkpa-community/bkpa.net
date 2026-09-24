@@ -48,6 +48,30 @@ const ALIAS_PATHS = new Set(
       return Array.isArray(aliases) ? aliases.map((a) => `/${category}/${String(a).trim()}`) : [];
     }),
 );
+// Articles marked `unlisted` are reachable by link but listed nowhere, and
+// they carry noindex — so they must not appear in the sitemap either.
+const UNLISTED_PATHS = new Set(
+  readdirSync(ARTICLES_DIR, { recursive: true, encoding: "utf8" })
+    .filter((f) => f.endsWith(".md"))
+    .flatMap((f) => {
+      const category = f.split("/").at(-2);
+      const slug = (f.split("/").at(-1) ?? "").replace(/\.md$/, "");
+      const text = readFileSync(join(ARTICLES_DIR, f), "utf8").replace(/^\uFEFF/, "").replace(/\r\n/g, "\n");
+      const frontmatter = text.match(/^---\n([\s\S]*?)\n---/)?.[1];
+      let fm;
+      try {
+        fm = frontmatter ? parseYaml(frontmatter) : undefined;
+      } catch {
+        return [];
+      }
+      return fm?.unlisted === true ? [`/${category}/${slug}`] : [];
+    }),
+);
+/** @param {string} url */
+function isUnlisted(url) {
+  const path = decodeURIComponent(new URL(url).pathname).replace(/\/$/, "");
+  return [...UNLISTED_PATHS].some((u) => path === u || path.endsWith(u));
+}
 /** @param {string} url */
 function isRenamedStub(url) {
   const path = decodeURIComponent(new URL(url).pathname).replace(/\/$/, "");
@@ -60,7 +84,7 @@ export default defineConfig({
   build: {
     inlineStylesheets: "always",
   },
-  integrations: [sitemap({ filter: (page) => !isLegacyStub(page) && !isRenamedStub(page) })],
+  integrations: [sitemap({ filter: (page) => !isLegacyStub(page) && !isRenamedStub(page) && !isUnlisted(page) })],
   vite: {
     plugins: [tailwindcss()],
   },

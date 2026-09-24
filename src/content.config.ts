@@ -28,6 +28,11 @@ const articlesSchema = z.object({
     description: z.string().optional().default(""),
     image: z.string().optional(),
     draft: z.boolean().optional().default(false),
+    // Reachable at its URL, but listed nowhere: not in a category, not on
+    // the homepage, not in the site search, not in the sitemap, and marked
+    // noindex so search engines leave it alone. For a page you want to hand
+    // out by link. `draft` is different — that one is not published at all.
+    unlisted: z.boolean().optional().default(false),
     // Slugs this article used to live at. Each one becomes a redirect to the
     // current URL — under its category and, for the old Hugo site, at the
     // root — so renaming a file never breaks a shared or indexed link.
