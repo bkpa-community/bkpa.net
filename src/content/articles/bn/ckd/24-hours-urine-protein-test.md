@@ -1,10 +1,9 @@
 ---
-title: ২৪ ঘণ্টা ইউরিন প্রোটিন টেস্ট (24 Hours Urine Protein test) এর প্রয়োজনীয়তা ও টেস্টের নিয়মাবলী
+title: ২৪ ঘণ্টা ইউরিন প্রোটিন টেস্ট এর প্রয়োজনীয়তা ও টেস্টের নিয়মাবলী
 description: ''
-date: 2022-03-05 18:00:00+00:00
-image: /images/161335273_10225246352529061_4741228291592592703_n.jpeg
+date: 2022-03-05T18:00:00.000Z
+image: /images/24-hours-urine-protein-test-final.webp
 ---
-
 ### ২৪ ঘণ্টা ইউরিন প্রোটিন টেস্ট (24 Hours Urine Protein test) এর প্রয়োজনীয়তা ও টেস্টের নিয়মাবলী
 
 প্রায়ই অনেক কিডনি রোগী এবং ট্র্যান্সপ্ল্যান্ট রেসিপিয়েন্টদের দেখা যায় হুট করে ক্রিয়েটিনিন বেড়ে যাচ্ছে অথবা ইউরিন আরএমই ( Urine RME) টেস্ট করার পর প্রোটিন ট্রেস (Trace) অথবা প্লাস (Plus) দেখাচ্ছে।
@@ -21,23 +20,23 @@ image: /images/161335273_10225246352529061_4741228291592592703_n.jpeg
 
 #### ***TOPICS :- PROTEINUREA সম্পকে বিস্তারিত জানতে*** ***এই পোস্টটি পড়ুন।***
 
-> **[Proteinurea/Chronic Kidney Disease(CKD)](/ckd/proteinurea-ckd "Proteinurea/Chronic Kidney Disease(CKD)")**
+> ​[**Proteinurea/Chronic Kidney Disease(CKD)**](/ckd/proteinurea-ckd "Proteinurea/Chronic Kidney Disease(CKD)")​
 
-** কাদের ২৪ ঘণ্টা ইউরিন প্রোটিন টেস্ট টা করা জরুরি ???**
+\*\* কাদের ২৪ ঘণ্টা ইউরিন প্রোটিন টেস্ট টা করা জরুরি ???\*\*
 
-** Diabetic nephropathy** - যাদের অনিয়ন্ত্রিত ডাইবেটিক্স রেয়েছে।
+\*\* Diabetic nephropathy\*\* - যাদের অনিয়ন্ত্রিত ডাইবেটিক্স রেয়েছে।
 
 অনেক সময় কিডনি ট্রান্সপ্ল্যান্ট করার পর পরই ইমুনুসাপ্রেসিভ ওষুধ খাওয়ার ফলে সুগার লেভেল বেড়ে যায় ( বিস্তারিত পড়ুন ,
 
-> **[New On Set Diabetes After Transplant (NODAT)](/diabetes/new-on-set-diabetes-after-transplant-nodat "New On Set Diabetes After Transplant (NODAT)")**
+> ​[**New On Set Diabetes After Transplant (NODAT)**](/diabetes/new-on-set-diabetes-after-transplant-nodat "New On Set Diabetes After Transplant (NODAT)")​
 
 ফলে প্রস্রাবের সাথে অনেক বেশি পরিমান প্রোটিন নিগ্রত হতে থাকে এবং খুব দ্রুত ট্রান্সপ্ল্যান্ট করা কিডনি বিকল হতে থাকে। তাই এখন থেকে কায়িক পরিশ্রম বারায় দিন এবং প্রতি ৬ মাস পর পর একবার করে HBA1C test টি করে আপনার সুগার লেভেলের আসল পরিমাপ দেখে নিন।
 
-** High blood pressure.** - অস্বাভাবিক উচ্চ রক্তচাপ স্থায়ীভাবে কিডনি ক্ষতি করতে থাকে। উচ্চ রক্তচাপ নিয়ন্ত্রন করা অতি জরুরি।
+\*\* High blood pressure.\*\* - অস্বাভাবিক উচ্চ রক্তচাপ স্থায়ীভাবে কিডনি ক্ষতি করতে থাকে। উচ্চ রক্তচাপ নিয়ন্ত্রন করা অতি জরুরি।
 
-** Lupus nephritis** – লুপাস একটি অটোইমিউন রোগ যেখানে নিজের শরীরেরে রোগ প্রতিরোধ ব্যবস্থা উল্টা নিজের কিডনীতে আক্রমণ করে এবং তাদের ক্ষতি করে।তাই যারা এ রোগে আক্রান্ত্র তাদের অবশই প্রোটিন ইউরিয়া চেক করা উচিৎ।
+\*\* Lupus nephritis\*\* – লুপাস একটি অটোইমিউন রোগ যেখানে নিজের শরীরেরে রোগ প্রতিরোধ ব্যবস্থা উল্টা নিজের কিডনীতে আক্রমণ করে এবং তাদের ক্ষতি করে।তাই যারা এ রোগে আক্রান্ত্র তাদের অবশই প্রোটিন ইউরিয়া চেক করা উচিৎ।
 
-**** **এছাড়াও যাদের ঘন ঘন ইরিন ইনফেকশন (urinary tract infections – UTI )** বিশেষ করে নারীদের এবং যারা **Nephrotic syndrome ( কিডনি রোগ) যেমন হাত মুখ ফুলে গেলে অথবা ইউরিনে ফেনা হলে** , **Polycystic kidney disease (এক প্রকার সিসট যা কিডনি তে তরল পদার্থ হিসেবে জমে কিডনির সাইজ কে বড় করে তুলে এবং কিডনি টিস্যুকে নষ্ট করতে থাকে)** ভুগতেসেন তাদের অবশই অবশ্যই প্রতি ৩ মাস অথবা ৬ মাস পর পর 24 Hours Urine Protein test টা করা জরুরি।
+\*\*\*\* **এছাড়াও যাদের ঘন ঘন ইরিন ইনফেকশন (urinary tract infections – UTI )** বিশেষ করে নারীদের এবং যারা **Nephrotic syndrome ( কিডনি রোগ) যেমন হাত মুখ ফুলে গেলে অথবা ইউরিনে ফেনা হলে** , **Polycystic kidney disease (এক প্রকার সিসট যা কিডনি তে তরল পদার্থ হিসেবে জমে কিডনির সাইজ কে বড় করে তুলে এবং কিডনি টিস্যুকে নষ্ট করতে থাকে)** ভুগতেসেন তাদের অবশই অবশ্যই প্রতি ৩ মাস অথবা ৬ মাস পর পর 24 Hours Urine Protein test টা করা জরুরি।
 
 **24 Hours Urine Protein test কই করবেন ???**
 
@@ -53,11 +52,11 @@ image: /images/161335273_10225246352529061_4741228291592592703_n.jpeg
 
 এখন ইউরিন কালেক্ট করা নিয়ম হলো ধরুন আপনি সকাল ৭ টা থেকে ইউরিন কালেক্ট করতে চান। তাহলে সকাল ৭ টায় আপনি টয়লেট এ গিয়ে **প্রথম** ইউরিন টা ফেলে দিবেন। এর পর থেকে সকাল ৭ টা থেকে পরবর্তী দিনের ৭ টা পর্যন্ত যত ইউরিন আসবে সব (টোটাল ২৪ ঘণ্টা ) টা অই পাত্রে সংগ্রহ করতে হবে। কোন প্রকার ইউরিন বাহিরে ফেলবেন না। এবং **খেয়াল রাখবেন প্রথম ইউরিন টা বাহিরে ফেলে দিয়ে এর পর থেকে ২৪ ঘণ্টা কাউননট করবেন।**
 
-**বিস্তারিত -** [Why might I need a 24-hour urine collection?](https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/24hour-urine-collection#:~:text=A%2024%2Dhour%20urine%20collection%20helps%20diagnose%20kidney%20problems.,minerals%2C%20and%20other%20chemical%20compounds. "Why might I need a 24-hour urine collection?")
+**বিস্তারিত -** [Why might I need a 24-hour urine collection?](https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/24hour-urine-collection#:~:text=A%2024%2Dhour%20urine%20collection%20helps%20diagnose%20kidney%20problems.,minerals%2C%20and%20other%20chemical%20compounds. "Why might I need a 24-hour urine collection?")​
 
 ***ICDDR,B তে টেস্ট করার নিয়ম-***
 
-> **[Urine Protein Test](/ckd/urine-protein-test "Urine Protein Test")**
+> ​[**Urine Protein Test**](/ckd/urine-protein-test "Urine Protein Test")​
 
 **24 Hours Urine Protein test সতর্কতা –**
 
@@ -85,6 +84,6 @@ image: /images/161335273_10225246352529061_4741228291592592703_n.jpeg
 
 **ⒸBKPA\_Foundation**
 
-**Facebook Group: [BKPA FOUNDATION - FACEBOOK GROUP](https://www.facebook.com/groups/bkpafoundation)**
+**Facebook Group:** [**BKPA FOUNDATION - FACEBOOK GROUP**](https://www.facebook.com/groups/bkpafoundation)​
 
-Facebook Page: [BKA FOUNDATION - FACEBOOK PAGE](https://www.facebook.com/profile.php?id=61569530603501)
+Facebook Page: [BKA FOUNDATION - FACEBOOK PAGE](https://www.facebook.com/profile.php?id=61569530603501)​
